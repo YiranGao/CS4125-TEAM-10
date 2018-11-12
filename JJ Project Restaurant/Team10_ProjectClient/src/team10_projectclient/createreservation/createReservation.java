@@ -14,9 +14,9 @@ import javax.swing.JFrame;
  * @author Yiran Gao - 17083214
  */
 public class createReservation extends JFrame implements ActionListener {
-    createReservation(){
+    public createReservation(){
          reservationBooking reservationbooking = new reservationBooking();
-         //reservationbooking.initComponents();
+            reservationbooking.setVisible(true);
     }
 
     @Override
