@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://myWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://myWS/">
+
+<xs:element name="deleteBooking" type="tns:deleteBooking"/>
+
+<xs:element name="deleteBookingResponse" type="tns:deleteBookingResponse"/>
+
+<xs:element name="getAllBookings" type="tns:getAllBookings"/>
+
+<xs:element name="getAllBookingsResponse" type="tns:getAllBookingsResponse"/>
+
+<xs:element name="makeBooking" type="tns:makeBooking"/>
+
+<xs:element name="makeBookingResponse" type="tns:makeBookingResponse"/>
+
+<xs:element name="updateBooking" type="tns:updateBooking"/>
+
+<xs:element name="updateBookingResponse" type="tns:updateBookingResponse"/>
+
+<xs:complexType name="updateBooking">
+<xs:sequence>
+<xs:element name="r" type="tns:reservation" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reservation">
+<xs:sequence>
+<xs:element name="custID" type="xs:string" minOccurs="0"/>
+<xs:element name="date" type="xs:string" minOccurs="0"/>
+<xs:element name="groupSize" type="xs:string" minOccurs="0"/>
+<xs:element name="resID" type="xs:string" minOccurs="0"/>
+<xs:element name="restaurantID" type="xs:string" minOccurs="0"/>
+<xs:element name="tableID" type="xs:string" minOccurs="0"/>
+<xs:element name="time" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="makeBooking">
+<xs:sequence>
+<xs:element name="r" type="tns:reservation" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="makeBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBooking">
+<xs:sequence>
+<xs:element name="r" type="tns:reservation" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllBookings">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllBookingsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reservation" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="JJ Project Restaurant/mySqlProject/src"/>
+	<classpathentry kind="src" path="JJ Project Restaurant/Registration/src"/>
+	<classpathentry kind="lib" path="JJ Project Restaurant/Registration/WebContent/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="JJ Project Restaurant/Registration/build/classes"/>
+</classpath>

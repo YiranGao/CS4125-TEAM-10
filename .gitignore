@@ -21,3 +21,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/JJ Project Restaurant/Team10_Project/nbproject/private/
+/JJ Project Restaurant/Team10_Project/build/
+/JJ Project Restaurant/Team10_ProjectClient/nbproject/private/
+/JJ Project Restaurant/Team10_ProjectClient/build/
+/JJ Project Restaurant/Team10_ProjectClient/dist/

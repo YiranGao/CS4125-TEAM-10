@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CS4125-TEAM-10">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/JJ Project Restaurant/mySqlProject/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/JJ Project Restaurant/Registration/src"/>
+        <property name="context-root" value="CS4125-TEAM-10"/>
+        <property name="java-output-path" value="/CS4125-TEAM-10/JJ Project Restaurant/Registration/build/classes"/>
+    </wb-module>
+</project-modules>
