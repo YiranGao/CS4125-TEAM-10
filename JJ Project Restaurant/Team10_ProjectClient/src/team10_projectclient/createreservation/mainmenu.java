@@ -5,16 +5,23 @@
  */
 package team10_projectclient.createreservation;
 
+import javax.swing.JOptionPane;
+import team10_projectclient.Team10_ProjectClient;
+
 /**
  *
  * @author Yiran Gao - 17083214
  */
 public class mainmenu extends javax.swing.JFrame {
-
+    private static String name = Team10_ProjectClient.fetchUsername(); 
+    private static int id = Team10_ProjectClient.fetchUserid();
     /**
      * Creates new form mainmenu
      */
     public mainmenu() {
+      name = Team10_ProjectClient.fetchUsername();
+      id = Team10_ProjectClient.fetchUserid();
+      // JOptionPane.showMessageDialog(null,name + id);
         initComponents();
     }
 
@@ -56,8 +63,14 @@ public class mainmenu extends javax.swing.JFrame {
         jButton3.setText("Modity Reservation");
 
         jLabel2.setText("Username");
+        jLabel2.setText(Team10_ProjectClient.fetchUsername());
 
         jButton4.setText("Profile");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +128,19 @@ public class mainmenu extends javax.swing.JFrame {
         //setFocusable(false);
         booking.setAlwaysOnTop(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-   
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        userprofile profile = new userprofile();
+        profile.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+    public static int fetchUserid() {
+         return id;
+     }
+
+     public static String fetchUsername() {
+         return name;
+     }
     /**
      * @param args the command line arguments
      */
@@ -159,4 +184,6 @@ public class mainmenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    
 }
