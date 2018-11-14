@@ -14,14 +14,16 @@ import javax.swing.JOptionPane;
  * @author 
  */
 public class Team10_ProjectClient extends JFrame{
-
+    private static int userId = 0;
+    private static String userName = "";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       String username = "";
-       int usertype = 100;
+       String username = "TextCustomer";
+       int userid = 1;
+       int usertype = 1;
        /*
         username = getLoginStates();
         //here I need model return me a string username (if the user has login)
@@ -32,10 +34,18 @@ public class Team10_ProjectClient extends JFrame{
                     usertype = getUserType();
                  //here I need model return me a usertype (if the user has login)
                 */
-                if(usertype == 1){
+                if(usertype == 1){//customer
+                    userId = userid;
+                    userName = username;
                     mainmenu m = new mainmenu();
                     m.setVisible(true);
                     //this is main menu.
+                    /*
+                    username = login.fetchUsername();// this should be passed in login class!
+                    userid = login.fetchUserid();// this should be passed in login class!
+                    */
+                   // JOptionPane.showMessageDialog(null,userId+userName +"\n"+ fetchUsername() + fetchUserid());
+                    
                 }
                 else if(usertype == 2){
                     /*
@@ -61,6 +71,14 @@ public class Team10_ProjectClient extends JFrame{
        }catch(Exception e){
            System.out.println("Initialise fail.");
        }
+    }
+
+    public static int fetchUserid() {
+        return userId;
+    }
+
+    public static String fetchUsername() {
+        return userName;
     }
     
 }
