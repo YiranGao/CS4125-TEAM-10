@@ -28,6 +28,7 @@ public class Register extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField emailField;
+        private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -75,13 +76,16 @@ public class Register extends JFrame {
 		JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String username = user.getText();
+				int index = 0;
+                                String username = user.getText();
                                 String phoneNo = phoneNumber.getText();
                                 String password = String.valueOf(passwordField.getPassword());
                                 String dateofBirth = textField.getText();
-                               // String radioYes = rdbtnYesCard.getText();
+                                String creditCard = textField_2.getText();
                                String gender = textField_1.getText();
                                String email = emailField.getText();
+                               
+                               
                                
                                Connection conn = null;
                                PreparedStatement pstmt = null;
@@ -89,14 +93,15 @@ public class Register extends JFrame {
                                try{
                                    Class.forName("com.mysql.jdbc.Driver");
 				   conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking_system", "root", "");
-                                   pstmt = conn.prepareStatement("insert into booking_system values(?,?,?,?,?,?,?)");
-                                   pstmt.setString(1, username);
-                                   pstmt.setString(2, phoneNo);
-                                   pstmt.setString(3, password);
-                                   pstmt.setString(4, dateofBirth);
-                                   pstmt.setString(5, "null");
-                                   pstmt.setString(6, gender);
-                                   pstmt.setString(7, email);
+                                   pstmt = conn.prepareStatement("insert into customer_table values(?,?,?,?,?,?,?,?)");
+                                   pstmt.setInt(1, index);
+                                   pstmt.setString(2, username);
+                                   pstmt.setString(3, phoneNo);
+                                   pstmt.setString(4, password);
+                                   pstmt.setString(5, dateofBirth);
+                                   pstmt.setString(6, creditCard);
+                                   pstmt.setString(7, gender);
+                                   pstmt.setString(8, email);
                                    
                                    int i = pstmt.executeUpdate();
                                    if(i>0){
@@ -172,12 +177,9 @@ public class Register extends JFrame {
 		lblEmail.setBounds(12, 570, 143, 26);
 		contentPane.add(lblEmail);
 		
-		JRadioButton rdbtnYesCard = new JRadioButton("yes");
-		rdbtnYesCard.setBounds(22, 444, 127, 25);
-		contentPane.add(rdbtnYesCard);
-		
-		JRadioButton rdbtnNoCard = new JRadioButton("No");
-		rdbtnNoCard.setBounds(182, 444, 127, 25);
-		contentPane.add(rdbtnNoCard);
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(12, 444, 298, 35);
+		contentPane.add(textField_2);
 	}
 }
