@@ -15,12 +15,14 @@ import team10_projectclient.Team10_ProjectClient;
 public class mainmenu extends javax.swing.JFrame {
     private static String name = Team10_ProjectClient.fetchUsername(); 
     private static int id = Team10_ProjectClient.fetchUserid();
+    private static int type = Team10_ProjectClient.fetchUsertype();
     /**
      * Creates new form mainmenu
      */
     public mainmenu() {
       name = Team10_ProjectClient.fetchUsername();
       id = Team10_ProjectClient.fetchUserid();
+      type = Team10_ProjectClient.fetchUsertype();
       //JOptionPane.showMessageDialog(null,name + id);
         initComponents();
     }
@@ -66,6 +68,11 @@ public class mainmenu extends javax.swing.JFrame {
         });
 
         jButton3.setText("Modity Reservation");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Username");
         jLabel2.setText(Team10_ProjectClient.fetchUsername());
@@ -145,12 +152,21 @@ public class mainmenu extends javax.swing.JFrame {
         cancelreservation cancel = new cancelreservation();
         cancel.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        modifyreservation modify = new modifyreservation();
+        modify.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
     public static int fetchUserid() {
          return id;
      }
 
      public static String fetchUsername() {
          return name;
+     }
+     public static int fetchUsertype() {
+         return type;
      }
     /**
      * @param args the command line arguments

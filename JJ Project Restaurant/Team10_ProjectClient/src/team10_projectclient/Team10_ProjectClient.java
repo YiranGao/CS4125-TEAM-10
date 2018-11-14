@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class Team10_ProjectClient extends JFrame{
     private static int userId = 0;
     private static String userName = "";
+    private static int userType = 0;
     /**
      * @param args the command line arguments
      */
@@ -31,7 +32,7 @@ public class Team10_ProjectClient extends JFrame{
        try{
             if(username != ""){
                 /*
-                    usertype = getUserType();
+                    userType = getUserType();
                  //here I need model return me a usertype (if the user has login)
                 */
                 if(usertype == 1){//customer
@@ -80,5 +81,7 @@ public class Team10_ProjectClient extends JFrame{
     public static String fetchUsername() {
         return userName;
     }
-    
+    public static int fetchUsertype() {
+        return userType;
+    }
 }
