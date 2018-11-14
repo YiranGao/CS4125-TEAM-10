@@ -21,7 +21,7 @@ public class mainmenu extends javax.swing.JFrame {
     public mainmenu() {
       name = Team10_ProjectClient.fetchUsername();
       id = Team10_ProjectClient.fetchUserid();
-      // JOptionPane.showMessageDialog(null,name + id);
+      //JOptionPane.showMessageDialog(null,name + id);
         initComponents();
     }
 
@@ -59,6 +59,11 @@ public class mainmenu extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancel Reservation");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Modity Reservation");
 
@@ -134,6 +139,12 @@ public class mainmenu extends javax.swing.JFrame {
         userprofile profile = new userprofile();
         profile.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        cancelreservation cancel = new cancelreservation();
+        cancel.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
     public static int fetchUserid() {
          return id;
      }
