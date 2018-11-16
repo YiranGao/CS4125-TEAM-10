@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author admin
+ * @author Yiran Gao - 17083214
  */
 @Entity
 @Table(name = "table_table")

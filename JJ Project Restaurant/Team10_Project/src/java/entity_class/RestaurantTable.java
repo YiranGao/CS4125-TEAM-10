@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author admin
+ * @author Yiran Gao - 17083214
  */
 @Entity
 @Table(name = "restaurant_table")
