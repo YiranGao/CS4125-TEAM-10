@@ -5,7 +5,7 @@
  */
 package team10_projectclient;
 
-import team10_projectclient.createreservation.mainmenu;
+import team10_projectclient.view.createreservation.mainmenu;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
  

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package team10_projectclient.createreservation;
+package team10_projectclient.view.createreservation;
        
 import javax.swing.JOptionPane;
 
@@ -85,7 +85,6 @@ public class cancelreservation extends javax.swing.JFrame {
         jLabel7.setText("Order ToString 5");
 
         jButton1.setText("Confirm");
-        jButton1.setActionCommand("Confirm");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package team10_projectclient.createreservation;
+package team10_projectclient.view.createreservation;
 
 import javax.swing.JOptionPane;
 import team10_projectclient.Team10_ProjectClient;

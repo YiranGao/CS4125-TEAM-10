@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package team10_projectclient.viewreservations;
+package team10_projectclient.view.viewreservations;
 
 /**
  *
@@ -12,7 +12,7 @@ package team10_projectclient.viewreservations;
  * */
 
 
-import team10_projectclient.view.MyTableModel;
+import team10_projectclient.view.viewreservations.MyTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;

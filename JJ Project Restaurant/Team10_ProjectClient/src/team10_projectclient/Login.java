@@ -22,7 +22,7 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import team10_projectclient.createreservation.mainmenu;
+import team10_projectclient.view.createreservation.mainmenu;
 
 //import myWS.Booking_Service;
 //import myWS.Booking_Service_Service;
