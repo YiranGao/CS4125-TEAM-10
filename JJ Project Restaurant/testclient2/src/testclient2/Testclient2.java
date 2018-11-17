@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication8;
+package testclient2;
 
 /**
  *
  * @author admin
  */
-public class JavaApplication8 {
+public class Testclient2 {
 
     /**
      * @param args the command line arguments
