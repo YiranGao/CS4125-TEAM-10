@@ -289,4 +289,10 @@ public class userprofile extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private static String updateBooking(team10_projectclient.Reservation r) {
+        team10_projectclient.BookingService_Service service = new team10_projectclient.BookingService_Service();
+        team10_projectclient.BookingService port = service.getBookingServicePort();
+        return port.updateBooking(r);
+    }
 }
