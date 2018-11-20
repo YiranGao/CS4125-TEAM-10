@@ -16,7 +16,7 @@ public class tableBean {
     private int tableState;
     private int seatAmount;
     
-    tableBean() {
+    public tableBean() {
         tableID = 0;
         restaurantID = 0;
         tableState = 0;
