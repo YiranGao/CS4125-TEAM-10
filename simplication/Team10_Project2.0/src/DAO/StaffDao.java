@@ -12,10 +12,8 @@ import util.DBConnection;
  *
  * @author Sean
  */
-public class CustomerRegisterDao {
-    
-    
-    public boolean autheticateUserDetails(String username){
+public class StaffDao {
+     public boolean autheticateUserDetails(String username){
 
         
         Connection con;
@@ -27,7 +25,7 @@ public class CustomerRegisterDao {
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select username from customers");
+            resultSet = statement.executeQuery("select username from staff");
  
             while(resultSet.next()) {
                 usernameDB = resultSet.getString(username);
@@ -41,23 +39,24 @@ public class CustomerRegisterDao {
        return true;
     }
 
-    public void RegisterCusotmer(CustomerBean CustRegBean) {
+    public void RegisterCusotmer(StaffBean StaffRegBean) {
         
         Connection con;
         Statement statement;
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = ("insert into customers(username, password, firstname, lastname, phone_number, email, birthday, creditcard_id) values(?,?,?,?,?,?,?,null)");
+            String sql = ("insert into staff(username, password, firstname, lastname, phone_number, email, usertype, restaurant_id) values(?,?,?,?,?,?,?,?)");
            
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,CustRegBean.getUserName());
-            ps.setString(2,CustRegBean.getPassword() );
-            ps.setString(3,CustRegBean.getFirstName() );
-            ps.setString(4,CustRegBean.getSurName() );
-            ps.setString(5,CustRegBean.getPhoneNum() );
-            ps.setString(6,CustRegBean.getEmailAddress() );
-            ps.setString(7,CustRegBean.getDOB() );
+            ps.setString(1,StaffRegBean.getUserName());
+            ps.setString(2,StaffRegBean.getPassword());
+            ps.setString(3,StaffRegBean.getFirstName());
+            ps.setString(4,StaffRegBean.getSurName());
+            ps.setString(5,StaffRegBean.getPhoneNum());
+            ps.setString(6,StaffRegBean.getEmailAddress());
+            ps.setInt(7,StaffRegBean.getStaffFeedBackMark());
+            ps.setInt(7, StaffRegBean.getRestaurantID());
             ps.executeUpdate();
             
             
