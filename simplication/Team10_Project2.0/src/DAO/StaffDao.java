@@ -1,6 +1,7 @@
 package DAO;
 
 import bean.CustomerBean;
+import bean.StaffBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

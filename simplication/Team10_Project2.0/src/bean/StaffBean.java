@@ -4,7 +4,7 @@ package bean;
  *
  * @author Sean
  */
-public class StaffBean {
+public class StaffBean extends userBean {
     
         
     private int userType;
