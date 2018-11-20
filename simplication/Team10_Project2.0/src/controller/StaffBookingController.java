@@ -1,6 +1,6 @@
 package controller;
 
-import DAO.createReservation2DAO;
+import DAO.reservationDAO;
 import bean.bookingBean;
 import javax.swing.JOptionPane;
 import view.java_app.createReservation2;
@@ -8,13 +8,13 @@ import view.java_app.createReservation2;
 
 public class StaffBookingController {
     
-    public StaffBookingController(String aRestName, String aTableID, String aNoOfGuests, String aDate, int aAllergyDairy, int aAllergyFish, int aAllergyGluten, int aAllergyPeanuts, int aAllergyShellfish, int aAllergySoya) {
+    public StaffBookingController(String aUserName, String aRestID, String aTableID, String aNoOfGuests, String aDate, String aTime, int aAllergyDairy, int aAllergyFish, int aAllergyGluten, int aAllergyPeanuts, int aAllergyShellfish, int aAllergySoya, createReservation2 res) {
        
         bookingBean bookingBean = new bookingBean();
         
-        bookingBean.setRestName(aRestName);
-        bookingBean.setTableID(aTableID);
-        bookingBean.setNoOfGuests(aNoOfGuests);
+        bookingBean.setRestID(Integer.parseInt(aRestID));
+        bookingBean.setTableID(Integer.parseInt(aTableID));
+        bookingBean.setNoOfGuests(Integer.parseInt(aNoOfGuests));
         bookingBean.setDate(aDate);
         bookingBean.setAllergyDairy(aAllergyDairy);
         bookingBean.setAllergyFish(aAllergyFish);
@@ -23,12 +23,14 @@ public class StaffBookingController {
         bookingBean.setAllergyShellfish(aAllergyShellfish);
         bookingBean.setAllergySoya(aAllergySoya);
         
-         createReservation2DAO bookingDao = new createReservation2DAO();
+        reservationDAO bookingDao = new reservationDAO();
         
-        String userValidate = bookingDao.authenticateReservation(bookingBean);
+        String userValidate = bookingDao.createReservation(bookingBean);
         
         if(userValidate.equals("SUCCESS")){
             JOptionPane.showMessageDialog(null,"Table has been reserved");
+            res.closeRes();
+            
         } else {
             JOptionPane.showMessageDialog(null,"Reservation Unsuccessfull");
         }

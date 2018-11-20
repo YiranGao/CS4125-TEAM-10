@@ -2,9 +2,11 @@ package bean;
 
 public class bookingBean {
     
-        private String RestName;
-        private String TableID;
-        private String NoOfGuests;
+        private int reservationID;
+        private int customerID;
+        private int RestID; // String restName
+        private int TableID;
+        private int NoOfGuests;
         private String Date;
         private int AllergyDairy;
         private int AllergyFish;
@@ -12,16 +14,40 @@ public class bookingBean {
         private int AllergyPeanuts;
         private int AllergyShellfish;
         private int AllergySoya;
+        
+        public bookingBean()
+        {
+        reservationID = 0;
+        customerID =0;
+        RestID =0; // String restName
+        TableID =0;
+        NoOfGuests =0;
+        Date="";
+        AllergyDairy = 0;
+        AllergyFish = 0;
+        AllergyGluten = 0;
+        AllergyPeanuts = 0;
+        AllergyShellfish = 0;
+        AllergySoya = 0;   
+        }
 
-    public void setRestName(String RestName) {
-        this.RestName = RestName;
+    public void setReservationID(int reservationID) {
+        this.reservationID = reservationID;
     }
 
-    public void setTableID(String TableID) {
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
+    public void setRestID(int RestID) {
+        this.RestID = RestID;
+    }
+
+    public void setTableID(int TableID) {
         this.TableID = TableID;
     }
 
-    public void setNoOfGuests(String NoOfGuests) {
+    public void setNoOfGuests(int NoOfGuests) {
         this.NoOfGuests = NoOfGuests;
     }
 
@@ -53,15 +79,23 @@ public class bookingBean {
         this.AllergySoya = AllergySoya;
     }
 
-    public String getRestName() {
-        return RestName;
+    public int getReservationID() {
+        return reservationID;
     }
 
-    public String getTableID() {
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public int getRestID() {
+        return RestID;
+    }
+
+    public int getTableID() {
         return TableID;
     }
 
-    public String getNoOfGuests() {
+    public int getNoOfGuests() {
         return NoOfGuests;
     }
 
@@ -92,5 +126,6 @@ public class bookingBean {
     public int getAllergySoya() {
         return AllergySoya;
     }
-    
+
+
 }
