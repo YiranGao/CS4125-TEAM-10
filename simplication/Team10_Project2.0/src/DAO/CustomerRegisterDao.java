@@ -1,5 +1,6 @@
 package DAO;
 
+import bean.CustomerBean;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import util.DBConnection;
 public class CustomerRegisterDao {
     
     
-    public static boolean autheticateUserDetails(String username){
+    public boolean autheticateUserDetails(String username){
 
         
         Connection con;
@@ -38,4 +39,9 @@ public class CustomerRegisterDao {
         }   
        return true;
     }
+
+    public void RegisterCusotmer(CustomerBean CustRegBean) {
+            
+            
+        }
 }

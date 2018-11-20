@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class CustomerRegisterController {
     
-        private static String userNamePattern = "^[A-Za-z0-9]+$";
-        private static String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        private static String namePattern = "^[A-Za-z]+$";
-        private static CustomerBean CustRegBean = new CustomerBean();
+        private String userNamePattern = "^[A-Za-z0-9]+$";
+        private String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        private String namePattern = "^[A-Za-z]+$";
+        private CustomerBean CustRegBean = new CustomerBean();
         
-        public static void checkUsername(String userName){
+        public void checkUsername(String userName){
             if(CustomerRegisterDao.autheticateUserDetails(userName)){//this needs to call the DAO and return true so we know that username isnt taken
                 
                 checkUsername(JOptionPane.showInputDialog(null,"The username: " + userName + " is taken please enter a new user name", JOptionPane.ERROR_MESSAGE));
@@ -26,7 +26,7 @@ public class CustomerRegisterController {
                 CustRegBean.setUserName(userName);
             }
         }
-        public static void checkEmailAddress(String emailAddress){
+        public void checkEmailAddress(String emailAddress){
             
             if(emailAddress.matches(emailPattern)){
                 CustRegBean.setEmailAddress(emailAddress);
@@ -35,7 +35,7 @@ public class CustomerRegisterController {
                 checkEmailAddress(JOptionPane.showInputDialog(null,"The Email Address: " + emailAddress + " is taken please enter a new user name", JOptionPane.ERROR_MESSAGE));
             }
         }
-        public static void checkFirstName(String FName){
+        public void checkFirstName(String FName){
             
             if(FName.matches(namePattern)){
                 CustRegBean.setFirstName(FName);
@@ -44,7 +44,7 @@ public class CustomerRegisterController {
                 checkFirstName(JOptionPane.showInputDialog(null,"Names cannot be Null and should not include numbers!", JOptionPane.ERROR_MESSAGE));
             }
         }
-        public static void checkSurName(String SName){
+        public void checkSurName(String SName){
             
             if(SName.matches(namePattern)){
                 CustRegBean.setSurName(SName);
@@ -53,7 +53,7 @@ public class CustomerRegisterController {
                 checkSurName(JOptionPane.showInputDialog(null,"Names cannot be Null and should not include numbers!", JOptionPane.ERROR_MESSAGE));
             }
         }
-        public static void checkPW(String password){
+        public void checkPW(String password){
             
             if(password.matches(userNamePattern)){
                  CustRegBean.setPassword(password);
@@ -62,7 +62,7 @@ public class CustomerRegisterController {
                 checkPW(JOptionPane.showInputDialog(null,"The password must contain at least one upper and one lower /n case letter along with at least one number", JOptionPane.ERROR_MESSAGE));
             }  
         }
-        public static void checkPhoneNumber(String phoneNum){
+        public void checkPhoneNumber(String phoneNum){
             
             if(phoneNum.matches("^[0-9]+$") && phoneNum.length() <=12 && phoneNum.length() >= 9){
                 CustRegBean.setPhoneNum(phoneNum);   
@@ -71,7 +71,7 @@ public class CustomerRegisterController {
                 checkPhoneNumber(JOptionPane.showInputDialog(null,"A phone number should be numbers 0-9 and <=12 >=9", JOptionPane.ERROR_MESSAGE));
             }
         }
-        public static void checkDOB(String DOB){
+        public void checkDOB(String DOB){
             
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 try {
@@ -82,6 +82,19 @@ public class CustomerRegisterController {
                     checkDOB(JOptionPane.showInputDialog(null,"Date of birth should be yyyy-MM-dd", JOptionPane.ERROR_MESSAGE));
                     }
         }
+        public void RegisterCustomer(CustomerBean CustRegBean){
+            
+            CustomerRegisterDao.RegisterCusotmer(CustRegBean);
+            
+        }
+        
+      //  StaffLoginDao loginDao = new StaffLoginDao();
+        
+      //  String userValidate = loginDao.authenticateUser(loginBean);
+        
+      //  CustomerRegisterDao RegDao = new CustomerRegisterDao();
+        
+
             
 }
         

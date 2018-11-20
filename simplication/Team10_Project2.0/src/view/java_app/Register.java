@@ -36,23 +36,6 @@ public class Register extends JFrame {
 	 */
 	public static void main(String[] args) {
             
-            
-            String userName = "gran";
-            String emailAddress = "testgmail.com";
-            String Fname = "Sean45";
-            String Sname = "Wright55";
-            String PW = "1password1";
-            String phoneNum ="0874714380asf";
-            String DOB = "";
-            
-            CustomerRegisterController.checkUsername(userName);
-            CustomerRegisterController.checkEmailAddress(emailAddress);
-            CustomerRegisterController.checkFirstName(Fname);        
-            CustomerRegisterController.checkSurName(Sname);
-            CustomerRegisterController.checkPW(PW);
-            CustomerRegisterController.checkPhoneNumber(phoneNum);
-            CustomerRegisterController.checkDOB(DOB);
-/*
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -197,6 +180,6 @@ public class Register extends JFrame {
 		textField_2.setColumns(10);
 		textField_2.setBounds(12, 444, 298, 35);
 		contentPane.add(textField_2);
-	*/}
+	}
 
 }
