@@ -58,7 +58,7 @@ public class creditcardDAO {
         Statement statement = null;
         ResultSet resultSet = null;
  
-        int card_idBD = 0;
+        int card_idDB = 0;
         String holderNameDB = "";
         int yearDB = 0;
         int monthDB = 0;
@@ -71,14 +71,14 @@ public class creditcardDAO {
  
             while(resultSet.next()) {
                 
-                card_idBD = resultSet.getInt("card_id");  
+                card_idDB = resultSet.getInt("card_id");  
                 holderNameDB = resultSet.getString("holder_name");
                 yearDB = resultSet.getInt("validdate_year");
                 monthDB = resultSet.getInt("validdate_month");
                 numberDB = resultSet.getString("card_number");
  
-                if(cardID == card_idBD) {
-                    creditcard.setCardID(card_idBD);
+                if(cardID == card_idDB) {
+                    creditcard.setCardID(card_idDB);
                     creditcard.setHolderName(holderNameDB);
                     creditcard.setYear(yearDB);
                     creditcard.setMonth(monthDB);
