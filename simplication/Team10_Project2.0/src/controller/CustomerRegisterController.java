@@ -1,6 +1,7 @@
 package controller;
 
 import DAO.CustomerRegisterDao;
+import DAO.StaffLoginDao;
 import bean.CustomerBean;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +19,9 @@ public class CustomerRegisterController {
         private CustomerBean CustRegBean = new CustomerBean();
         
         public void checkUsername(String userName){
-            if(CustomerRegisterDao.autheticateUserDetails(userName)){//this needs to call the DAO and return true so we know that username isnt taken
+            CustomerRegisterDao authUser = new CustomerRegisterDao();
+            
+            if(authUser.autheticateUserDetails(userName)){//this needs to call the DAO and return true so we know that username isnt taken
                 
                 checkUsername(JOptionPane.showInputDialog(null,"The username: " + userName + " is taken please enter a new user name", JOptionPane.ERROR_MESSAGE));
             }
@@ -84,17 +87,10 @@ public class CustomerRegisterController {
         }
         public void RegisterCustomer(CustomerBean CustRegBean){
             
-            CustomerRegisterDao.RegisterCusotmer(CustRegBean);
             
-        }
-        
-      //  StaffLoginDao loginDao = new StaffLoginDao();
-        
-      //  String userValidate = loginDao.authenticateUser(loginBean);
-        
-      //  CustomerRegisterDao RegDao = new CustomerRegisterDao();
-        
-
+            CustomerRegisterDao genCust = new CustomerRegisterDao();
+                   genCust.RegisterCusotmer(CustRegBean);
             
+        }         
 }
         
