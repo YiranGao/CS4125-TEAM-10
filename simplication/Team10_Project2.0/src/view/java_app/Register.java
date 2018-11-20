@@ -1,5 +1,6 @@
 package view.java_app;
 
+import controller.CustomerRegisterController;
 import java.awt.BorderLayout;
 import java.sql.*;
 import java.awt.EventQueue;
@@ -34,6 +35,7 @@ public class Register extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+            
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -46,9 +48,6 @@ public class Register extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Register() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 366, 751);
@@ -182,4 +181,5 @@ public class Register extends JFrame {
 		textField_2.setBounds(12, 444, 298, 35);
 		contentPane.add(textField_2);
 	}
+
 }
