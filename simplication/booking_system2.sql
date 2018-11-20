@@ -67,8 +67,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `username`, `password`, `firstname`, `lastname`, `phone_number`, `email`, `birthday`, `creditcard_id`, `loyalty_points`) VALUES
-(1, 'grand1', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', '05/13/2018', 1, 0),
-;
+(1, 'grand1', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', '05/13/2018', 1, 0);
 
 -- --------------------------------------------------------
 
