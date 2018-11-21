@@ -9,12 +9,27 @@ import java.awt.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
  * @author Yiran Gao 17083214
  */
-public class reservationBooking extends javax.swing.JFrame {
+public class ReservationBooking extends javax.swing.JFrame {
+
+    /**
+     * @return the userNameTextField
+     */
+    public javax.swing.JTextField getUserNameTextField() {
+        return userNameTextField;
+    }
+
+    /**
+     * @param userNameTextField the userNameTextField to set
+     */
+    public void setUserNameTextField(javax.swing.JTextField userNameTextField) {
+        this.userNameTextField = userNameTextField;
+    }
 
     private boolean verifyTable = false;
     private int tableSelected = 0;
@@ -25,7 +40,7 @@ public class reservationBooking extends javax.swing.JFrame {
     /**
      * Creates new form reservationBooking
      */
-    public reservationBooking() {
+    public ReservationBooking() {
         initComponents();
     }
 
@@ -47,19 +62,16 @@ public class reservationBooking extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        confirmButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        cardNumTextField = new javax.swing.JTextField();
+        phoneNumTextField = new javax.swing.JTextField();
+        dateTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        tableButton = new javax.swing.JButton();
+        cardNumEmail = new javax.swing.JLabel();
+        phoneNumLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -74,14 +86,24 @@ public class reservationBooking extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jRadioButton10 = new javax.swing.JRadioButton();
         jRadioButton11 = new javax.swing.JRadioButton();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        restaurantIdLabel = new javax.swing.JLabel();
+        restaurantLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        userNameTextField = new javax.swing.JTextField();
+        tableLabel = new javax.swing.JLabel();
+        tableIDLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        nameEditLabel = new javax.swing.JLabel();
+        allergyLabel = new javax.swing.JLabel();
+        allergyGluten = new javax.swing.JRadioButton();
+        allergyDairy = new javax.swing.JRadioButton();
+        allergyFish = new javax.swing.JRadioButton();
+        allergyShellfish = new javax.swing.JRadioButton();
+        allergyPeanuts = new javax.swing.JRadioButton();
+        allergySoya = new javax.swing.JRadioButton();
+        numOfGuestsTextField = new javax.swing.JTextField();
+        userNameLabel = new javax.swing.JLabel();
+        emailTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,33 +124,18 @@ public class reservationBooking extends javax.swing.JFrame {
                 jRadioButton1MouseClicked(evt);
             }
         });
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
 
         jRadioButton2.setText("restaurant2");
         jRadioButton2.setFocusable(false);
         jRadioButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jRadioButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         restaurant.add(jRadioButton2);
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
 
         jRadioButton3.setText("restaurant3");
         jRadioButton3.setFocusable(false);
         jRadioButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jRadioButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         restaurant.add(jRadioButton3);
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
 
         jRadioButton4.setText("restaurant4");
         jRadioButton4.setToolTipText("");
@@ -136,56 +143,43 @@ public class reservationBooking extends javax.swing.JFrame {
         jRadioButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jRadioButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         restaurant.add(jRadioButton4);
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+
+        confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                confirmButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Confirm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("DD-MM-YYYY");
-        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+        dateTextField.setForeground(new java.awt.Color(153, 153, 153));
+        dateTextField.setText("DD-MM-YYYY");
+        dateTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField3MouseClicked(evt);
+                dateTextFieldMouseClicked(evt);
             }
         });
 
         jLabel3.setText("Number of Covers:");
 
-        jButton3.setText("Find a table");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        tableButton.setText("Find a table");
+        tableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                tableButtonActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("CardNum");
+        cardNumEmail.setText("CardNum");
 
-        jLabel5.setText("PhoneNum");
+        phoneNumLabel.setText("PhoneNum");
 
-        jLabel6.setText("Date");
-
-        jLabel7.setText("Notes");
+        dateLabel.setText("Date");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Table List:");
@@ -203,43 +197,18 @@ public class reservationBooking extends javax.swing.JFrame {
         jRadioButton5.setSelected(true);
         jRadioButton5.setText("jRadioButton5");
         tables.add(jRadioButton5);
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
-            }
-        });
 
         jRadioButton6.setText("jRadioButton6");
         tables.add(jRadioButton6);
-        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton6ActionPerformed(evt);
-            }
-        });
 
         jRadioButton7.setText("jRadioButton7");
         tables.add(jRadioButton7);
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
-            }
-        });
 
         jRadioButton8.setText("jRadioButton8");
         tables.add(jRadioButton8);
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
-            }
-        });
 
         jRadioButton9.setText("jRadioButton9");
         tables.add(jRadioButton9);
-        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton9ActionPerformed(evt);
-            }
-        });
 
         jLabel14.setText("Will you want seperate tables?");
 
@@ -255,47 +224,51 @@ public class reservationBooking extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setText("1");
+        restaurantIdLabel.setText("1");
 
-        jLabel16.setText("Restaurant:");
+        restaurantLabel.setText("Restaurant:");
 
-        jLabel17.setText("E-mail");
+        emailLabel.setText("E-mail");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
+        tableLabel.setText("Table:");
 
-        jLabel18.setText("Table:");
+        tableIDLabel.setText("1");
 
-        jLabel19.setText("1");
+        nameLabel.setText("Name");
 
-        jLabel20.setText("Name");
+        nameEditLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        nameEditLabel.setText("jLabel21");
+        nameEditLabel.setText(mainmenu.fetchUsername());
 
-        jLabel21.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        jLabel21.setText("jLabel21");
-        jLabel21.setText(mainmenu.fetchUsername());
+        allergyLabel.setText("Allergies:");
+
+        allergyGluten.setText("gluten");
+
+        allergyDairy.setText("dairy");
+
+        allergyFish.setText("fish");
+
+        allergyShellfish.setText("shellfish");
+
+        allergyPeanuts.setText("peanuts");
+
+        allergySoya.setText("soya");
+
+        numOfGuestsTextField.setText("jTextField1");
+
+        userNameLabel.setText("Username");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(269, 269, 269)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel17)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -305,42 +278,72 @@ public class reservationBooking extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(jRadioButton4)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel16)
+                                        .addComponent(restaurantLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
+                                        .addComponent(restaurantIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(181, 181, 181))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cardNumEmail)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(emailLabel)
+                                                .addComponent(nameLabel)
+                                                .addComponent(userNameLabel, javax.swing.GroupLayout.Alignment.LEADING)))
+                                        .addGap(25, 25, 25))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(phoneNumLabel)
+                                        .addGap(18, 18, 18)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(dateLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 7, Short.MAX_VALUE))
+                                    .addComponent(allergyGluten)
+                                    .addComponent(confirmButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(allergyShellfish)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jRadioButton10)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton11))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField4)
+                                        .addComponent(cancelButton))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
-                                    .addComponent(jButton3)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jTextField6)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                        .addComponent(allergyDairy)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(phoneNumTextField)
+                                .addComponent(cardNumTextField)
+                                .addComponent(tableButton)
+                                .addComponent(jLabel14)
+                                .addComponent(userNameTextField)
+                                .addComponent(nameEditLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                                .addComponent(emailTextField1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(allergyFish)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(allergyPeanuts)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(allergySoya))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton11))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -349,10 +352,10 @@ public class reservationBooking extends javax.swing.JFrame {
                         .addComponent(jLabel9))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
-                    .addComponent(jLabel18))
+                    .addComponent(tableLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
+                    .addComponent(tableIDLabel)
                     .addComponent(jRadioButton9)
                     .addComponent(jRadioButton8)
                     .addComponent(jRadioButton5)
@@ -373,9 +376,9 @@ public class reservationBooking extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE))
+                                    .addComponent(jLabel8)
+                                    .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -404,10 +407,10 @@ public class reservationBooking extends javax.swing.JFrame {
                                         .addComponent(jRadioButton2))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(dateLabel)
+                                            .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton3)))
+                                        .addComponent(tableButton)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jRadioButton3))
                             .addGroup(layout.createSequentialGroup()
@@ -427,54 +430,66 @@ public class reservationBooking extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19))))
-                .addGap(18, 18, 18)
+                            .addComponent(tableLabel)
+                            .addComponent(tableIDLabel))))
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
-                .addGap(21, 21, 21)
+                    .addComponent(restaurantIdLabel)
+                    .addComponent(restaurantLabel))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(nameLabel)
+                    .addComponent(nameEditLabel))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                    .addComponent(userNameLabel)
+                    .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                    .addComponent(emailLabel)
+                    .addComponent(emailTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cardNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardNumEmail))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                    .addComponent(phoneNumLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(phoneNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allergyGluten)
+                    .addComponent(allergyDairy))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allergyFish)
+                    .addComponent(allergyShellfish))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allergyPeanuts)
+                    .addComponent(allergySoya))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmButton)
+                    .addComponent(cancelButton))
                 .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
-        String cardNum = jTextField1.getText();
-        String phoneNum = jTextField2.getText();
-        String note = jTextField4.getText();
+        String cardNum = getCardNumTextField().getText();
+        String phoneNum = getPhoneNumTextField().getText();
         int max = 0;
         int tableId = 0;
-        String email = jTextField6.getText();
-        String date = jTextField3.getText();
-        String username = jLabel21.getText();
+        String email = getEmailTextField().getText();
+        String date = getDateTextField().getText();
+        String username = getNameEditLabel().getText();
         int userid = mainmenu.fetchUserid();
-        int restaurant = Integer.parseInt(jLabel15.getText());
+        int restaurant = Integer.parseInt(getRestaurantIdLabel().getText());
         for(int i = 0;i<5;i++){
             if(max<seat[i]){
                 max = seat[i];
@@ -486,7 +501,7 @@ public class reservationBooking extends javax.swing.JFrame {
         }else if(isFindATable == false){
             JOptionPane.showMessageDialog(null,"Please find a table first.");
         } else
-            if(Integer.parseInt(jTextField5.getText())<=max){
+            if(Integer.parseInt(numOfGuestsTextField.getText())<=max){
             /*
                 REQUEST API
                 ****makeBooking includes with set selected table state = 0(has booked) and this should be done at server,
@@ -495,8 +510,8 @@ public class reservationBooking extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Booking successfully, Table ID is " + tableSelected);
             dispose();
             
-        }else if(Integer.parseInt(jTextField5.getText())>max){
-            int covernum = Integer.parseInt(jTextField5.getText());
+        }else if(Integer.parseInt(numOfGuestsTextField.getText())>max){
+            int covernum = Integer.parseInt(numOfGuestsTextField.getText());
             String tableID = "";
             String str = "";
             for(int i = 0; i < 5 ; i++ ){
@@ -513,16 +528,12 @@ public class reservationBooking extends javax.swing.JFrame {
                 dispose();
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void tableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableButtonActionPerformed
         // TODO add your handling code here:
         Pattern pattern = Pattern.compile("[0-9]*");
-        Matcher isNum = pattern.matcher(jTextField5.getText());
+        Matcher isNum = pattern.matcher(numOfGuestsTextField.getText());
         if( !isNum.matches() ){
                verifyTable = false;
                JOptionPane.showMessageDialog(null,"Please type in number");
@@ -534,13 +545,13 @@ public class reservationBooking extends javax.swing.JFrame {
             int restaurant = 0;
             String date = "";
             String dateRegEx="^[0-3]{1}[0-9]{1}-[0-1]{1}[1-2]{1}-[1-9]{1}[0-9]{3}$";
-            boolean dateFlag = Pattern.matches(dateRegEx, jTextField3.getText());
+            boolean dateFlag = Pattern.matches(dateRegEx, getDateTextField().getText());
             if (!dateFlag){
                 JOptionPane.showMessageDialog(null,"Please type in correct date");
             }else{
-               date = jTextField3.getText();
-               cover = Integer.parseInt(jTextField5.getText());
-               restaurant = Integer.parseInt(jLabel15.getText());
+               date = getDateTextField().getText();
+               cover = Integer.parseInt(numOfGuestsTextField.getText());
+               restaurant = Integer.parseInt(getRestaurantIdLabel().getText());
                isFindATable = true;
                // JOptionPane.showMessageDialog(null,"correct" + cover + restaurant);
                 /*
@@ -568,84 +579,30 @@ public class reservationBooking extends javax.swing.JFrame {
                 */
             }
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-        jLabel15.setText("3");
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-        jLabel15.setText("4");
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_tableButtonActionPerformed
 
     private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton11ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-        jLabel15.setText("2");
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
         dispose();//cancel
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
         // TODO add your handling code here:
         //jLabel15.setText("1");
     }//GEN-LAST:event_jRadioButton1MouseClicked
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-        jLabel15.setText("1");
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-        tableSelected = 1;
-        jLabel19.setText(""+ tableSelected);
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
-
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-        // TODO add your handling code here:
-        tableSelected = 2;
-        jLabel19.setText(""+ tableSelected);
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
-
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-        // TODO add your handling code here:
-        tableSelected = 3;
-        jLabel19.setText(""+ tableSelected);
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
-
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
-        // TODO add your handling code here:
-        tableSelected = 4;
-        jLabel19.setText(""+ tableSelected);
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
-
-    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
-        // TODO add your handling code here:
-        tableSelected = 5;
-        jLabel19.setText(""+ tableSelected);
-    }//GEN-LAST:event_jRadioButton9ActionPerformed
-
-    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+    private void dateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTextFieldMouseClicked
         // TODO add your handling code here:
         if(colour==false){
-            jTextField3.setText("");
-            jTextField3.setForeground(Color.BLACK);
+            getDateTextField().setText("");
+            getDateTextField().setForeground(Color.BLACK);
             colour = true;
         }
-    }//GEN-LAST:event_jTextField3MouseClicked
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_dateTextFieldMouseClicked
 
     /**
      * @param args the command line arguments
@@ -664,13 +621,13 @@ public class reservationBooking extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(reservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(reservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(reservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(reservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -678,34 +635,35 @@ public class reservationBooking extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new reservationBooking().setVisible(true);
+                new ReservationBooking().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JRadioButton allergyDairy;
+    private javax.swing.JRadioButton allergyFish;
+    private javax.swing.JRadioButton allergyGluten;
+    private javax.swing.JLabel allergyLabel;
+    private javax.swing.JRadioButton allergyPeanuts;
+    private javax.swing.JRadioButton allergyShellfish;
+    private javax.swing.JRadioButton allergySoya;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JLabel cardNumEmail;
+    private javax.swing.JTextField cardNumTextField;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JTextField dateTextField;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;
@@ -719,14 +677,272 @@ public class reservationBooking extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel nameEditLabel;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField numOfGuestsTextField;
+    private javax.swing.JLabel phoneNumLabel;
+    private javax.swing.JTextField phoneNumTextField;
     private javax.swing.ButtonGroup restaurant;
+    private javax.swing.JLabel restaurantIdLabel;
+    private javax.swing.JLabel restaurantLabel;
     private javax.swing.ButtonGroup seperatetables;
+    private javax.swing.JButton tableButton;
+    private javax.swing.JLabel tableIDLabel;
+    private javax.swing.JLabel tableLabel;
     private javax.swing.ButtonGroup tables;
+    private javax.swing.JLabel userNameLabel;
+    private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the allergyDairy
+     */
+    public JRadioButton getAllergyDairy() {
+        return allergyDairy;
+    }
+
+    /**
+     * @param allergyDairy the allergyDairy to set
+     */
+    public void setAllergyDairy(javax.swing.JRadioButton allergyDairy) {
+        this.allergyDairy = allergyDairy;
+    }
+
+    /**
+     * @return the allergyFish
+     */
+    public JRadioButton getAllergyFish() {
+        return allergyFish;
+    }
+
+    /**
+     * @param allergyFish the allergyFish to set
+     */
+    public void setAllergyFish(javax.swing.JRadioButton allergyFish) {
+        this.allergyFish = allergyFish;
+    }
+
+    /**
+     * @return the allergyGluten
+     */
+    public JRadioButton getAllergyGluten() {
+        return allergyGluten;
+    }
+
+    /**
+     * @param allergyGluten the allergyGluten to set
+     */
+    public void setAllergyGluten(javax.swing.JRadioButton allergyGluten) {
+        this.allergyGluten = allergyGluten;
+    }
+
+    /**
+     * @return the allergyPeanuts
+     */
+    public JRadioButton getAllergyPeanuts() {
+        return allergyPeanuts;
+    }
+
+    /**
+     * @param allergyPeanuts the allergyPeanuts to set
+     */
+    public void setAllergyPeanuts(javax.swing.JRadioButton allergyPeanuts) {
+        this.allergyPeanuts = allergyPeanuts;
+    }
+
+    /**
+     * @return the allergyShellfish
+     */
+    public JRadioButton getAllergyShellfish() {
+        return allergyShellfish;
+    }
+
+    /**
+     * @param allergyShellfish the allergyShellfish to set
+     */
+    public void setAllergyShellfish(javax.swing.JRadioButton allergyShellfish) {
+        this.allergyShellfish = allergyShellfish;
+    }
+
+    /**
+     * @return the allergySoya
+     */
+    public JRadioButton getAllergySoya() {
+        return allergySoya;
+    }
+
+    /**
+     * @param allergySoya the allergySoya to set
+     */
+    public void setAllergySoya(javax.swing.JRadioButton allergySoya) {
+        this.allergySoya = allergySoya;
+    }
+
+    /**
+     * @return the cancelButton
+     */
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+
+    /**
+     * @param cancelButton the cancelButton to set
+     */
+    public void setCancelButton(javax.swing.JButton cancelButton) {
+        this.cancelButton = cancelButton;
+    }
+
+    /**
+     * @return the cardNumEmail
+     */
+    public JLabel getCardNumEmail() {
+        return cardNumEmail;
+    }
+
+    /**
+     * @param cardNumEmail the cardNumEmail to set
+     */
+    public void setCardNumEmail(javax.swing.JLabel cardNumEmail) {
+        this.cardNumEmail = cardNumEmail;
+    }
+
+    /**
+     * @return the cardNumTextField
+     */
+    public JTextField getCardNumTextField() {
+        return cardNumTextField;
+    }
+
+    /**
+     * @param cardNumTextField the cardNumTextField to set
+     */
+    public void setCardNumTextField(javax.swing.JTextField cardNumTextField) {
+        this.cardNumTextField = cardNumTextField;
+    }
+
+    /**
+     * @return the confirmButton
+     */
+    public javax.swing.JButton getConfirmButton() {
+        return confirmButton;
+    }
+
+    /**
+     * @param confirmButton the confirmButton to set
+     */
+    public void setConfirmButton(javax.swing.JButton confirmButton) {
+        this.confirmButton = confirmButton;
+    }
+
+    /**
+     * @return the dateTextField
+     */
+    public JTextField getDateTextField() {
+        return dateTextField;
+    }
+
+    /**
+     * @param dateTextField the dateTextField to set
+     */
+    public void setDateTextField(javax.swing.JTextField dateTextField) {
+        this.dateTextField = dateTextField;
+    }
+
+    /**
+     * @return the emailTextField
+     */
+    public JTextField getEmailTextField() {
+        return getUserNameTextField();
+    }
+
+    /**
+     * @param emailTextField the emailTextField to set
+     */
+    public void setEmailTextField(javax.swing.JTextField emailTextField) {
+        this.setUserNameTextField(emailTextField);
+    }
+
+    /**
+     * @return the nameEditLabel
+     */
+    public JLabel getNameEditLabel() {
+        return nameEditLabel;
+    }
+
+    /**
+     * @param nameEditLabel the nameEditLabel to set
+     */
+    public void setNameEditLabel(javax.swing.JLabel nameEditLabel) {
+        this.nameEditLabel = nameEditLabel;
+    }
+
+    /**
+     * @return the phoneNumTextField
+     */
+    public JTextField getPhoneNumTextField() {
+        return phoneNumTextField;
+    }
+
+    /**
+     * @param phoneNumTextField the phoneNumTextField to set
+     */
+    public void setPhoneNumTextField(javax.swing.JTextField phoneNumTextField) {
+        this.phoneNumTextField = phoneNumTextField;
+    }
+
+    /**
+     * @return the restaurantIdLabel
+     */
+    public JLabel getRestaurantIdLabel() {
+        return restaurantIdLabel;
+    }
+
+    /**
+     * @param restaurantIdLabel the restaurantIdLabel to set
+     */
+    public void setRestaurantIdLabel(javax.swing.JLabel restaurantIdLabel) {
+        this.restaurantIdLabel = restaurantIdLabel;
+    }
+
+    /**
+     * @return the tableButton
+     */
+    public JButton getTableButton() {
+        return tableButton;
+    }
+
+    /**
+     * @param tableButton the tableButton to set
+     */
+    public void setTableButton(javax.swing.JButton tableButton) {
+        this.tableButton = tableButton;
+    }
+
+    /**
+     * @return the tableIDLabel
+     */
+    public JLabel getTableIDLabel() {
+        return tableIDLabel;
+    }
+
+    /**
+     * @param tableIDLabel the tableIDLabel to set
+     */
+    public void setTableIDLabel(javax.swing.JLabel tableIDLabel) {
+        this.tableIDLabel = tableIDLabel;
+    }
+
+    /**
+     * @return the numOfGuestsTextField
+     */
+    public JTextField getNumOfGuestsTextField() {
+        return numOfGuestsTextField;
+    }
+
+    /**
+     * @param jTextField1 the numOfGuestsTextField to set
+     */
+    public void setNumOfGuestsTextField(javax.swing.JTextField numOfGuestsTextField) {
+        this.numOfGuestsTextField = numOfGuestsTextField;
+    }
 }

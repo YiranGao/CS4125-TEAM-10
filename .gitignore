@@ -42,3 +42,4 @@ hs_err_pid*
 /JJ Project Restaurant/TTTWebApplication/nbproject/private/
 /JJ Project Restaurant/TTTWebApplication/build/
 /JJ Project Restaurant/TTTWebApplication/dist/
+*.properties
