@@ -124,4 +124,67 @@ public class Booking_Service {
         return results;
     }
 
+    @WebMethod(operationName = "login")
+    public int login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
+        try {
+            String sqlCmd = "SELECT autokey FROM tttexample.users WHERE username = '" + username;
+            sqlCmd += "' AND password = PASSWORD('" + password + "') AND isactive = 1;";
+            String result = dao.retrieve(sqlCmd);
+            if("ERROR".equals(result)) {
+                return 0;
+            } else {
+                return Integer.parseInt(result);
+            }
+        } catch(Exception e) {
+            System.out.println("Error is : " + e.getMessage());
+            return -1;
+        }
+    }
+
+    /**
+     * Web service operation
+     * @param username
+     * @param password
+     * @param name
+     * @param surname
+     * @return 
+     */
+    @WebMethod(operationName = "register")
+    public String register(@WebParam(name = "username") String username, @WebParam(name = "password") String password, @WebParam(name = "name") String name, @WebParam(name = "surname") String surname) {
+        String sqlCmd = "";
+        
+        sqlCmd = "SELECT COUNT(*) FROM tttexample.users WHERE username = '" + username + "';";
+        try {
+            String result = "";
+            result = dao.retrieve(sqlCmd);
+            if(result.equals("0")) {
+                sqlCmd = "INSERT INTO users VALUES (default, '";
+                sqlCmd += name + "', '" + surname + "', '" + username + "', PASSWORD('";
+                sqlCmd += password + "'), 1, default);";
+                System.out.println(sqlCmd);
+                try {
+                    result = dao.insert(sqlCmd);
+                    if(!"INSERTED 1 ROWS.".equals(result)) {
+                        return "ERROR-INSERT";
+                    } else {
+                        sqlCmd = "SELECT autokey FROM tttexample.users WHERE username = '" + username;
+                        sqlCmd += "' AND password = PASSWORD('" + password + "') AND isactive = 1;";
+
+                        try {
+                            result = dao.retrieve(sqlCmd);
+                            return result;
+                        } catch(Exception g) {
+                            return "ERROR-RETRIEVE";
+                        }
+                    }
+                } catch(Exception e) {
+                    return "ERROR-DB";
+                }
+            } else {
+                return "ERROR-REPEAT";
+            }
+        } catch(Exception u) {
+            return "ERROR-DB";
+        }        
+    }
 }
