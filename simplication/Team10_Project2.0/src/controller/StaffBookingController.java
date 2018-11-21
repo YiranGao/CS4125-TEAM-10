@@ -17,6 +17,7 @@ public class StaffBookingController {
     public StaffBookingController(BookingBean m, ReservationBooking v) {
         bookingBean = m;
         view = v;
+        //view.setVisible(true);
     }
     
     
