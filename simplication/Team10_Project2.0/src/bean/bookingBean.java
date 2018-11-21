@@ -8,12 +8,12 @@ public class bookingBean {
         private int TableID;
         private int NoOfGuests;
         private String Date;
-        private int AllergyDairy;
-        private int AllergyFish;
-        private int AllergyGluten;
-        private int AllergyPeanuts;
-        private int AllergyShellfish;
-        private int AllergySoya;
+        private int AllergyDairy = 0;
+        private int AllergyFish = 0;
+        private int AllergyGluten = 0;
+        private int AllergyPeanuts = 0;
+        private int AllergyShellfish = 0;
+        private int AllergySoya = 0;
         
         public bookingBean()
         {
