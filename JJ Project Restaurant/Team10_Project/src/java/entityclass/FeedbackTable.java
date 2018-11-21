@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package entityclass;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -129,7 +129,7 @@ public class FeedbackTable implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.FeedbackTable[ feedbackId=" + feedbackId + " ]";
+        return "entityclass.FeedbackTable[ feedbackId=" + feedbackId + " ]";
     }
     
 }

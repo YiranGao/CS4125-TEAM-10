@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package entityclass;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -150,7 +150,7 @@ public class CreditcardTable implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.CreditcardTable[ cardId=" + cardId + " ]";
+        return "entityclass.CreditcardTable[ cardId=" + cardId + " ]";
     }
     
 }
