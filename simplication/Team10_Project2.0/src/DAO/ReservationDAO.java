@@ -1,7 +1,7 @@
 
 package DAO;
 
-import bean.bookingBean;
+import bean.BookingBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +11,9 @@ import util.DBConnection;
 
 public class ReservationDAO {
         
-    private bookingBean booking;
+    private BookingBean booking;
 
-    public String addReservation(bookingBean bookingBean) {
+    public String addReservation(BookingBean bookingBean) {
  
         Connection con = null;
         Statement statement = null;
@@ -49,7 +49,7 @@ public class ReservationDAO {
         return "Invalid user credentials";
     }
     
-    public bookingBean getReservation(int resID)
+    public BookingBean getReservation(int resID)
     {
         Connection con = null;
         Statement statement = null;
