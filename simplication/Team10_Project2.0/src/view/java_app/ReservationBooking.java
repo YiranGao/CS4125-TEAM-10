@@ -42,6 +42,8 @@ public class ReservationBooking extends javax.swing.JFrame {
      */
     public ReservationBooking() {
         initComponents();
+        this.setVisible(true);
+        
     }
 
     /**
@@ -119,11 +121,6 @@ public class ReservationBooking extends javax.swing.JFrame {
         jRadioButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jRadioButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         restaurant.add(jRadioButton1);
-        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton1MouseClicked(evt);
-            }
-        });
 
         jRadioButton2.setText("restaurant2");
         jRadioButton2.setFocusable(false);
@@ -145,35 +142,15 @@ public class ReservationBooking extends javax.swing.JFrame {
         restaurant.add(jRadioButton4);
 
         confirmButton.setText("Confirm");
-        confirmButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmButtonActionPerformed(evt);
-            }
-        });
 
         cancelButton.setText("Cancel");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
-            }
-        });
 
         dateTextField.setForeground(new java.awt.Color(153, 153, 153));
         dateTextField.setText("DD-MM-YYYY");
-        dateTextField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dateTextFieldMouseClicked(evt);
-            }
-        });
 
         jLabel3.setText("Number of Covers:");
 
         tableButton.setText("Find a table");
-        tableButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tableButtonActionPerformed(evt);
-            }
-        });
 
         cardNumEmail.setText("CardNum");
 
@@ -218,11 +195,6 @@ public class ReservationBooking extends javax.swing.JFrame {
         jRadioButton11.setSelected(true);
         jRadioButton11.setText("No");
         seperatetables.add(jRadioButton11);
-        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton11ActionPerformed(evt);
-            }
-        });
 
         restaurantIdLabel.setText("1");
 
@@ -238,7 +210,6 @@ public class ReservationBooking extends javax.swing.JFrame {
 
         nameEditLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         nameEditLabel.setText("jLabel21");
-        nameEditLabel.setText(mainmenu.fetchUsername());
 
         allergyLabel.setText("Allergies:");
 
@@ -309,12 +280,13 @@ public class ReservationBooking extends javax.swing.JFrame {
                                     .addComponent(confirmButton))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(allergyShellfish)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(cancelButton))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(allergyDairy)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(allergyShellfish)
+                                            .addComponent(allergyDairy))
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(phoneNumTextField)
@@ -479,166 +451,7 @@ public class ReservationBooking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        // TODO add your handling code here:
-        String cardNum = getCardNumTextField().getText();
-        String phoneNum = getPhoneNumTextField().getText();
-        int max = 0;
-        int tableId = 0;
-        String email = getEmailTextField().getText();
-        String date = getDateTextField().getText();
-        String username = getNameEditLabel().getText();
-        int userid = mainmenu.fetchUserid();
-        int restaurant = Integer.parseInt(getRestaurantIdLabel().getText());
-        for(int i = 0;i<5;i++){
-            if(max<seat[i]){
-                max = seat[i];
-                tableId = i+1;
-            }
-        }
-        if((cardNum == "") || (phoneNum == "")){
-            JOptionPane.showMessageDialog(null,"Please fill cardNum and phoneNum");
-        }else if(isFindATable == false){
-            JOptionPane.showMessageDialog(null,"Please find a table first.");
-        } else
-            if(Integer.parseInt(numOfGuestsTextField.getText())<=max){
-            /*
-                REQUEST API
-                ****makeBooking includes with set selected table state = 0(has booked) and this should be done at server,
-                makeBooking(userid,username,restaurant,tableSelected,date,email,cardNum,phoneNum,note);
-            */
-            JOptionPane.showMessageDialog(null,"Booking successfully, Table ID is " + tableSelected);
-            dispose();
-            
-        }else if(Integer.parseInt(numOfGuestsTextField.getText())>max){
-            int covernum = Integer.parseInt(numOfGuestsTextField.getText());
-            String tableID = "";
-            String str = "";
-            for(int i = 0; i < 5 ; i++ ){
-                /*
-                    REQUEST API
-                ****if cover > seat and want to seperate, then we book amount of tables until fit in the cover.
-                    if(covernum>0){
-                        covernum = covernum - seat[i];
-                        makeBooking(userid,username,restaurant,tableSelected,date,email,cardNum,phoneNum,note);
-                        str = str + tableID;
-                    }
-                */
-                JOptionPane.showMessageDialog(null,"Booking successfully, Table ID is " + str);
-                dispose();
-            }
-        }
-    }//GEN-LAST:event_confirmButtonActionPerformed
 
-    private void tableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableButtonActionPerformed
-        // TODO add your handling code here:
-        Pattern pattern = Pattern.compile("[0-9]*");
-        Matcher isNum = pattern.matcher(numOfGuestsTextField.getText());
-        if( !isNum.matches() ){
-               verifyTable = false;
-               JOptionPane.showMessageDialog(null,"Please type in number");
-           }else {
-           verifyTable = true;
-           }
-        if(verifyTable == true){
-            int cover = 0;
-            int restaurant = 0;
-            String date = "";
-            String dateRegEx="^[0-3]{1}[0-9]{1}-[0-1]{1}[1-2]{1}-[1-9]{1}[0-9]{3}$";
-            boolean dateFlag = Pattern.matches(dateRegEx, getDateTextField().getText());
-            if (!dateFlag){
-                JOptionPane.showMessageDialog(null,"Please type in correct date");
-            }else{
-               date = getDateTextField().getText();
-               cover = Integer.parseInt(numOfGuestsTextField.getText());
-               restaurant = Integer.parseInt(getRestaurantIdLabel().getText());
-               isFindATable = true;
-               // JOptionPane.showMessageDialog(null,"correct" + cover + restaurant);
-                /*
-                    REQUEST API
-                    ****get first 5 empty tables (return number of seats ) on select restaurant:
-                    
-                    seperate = false;
-                    seat = getTableSeat(restaurant,cover,date);
-                    jLabel9.setText("Table 1, Seat " + tableSeats[0]);
-                    jLabel10.setText("Table 2, Seat " + tableSeats[1]);
-                    jLabel11.setText("Table 3, Seat " + tableSeats[2]);
-                    jLabel12.setText("Table 4, Seat " + tableSeats[3]);
-                    jLabel13.setText("Table 5, Seat " + tableSeats[4]);
-                    jRadioButton5.setText(tableSeats[0]);
-                    jRadioButton6.setText(tableSeats[1]);
-                    jRadioButton7.setText(tableSeats[2]);
-                    jRadioButton8.setText(tableSeats[3]);
-                    jRadioButton9.setText(tableSeats[4]);
-                    ****if cannot find that please return a int array with 0
-                    if(tableSeats == 0 && jRadioButton10.isSelected() == true){
-                        JOptionPane.showMessageDialog(null,"No valid table for you but we will book seperate tables for you,");
-                        seperate = true;
-                    }else
-                        JOptionPane.showMessageDialog(null,"No valid table for you, Sorry");
-                */
-            }
-        }
-    }//GEN-LAST:event_tableButtonActionPerformed
-
-    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton11ActionPerformed
-
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
-        dispose();//cancel
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
-        // TODO add your handling code here:
-        //jLabel15.setText("1");
-    }//GEN-LAST:event_jRadioButton1MouseClicked
-
-    private void dateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTextFieldMouseClicked
-        // TODO add your handling code here:
-        if(colour==false){
-            getDateTextField().setText("");
-            getDateTextField().setForeground(Color.BLACK);
-            colour = true;
-        }
-    }//GEN-LAST:event_dateTextFieldMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReservationBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ReservationBooking().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton allergyDairy;

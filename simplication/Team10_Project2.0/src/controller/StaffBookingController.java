@@ -2,10 +2,8 @@ package controller;
 
 import DAO.CustomerDAO;
 import DAO.ReservationDAO;
-import DAO.ReservationDAO;
-import bean.bookingBean;
 import bean.CustomerBean;
-import bean.bookingBean;
+import bean.BookingBean;
 import javax.swing.JOptionPane;
 import view.java_app.ReservationBooking;
 //import view.java_app.createReservation2;
@@ -13,12 +11,13 @@ import view.java_app.ReservationBooking;
 
 public class StaffBookingController {
     
-    private bookingBean bookingBean; //model
+    private BookingBean bookingBean; //model
     private ReservationBooking view;
     
-    public StaffBookingController(bookingBean m, ReservationBooking v) {
+    public StaffBookingController(BookingBean m, ReservationBooking v) {
         bookingBean = m;
         view = v;
+        //view.setVisible(true);
     }
     
     

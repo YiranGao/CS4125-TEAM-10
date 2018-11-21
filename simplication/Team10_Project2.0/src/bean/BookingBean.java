@@ -1,6 +1,6 @@
 package bean;
 
-public class bookingBean {
+public class BookingBean {
     
         private int reservationID;
         private int customerID;
@@ -15,7 +15,7 @@ public class bookingBean {
         private int AllergyShellfish = 0;
         private int AllergySoya = 0;
         
-        public bookingBean()
+        public BookingBean()
         {
         reservationID = 0;
         customerID =0;

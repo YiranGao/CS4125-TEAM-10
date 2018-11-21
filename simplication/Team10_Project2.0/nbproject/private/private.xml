@@ -3,22 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/util/DBConnection.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/Login.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/modifyreservation.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/createReservation2.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/createReservation.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/team10_project2/Team10_Project.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/META-INF/persistence.xml</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffBookingController.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/bookingBean.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffLoginController.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/reservationBooking.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/StaffLoginDao.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/mainmenu.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/createReservation2DAO.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/userprofile.java</file>
-            <file>file:/C:/Users/mjs-laptop/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/LoginBean.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/ReservationDAO.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/bookingBean.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffBookingController.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/LoginBean.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/CustomerBean.java</file>
+            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/java_app/ReservationBooking.java</file>
         </group>
     </open-files>
 </project-private>
