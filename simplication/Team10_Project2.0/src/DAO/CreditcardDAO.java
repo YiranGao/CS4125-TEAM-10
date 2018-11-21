@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
 import bean.creditcardBean;
@@ -18,7 +14,7 @@ import util.DBConnection;
  *
  * @author gtara
  */
-public class creditcardDAO {
+public class CreditcardDAO {
     
     private creditcardBean creditcard = new creditcardBean();
     
@@ -58,31 +54,19 @@ public class creditcardDAO {
         Statement statement = null;
         ResultSet resultSet = null;
  
-        int card_idDB = 0;
-        String holderNameDB = "";
-        int yearDB = 0;
-        int monthDB = 0;
-        String numberDB = "";
- 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             resultSet = statement.executeQuery("select * from tables");
  
             while(resultSet.next()) {
-                
-                card_idDB = resultSet.getInt("card_id");  
-                holderNameDB = resultSet.getString("holder_name");
-                yearDB = resultSet.getInt("validdate_year");
-                monthDB = resultSet.getInt("validdate_month");
-                numberDB = resultSet.getString("card_number");
  
-                if(cardID == card_idDB) {
-                    creditcard.setCardID(card_idDB);
-                    creditcard.setHolderName(holderNameDB);
-                    creditcard.setYear(yearDB);
-                    creditcard.setMonth(monthDB);
-                    creditcard.setNumber(numberDB);
+                if(cardID == resultSet.getInt("card_id")) {
+                    creditcard.setCardID(resultSet.getInt("card_id"));
+                    creditcard.setHolderName(resultSet.getString("holder_name"));
+                    creditcard.setYear(resultSet.getInt("validdate_year"));
+                    creditcard.setMonth(resultSet.getInt("validdate_month"));
+                    creditcard.setNumber(resultSet.getString("card_number"));
                 }
             }
         } catch(SQLException e) {

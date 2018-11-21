@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
 import bean.tableBean;
@@ -17,7 +13,7 @@ import util.DBConnection;
  *
  * @author gtara
  */
-public class tableDAO {
+public class TableDAO {
     
     private tableBean table = new tableBean();
     
@@ -55,28 +51,18 @@ public class tableDAO {
         Statement statement = null;
         ResultSet resultSet = null;
  
-        int table_idBD = 0;
-        int restaurant_idDB = 0;
-        int tableStateDB = 0;
-        int seatAmountDB = 0;
- 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             resultSet = statement.executeQuery("select * from tables");
  
-            while(resultSet.next()) {
-                
-                table_idBD = resultSet.getInt("tables_id");  
-                restaurant_idDB = resultSet.getInt("restaurant_id");
-                tableStateDB = resultSet.getInt("table_state");
-                seatAmountDB = resultSet.getInt("seat_amount");        
+            while(resultSet.next()) {    
  
-                if(tableID == table_idBD) {
-                    table.setTableID(table_idBD);
-                    table.setRestaurantID(restaurant_idDB);
-                    table.setTableState(tableStateDB);
-                    table.setSeatAmount(seatAmountDB);
+                if(tableID == resultSet.getInt("tables_id")) {
+                    table.setTableID(resultSet.getInt("tables_id"));
+                    table.setRestaurantID(resultSet.getInt("restaurant_id"));
+                    table.setTableState(resultSet.getInt("table_state"));
+                    table.setSeatAmount(resultSet.getInt("seat_amount"));
                 }
             }
         } catch(SQLException e) {

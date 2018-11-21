@@ -6,10 +6,6 @@ package bean;
  */
 public class StaffBean extends userBean {
     
-        
-    private int userType;
-    private int staffFeedBackMark;
-    private int restaurantID;
     private int userID;
     private String userName;
     private String password;
@@ -17,20 +13,22 @@ public class StaffBean extends userBean {
     private String surName;
     private String phoneNum;
     private String emailAddress;
+    private int userType;
+    private int staffFeedBackMark;
+    private int restaurantID;
     
     public StaffBean(){
         super();
         this.userType = 0;
         this.staffFeedBackMark = 0;
-        this.restaurantID = 0;
-        
+        this.restaurantID = 0; 
     }
 
     public int getUserType() {
         return userType;
     }
 
-    public int getStaffFeedBackMark() {
+    public int getFeedBackMark() {
         return staffFeedBackMark;
     }
 
@@ -42,7 +40,7 @@ public class StaffBean extends userBean {
         this.userType = userType;
     }
 
-    public void setStaffFeedBackMark(int staffFeedBackMark) {
+    public void setFeedBackMark(int staffFeedBackMark) {
         this.staffFeedBackMark = staffFeedBackMark;
     }
 

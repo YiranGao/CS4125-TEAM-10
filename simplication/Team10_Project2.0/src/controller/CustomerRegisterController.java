@@ -1,6 +1,6 @@
 package controller;
 
-import DAO.CustomerDao;
+import DAO.CustomerDAO;
 import bean.CustomerBean;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ public class CustomerRegisterController {
         private CustomerBean CustRegBean = new CustomerBean();
         
         public void checkUsername(String userName){
-            CustomerDao authUser = new CustomerDao();
+            CustomerDAO authUser = new CustomerDAO();
             
             if(authUser.autheticateUserDetails(userName)){//this needs to call the DAO and return true so we know that username isnt taken
                 
@@ -85,8 +85,8 @@ public class CustomerRegisterController {
                     }
         }
         public void RegisterCustomer(CustomerBean CustRegBean){
-            CustomerDao genCust = new CustomerDao();
-                   genCust.RegisterCusotmer(CustRegBean);
+            CustomerDAO genCust = new CustomerDAO();
+                   genCust.addCusotmer(CustRegBean);
             
         }         
 }
