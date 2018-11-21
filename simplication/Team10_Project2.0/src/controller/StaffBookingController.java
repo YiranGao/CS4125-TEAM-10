@@ -2,21 +2,21 @@ package controller;
 
 import DAO.CustomerDAO;
 import DAO.ReservationDAO;
-import DAO.reservationDAO;
-import bean.BookingBean;
+import DAO.ReservationDAO;
+import bean.bookingBean;
 import bean.CustomerBean;
 import bean.bookingBean;
 import javax.swing.JOptionPane;
 import view.java_app.ReservationBooking;
-import view.java_app.createReservation2;
+//import view.java_app.createReservation2;
 //import view.java_app.mainmenu;
 
 public class StaffBookingController {
     
-    private BookingBean bookingBean; //model
+    private bookingBean bookingBean; //model
     private ReservationBooking view;
     
-    public StaffBookingController(BookingBean m, ReservationBooking v) {
+    public StaffBookingController(bookingBean m, ReservationBooking v) {
         bookingBean = m;
         view = v;
     }
@@ -34,7 +34,7 @@ public class StaffBookingController {
         CustomerDAO customerDAO = new CustomerDAO();
         CustomerBean customer = customerDAO.getCustomer(userName);
         
-        bookingBean.setCustID(customer.getUserID());
+        bookingBean.setCustomerID(customer.getUserID());
         bookingBean.setRestID(Integer.parseInt(view.getRestaurantIdLabel().getText()));
         bookingBean.setTableID(Integer.parseInt(view.getTableIDLabel().getText()));
         bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));
@@ -45,7 +45,7 @@ public class StaffBookingController {
 
         if(view.getAllergyDairy().isSelected())
         {
-            bookingBean.setAllergyDiary(1);
+            bookingBean.setAllergyDairy(1);
         }
         if(view.getAllergyFish().isSelected())
         {

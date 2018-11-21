@@ -135,10 +135,10 @@ public class mainmenu extends JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        createReservation2 booking = new createReservation2();
-        booking.setVisible(true);
-        //setFocusable(false);
-        booking.setAlwaysOnTop(true);
+//        createReservation2 booking = new createReservation2();
+//        booking.setVisible(true);
+//        //setFocusable(false);
+//        booking.setAlwaysOnTop(true);
     }                                        
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {                                      
