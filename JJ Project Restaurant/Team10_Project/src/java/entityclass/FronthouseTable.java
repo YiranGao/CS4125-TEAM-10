@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package entityclass;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -162,7 +162,7 @@ public class FronthouseTable implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.FronthouseTable[ fronthouseId=" + fronthouseId + " ]";
+        return "entityclass.FronthouseTable[ fronthouseId=" + fronthouseId + " ]";
     }
     
 }

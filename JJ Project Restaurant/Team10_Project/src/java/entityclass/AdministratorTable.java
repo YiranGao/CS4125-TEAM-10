@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package entityclass;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -153,7 +153,7 @@ public class AdministratorTable implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.AdministratorTable[ adminId=" + adminId + " ]";
+        return "entityclass.AdministratorTable[ adminId=" + adminId + " ]";
     }
     
 }
