@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.java_app;
+package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author Yiran Gao - 17083214
  */
-public class MainMenu extends javax.swing.JFrame {
+public class MainMenuView extends javax.swing.JFrame {
    /* private static String name = Team10_ProjectClient.fetchUsername(); 
     private static int id = Team10_ProjectClient.fetchUserid();
     private static int type = Team10_ProjectClient.fetchUsertype();*/
     /**
      * Creates new form mainmenu
      */
-    public MainMenu() {
+    public MainMenuView() {
       /*name = Team10_ProjectClient.fetchUsername();
       id = Team10_ProjectClient.fetchUserid();
       type = Team10_ProjectClient.fetchUsertype();*/
@@ -153,7 +153,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void profileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMouseClicked
         // TODO add your handling code here:
-        UserProfile profile = new UserProfile();
+        UserProfileView profile = new UserProfileView();
         profile.setVisible(true);
     }//GEN-LAST:event_profileButtonMouseClicked
 
@@ -199,7 +199,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         ***** those codes should be put on controller:*****
         profileView(String username){
-            UserProfile profile = new UserProfile();
+            UserProfileView profile = new UserProfileView();
             profile.setResizable(false);
             profile.setVisible(true);
             profile.setLocationRelativeTo(null);
@@ -238,14 +238,22 @@ public class MainMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -258,7 +266,7 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenu().setVisible(true);
+                new MainMenuView().setVisible(true);
             }
         });
     }

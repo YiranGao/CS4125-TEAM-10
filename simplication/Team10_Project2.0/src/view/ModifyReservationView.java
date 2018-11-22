@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.java_app;
+package view;
 
 import javax.swing.JOptionPane;
 
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Yiran Gao - 17083214
  */
-public class ModifyReservation extends javax.swing.JFrame {
+public class ModifyReservationView extends javax.swing.JFrame {
     /*private int userid = mainmenu.fetchUserid();
     private String username = mainmenu.fetchUsername();
     private boolean isSearched = false;
@@ -19,7 +19,7 @@ public class ModifyReservation extends javax.swing.JFrame {
     /**
      * Creates new form modifyreservation
      */
-    public ModifyReservation() {
+    public ModifyReservationView() {
       /*  userid = mainmenu.fetchUserid();
         username = mainmenu.fetchUsername();*/
         initComponents();
@@ -328,14 +328,22 @@ public class ModifyReservation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModifyReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModifyReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModifyReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModifyReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
         //</editor-fold>
         //</editorld>
         //</editor-fold>
@@ -348,7 +356,7 @@ public class ModifyReservation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModifyReservation().setVisible(true);
+                new ModifyReservationView().setVisible(true);
             }
         });
     }

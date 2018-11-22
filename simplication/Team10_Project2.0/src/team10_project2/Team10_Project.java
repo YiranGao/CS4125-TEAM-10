@@ -1,7 +1,7 @@
 
 package team10_project2;
 
-import view.java_app.Login;
+import view.Login;
 
 public class Team10_Project {
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.java_app;
+package view;
 
 import java.awt.Color;
 import java.util.regex.Matcher;
@@ -15,7 +15,7 @@ import javax.swing.*;
  *
  * @author Yiran Gao 17083214
  */
-public class ReservationBooking extends javax.swing.JFrame {
+public class ReservationBookingView extends javax.swing.JFrame {
 
     /**
      * @return the userNameTextField
@@ -40,7 +40,7 @@ public class ReservationBooking extends javax.swing.JFrame {
     /**
      * Creates new form reservationBooking
      */
-    public ReservationBooking() {
+    public ReservationBookingView() {
         initComponents();
         this.setVisible(true);
         

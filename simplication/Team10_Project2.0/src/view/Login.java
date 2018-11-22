@@ -1,5 +1,5 @@
 
-package view.java_app;
+package view;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;

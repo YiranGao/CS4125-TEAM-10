@@ -1,4 +1,4 @@
-package view.java_app;
+package view;
 
 import controller.CustomerRegisterController;
 import java.awt.BorderLayout;
