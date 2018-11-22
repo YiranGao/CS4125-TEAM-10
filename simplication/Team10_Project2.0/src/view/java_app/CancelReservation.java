@@ -4,24 +4,24 @@
  * and open the template in the editor.
  */
 package view.java_app;
-       
+
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Yiran Gao - 17083214
  */
-public class cancelreservation extends javax.swing.JFrame {
-    private int userid = mainmenu.fetchUserid();
+public class CancelReservation extends javax.swing.JFrame {
+   /* private int userid = mainmenu.fetchUserid();
     private String username = mainmenu.fetchUsername();
     private String [] orderlist = new String [5];
-    private int [] orderid = new int [5];
+    private int [] orderid = new int [5];*/
     /**
      * Creates new form cancelreservation
      */
-    public cancelreservation() {
-        userid = mainmenu.fetchUserid();
-        username = mainmenu.fetchUsername();
+    public CancelReservation() {
+    /*    userid = mainmenu.fetchUserid();
+        username = mainmenu.fetchUsername();*/
         //JOptionPane.showMessageDialog(null,mainmenu.fetchUsername());
         initComponents();
         /*
@@ -72,7 +72,6 @@ public class cancelreservation extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel2.setText("jLabel2");
-        jLabel2.setText(mainmenu.fetchUsername());
 
         jLabel3.setText("Order ToString 1");
 
@@ -85,7 +84,6 @@ public class cancelreservation extends javax.swing.JFrame {
         jLabel7.setText("Order ToString 5");
 
         jButton1.setText("Confirm");
-        jButton1.setActionCommand("Confirm");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -192,6 +190,10 @@ public class cancelreservation extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        
+        /*
+        
         int selectedorderid = 0;
         if(jRadioButton1.isSelected()){
             selectedorderid = orderid[0];
@@ -205,6 +207,10 @@ public class cancelreservation extends javax.swing.JFrame {
         }else if(jRadioButton5.isSelected()){
             selectedorderid = orderid[4];
         }
+        
+        
+        
+        */
         /*
             REQUEST API
            return boolean  cancelBooking(int orderid); success true else false
@@ -244,21 +250,27 @@ public class cancelreservation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cancelreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cancelreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cancelreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cancelreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelReservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cancelreservation().setVisible(true);
+                new CancelReservation().setVisible(true);
             }
         });
     }

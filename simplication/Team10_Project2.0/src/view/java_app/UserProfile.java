@@ -5,18 +5,19 @@
  */
 package view.java_app;
 
+import java.awt.Color;
 import java.util.Calendar;
 
 /**
  *
  * @author admin
  */
-public class userprofile extends javax.swing.JFrame {
+public class UserProfile extends javax.swing.JFrame {
 
     /**
      * Creates new form userprofile
      */
-    public userprofile() {
+    public UserProfile() {
         initComponents();
     }
 
@@ -29,49 +30,48 @@ public class userprofile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        welcomeTextLabel = new javax.swing.JLabel();
+        usernameTextLabel = new javax.swing.JLabel();
+        birthTextLabel = new javax.swing.JLabel();
+        birthLabel = new javax.swing.JLabel();
+        emailTextLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        cardnumTextLabel = new javax.swing.JLabel();
+        cardnumLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        changecardButton = new javax.swing.JButton();
+        closeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel1.setText("WELCOME !");
+        welcomeTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        welcomeTextLabel.setText("WELCOME !");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel2.setText("Username");
-        jLabel2.setText(mainmenu.fetchUsername());
+        usernameTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        usernameTextLabel.setText("Username");
 
-        jLabel3.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel3.setText("Birth:");
+        birthTextLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        birthTextLabel.setText("Birth:");
 
-        jLabel4.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel4.setText("jLabel4");
+        birthLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        birthLabel.setText("jLabel4");
 
-        jLabel5.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel5.setText("Email:");
+        emailTextLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        emailTextLabel.setText("Email:");
 
-        jLabel6.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel6.setText("jLabel6");
+        emailLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        emailLabel.setText("jLabel6");
 
-        jLabel7.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel7.setText("CardNum:");
+        cardnumTextLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        cardnumTextLabel.setText("CardNum:");
 
-        jLabel8.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel8.setText("jLabel8");
+        cardnumLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        cardnumLabel.setText("jLabel8");
 
         jLabel9.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         jLabel9.setText("Current Order:");
@@ -79,8 +79,8 @@ public class userprofile extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         jLabel10.setText("jLabel10");
 
-        jLabel11.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel11.setText("jLabel11");
+        usernameLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        usernameLabel.setText("username");
         Calendar c = Calendar.getInstance();
  
  int year = c.get(Calendar.YEAR);  
@@ -89,13 +89,17 @@ public class userprofile extends javax.swing.JFrame {
  
  int date = c.get(Calendar.DATE);      
  
- jLabel11.setText(year + "/" + (month+1) + "/" + date);
+ usernameLabel.setText(year + "/" + (month+1) + "/" + date);
 
-        jTextField1.setText("jTextField1");
         jTextField1.setText("New Card Num");
         jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextField1MouseClicked(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -115,17 +119,17 @@ public class userprofile extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("ChangeCard");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        changecardButton.setText("ChangeCard");
+        changecardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                changecardButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Close");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        closeButton.setText("Close");
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                closeButtonActionPerformed(evt);
             }
         });
 
@@ -139,25 +143,25 @@ public class userprofile extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(emailTextLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                                .addComponent(jLabel6))
+                                .addComponent(emailLabel))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(birthTextLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
-                            .addComponent(jLabel1))
+                                .addComponent(birthLabel))
+                            .addComponent(welcomeTextLabel))
                         .addGap(162, 162, 162)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9))
-                                .addContainerGap(67, Short.MAX_VALUE))
+                                .addContainerGap(189, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(usernameTextLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(usernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(59, 59, 59))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(181, 181, 181)
@@ -167,14 +171,14 @@ public class userprofile extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(jButton1)
+                        .addComponent(changecardButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(closeButton)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
+                        .addComponent(cardnumTextLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)
+                        .addComponent(cardnumLabel)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -182,39 +186,39 @@ public class userprofile extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel11))
+                    .addComponent(welcomeTextLabel)
+                    .addComponent(usernameTextLabel)
+                    .addComponent(usernameLabel))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
+                    .addComponent(birthTextLabel)
+                    .addComponent(birthLabel)
                     .addComponent(jLabel9))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
+                    .addComponent(emailTextLabel)
+                    .addComponent(emailLabel)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(cardnumTextLabel)
+                    .addComponent(cardnumLabel))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(changecardButton)
+                    .addComponent(closeButton))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void changecardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changecardButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_changecardButtonActionPerformed
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         // TODO add your handling code here:
@@ -231,10 +235,14 @@ public class userprofile extends javax.swing.JFrame {
         jTextField3.setText("");
     }//GEN-LAST:event_jTextField3MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_closeButtonActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,41 +261,52 @@ public class userprofile extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(userprofile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(userprofile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(userprofile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(userprofile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userprofile().setVisible(true);
+                new UserProfile().setVisible(true);
             }
         });
     }
+    /*private void textAnimation(String str){
+            str.setText("");
+            str.setForeground(Color.BLACK);
+        }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel birthLabel;
+    private javax.swing.JLabel birthTextLabel;
+    private javax.swing.JLabel cardnumLabel;
+    private javax.swing.JLabel cardnumTextLabel;
+    private javax.swing.JButton changecardButton;
+    private javax.swing.JButton closeButton;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JLabel emailTextLabel;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel usernameLabel;
+    private javax.swing.JLabel usernameTextLabel;
+    private javax.swing.JLabel welcomeTextLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import DAO.StaffLoginDao;
 import bean.LoginBean;
 import view.java_app.Login;
-import view.java_app.mainmenu;
+import view.java_app.MainMenu;
 
 /**
  *
@@ -30,7 +30,7 @@ public class StaffLoginController {
         String userValidate = loginDao.authenticateUser(loginBean);
         
         if(userValidate.equals("SUCCESS")){
-            mainmenu m = new mainmenu();
+            MainMenu m = new MainMenu();
             login.closeLogin();
             m.setVisible(true);
         } else {
