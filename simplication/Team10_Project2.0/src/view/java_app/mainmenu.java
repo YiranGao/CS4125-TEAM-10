@@ -5,6 +5,8 @@
  */
 package view.java_app;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -42,6 +44,7 @@ public class mainmenu extends JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        //jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,13 +70,21 @@ public class mainmenu extends JFrame {
             }
         });
 
-        jButton3.setText("Modity Reservation");
+        jButton3.setText("Register Customer");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-
+        
+        
+       /* jButton5.setText("Create Customer");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+*/
         jLabel2.setText("Username");
         jLabel2.setText(username);
 
@@ -155,9 +166,17 @@ public class mainmenu extends JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        modifyreservation modify = new modifyreservation();
-        modify.setVisible(true);
-    }                                        
+       // modifyreservation modify = new modifyreservation();
+       // modify.setVisible(true);
+        CustomerRegister createCust = new CustomerRegister();
+        createCust.setVisible(true);
+    }
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        CustomerRegister createCust = new CustomerRegister();
+        createCust.setVisible(true);
+    }
+    
+    
     public static int fetchUserid() {
          return id;
      }
@@ -177,6 +196,5 @@ public class mainmenu extends JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration                   
-
     
 }

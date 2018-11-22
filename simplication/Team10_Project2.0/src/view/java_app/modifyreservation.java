@@ -346,7 +346,7 @@ public class modifyreservation extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(modifyreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
+        //</editorld>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

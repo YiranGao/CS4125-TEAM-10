@@ -12,11 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class CustomerRegisterController {
     
-        private String userNamePattern = "^[A-Za-z0-9]+$";
-        private String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        private String namePattern = "^[A-Za-z]+$";
-        private CustomerBean CustRegBean = new CustomerBean();
+        private final String userNamePattern = "^[A-Za-z0-9]+$";
+        private final String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        private final String namePattern = "^[A-Za-z]+$";
+        private final CustomerBean CustRegBean = new CustomerBean();
         
+        //The authentication return is not returning the correct value yet
         public void checkUsername(String userName){
             CustomerDAO authUser = new CustomerDAO();
             
