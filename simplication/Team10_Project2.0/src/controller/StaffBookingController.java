@@ -4,6 +4,7 @@ import DAO.CustomerDAO;
 import DAO.BookingDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
+import bean.UserBean;
 import javax.swing.JOptionPane;
 import view.ReservationBookingView;
 //import view.java_app.createReservation2;
@@ -38,7 +39,7 @@ public class StaffBookingController {
         bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));
            
         String time = "18:00";
-        String dateTime = view.getDateTextField().getText() + " " + time;
+        String dateTime = view.getDateTextField().getText() + " " + time + ":00";
         bookingBean.setDate(dateTime);
 
         if(view.getAllergyDairy().isSelected())
