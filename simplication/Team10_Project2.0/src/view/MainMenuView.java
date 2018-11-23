@@ -74,7 +74,7 @@ public class MainMenuView extends javax.swing.JFrame {
         usernameLabel.setText("Username");
         /* SeanHelpMe 
         the username label needs text for username.
-        usernameLabel.setText("fetchUsername()");
+        usernameLabel.setText(fetchUsername(String username));
         */
 
         profileButton.setText("Profile");

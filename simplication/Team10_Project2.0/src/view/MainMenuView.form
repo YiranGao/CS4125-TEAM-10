@@ -108,7 +108,7 @@
         <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="/* SeanHelpMe &#xd;&#xa;    the username label needs text for username.&#xd;&#xa;    usernameLabel.setText(&quot;fetchUsername()&quot;);&#xd;&#xa;*/"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="/* SeanHelpMe &#xd;&#xa;    the username label needs text for username.&#xd;&#xa;    usernameLabel.setText(fetchUsername(String username));&#xd;&#xa;*/"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="mainmenu_usernameLabel"/>
       </AuxValues>
     </Component>

@@ -48,14 +48,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="newcardholderTextField" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="newcardDateTextField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="changecardButton" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="changecardButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Component id="closeButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="newcarddateTextField" max="32767" attributes="0"/>
+                              <Component id="newcardholderTextField" alignment="1" pref="118" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -64,27 +64,33 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                       <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="275" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="currentDateLabel" min="-2" pref="158" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="727" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="welcomeTextLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="usernameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="currentDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="welcomeTextLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="usernameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="currentDateLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
@@ -108,7 +114,7 @@
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="newcardholderTextField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="newcardDateTextField" min="-2" max="-2" attributes="0"/>
+                      <Component id="newcarddateTextField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="changecardButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -141,6 +147,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value=" /* SeanHelpMe&#xa;        usernameLabel.setText(fetchUsername(String username));&#xa;*/"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="birthTextLabel">
       <Properties>
@@ -157,6 +166,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value=" /* SeanHelpMe&#xa;        birthLabel.setText(fetchBirth(String username));&#xa;*/"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="emailTextLabel">
       <Properties>
@@ -173,6 +185,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel6"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value=" /* SeanHelpMe&#xa;        emailLabel.setText(fetchEmail(String username));&#xa;*/"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="cardnumTextLabel">
       <Properties>
@@ -189,13 +204,16 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel8"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value=" /* SeanHelpMe&#xa;        cardnumLabel.setText(fetchCardNum(String username));&#xa;*/"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="currentDateLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#x5b8b;&#x4f53;" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="username"/>
+        <Property name="text" type="java.lang.String" value="currentDate"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="Calendar c = Calendar.getInstance();&#xd; &#xd; int year = c.get(Calendar.YEAR);  &#xd; &#xd; int month = c.get(Calendar.MONTH);   &#xd; &#xd; int date = c.get(Calendar.DATE);      &#xd; &#xd; currentDateLabel.setText(year + &quot;/&quot; + (month+1) + &quot;/&quot; + date);  "/>
@@ -231,7 +249,7 @@
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="newcardholderTextField.setText(&quot;Card Holder&quot;);"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="newcardDateTextField">
+    <Component class="javax.swing.JTextField" name="newcarddateTextField">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="99" type="rgb"/>
@@ -239,10 +257,10 @@
         <Property name="text" type="java.lang.String" value="EXPIRE DATE"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="newcardDateTextFieldMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="newcarddateTextFieldMouseClicked"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="newcardDateTextField.setText(&quot;Valid Date (MM/YY)&quot;);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="newcarddateTextField.setText(&quot;Valid Date (MM/YY)&quot;);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="changecardButton">
