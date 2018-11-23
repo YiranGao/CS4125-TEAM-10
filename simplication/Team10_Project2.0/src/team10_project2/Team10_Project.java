@@ -1,13 +1,12 @@
 
 package team10_project2;
 
-import view.Login;
+import controller.LoginController;
 
 public class Team10_Project {
 
     public static void main(String[] args) {
-        Login login = new Login();
-        login.setVisible(true);
+        LoginController login = new LoginController();
     }
     
 }
