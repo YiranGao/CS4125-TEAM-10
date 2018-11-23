@@ -95,7 +95,6 @@ public class ReservationBooking extends javax.swing.JFrame {
         tableLabel = new javax.swing.JLabel();
         tableIDLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
-        nameEditLabel = new javax.swing.JLabel();
         allergyLabel = new javax.swing.JLabel();
         allergyGluten = new javax.swing.JRadioButton();
         allergyDairy = new javax.swing.JRadioButton();
@@ -106,6 +105,7 @@ public class ReservationBooking extends javax.swing.JFrame {
         numOfGuestsTextField = new javax.swing.JTextField();
         userNameLabel = new javax.swing.JLabel();
         emailTextField1 = new javax.swing.JTextField();
+        nameTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,9 +208,6 @@ public class ReservationBooking extends javax.swing.JFrame {
 
         nameLabel.setText("Name");
 
-        nameEditLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        nameEditLabel.setText("jLabel21");
-
         allergyLabel.setText("Allergies:");
 
         allergyGluten.setText("gluten");
@@ -294,8 +291,8 @@ public class ReservationBooking extends javax.swing.JFrame {
                                 .addComponent(tableButton)
                                 .addComponent(jLabel14)
                                 .addComponent(userNameTextField)
-                                .addComponent(nameEditLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                .addComponent(emailTextField1))
+                                .addComponent(emailTextField1)
+                                .addComponent(nameTextField))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,11 +405,11 @@ public class ReservationBooking extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(restaurantIdLabel)
                     .addComponent(restaurantLabel))
-                .addGap(13, 13, 13)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
-                    .addComponent(nameEditLabel))
-                .addGap(30, 30, 30)
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userNameLabel)
                     .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -490,8 +487,8 @@ public class ReservationBooking extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JLabel nameEditLabel;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
     private javax.swing.JTextField numOfGuestsTextField;
     private javax.swing.JLabel phoneNumLabel;
     private javax.swing.JTextField phoneNumTextField;
@@ -675,19 +672,6 @@ public class ReservationBooking extends javax.swing.JFrame {
         this.setUserNameTextField(emailTextField);
     }
 
-    /**
-     * @return the nameEditLabel
-     */
-    public JLabel getNameEditLabel() {
-        return nameEditLabel;
-    }
-
-    /**
-     * @param nameEditLabel the nameEditLabel to set
-     */
-    public void setNameEditLabel(javax.swing.JLabel nameEditLabel) {
-        this.nameEditLabel = nameEditLabel;
-    }
 
     /**
      * @return the phoneNumTextField
