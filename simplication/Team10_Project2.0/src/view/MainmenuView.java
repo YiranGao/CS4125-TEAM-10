@@ -10,18 +10,23 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import bean.StaffBean;
+
 /**
  *
  * @author Yiran Gao - 17083214
  */
-public class MainMenuView extends javax.swing.JFrame {
+public class MainmenuView extends javax.swing.JFrame {
+    
+    private StaffBean staff;
    /* private static String name = Team10_ProjectClient.fetchUsername(); 
     private static int id = Team10_ProjectClient.fetchUserid();
     private static int type = Team10_ProjectClient.fetchUsertype();*/
     /**
      * Creates new form mainmenu
      */
-    public MainMenuView() {
+    public MainmenuView(StaffBean aStaff) {
+        staff = aStaff;
       /*name = Team10_ProjectClient.fetchUsername();
       id = Team10_ProjectClient.fetchUserid();
       type = Team10_ProjectClient.fetchUsertype();*/
@@ -238,13 +243,13 @@ public class MainMenuView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainmenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainmenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainmenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainmenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -266,7 +271,7 @@ public class MainMenuView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuView().setVisible(true);
+//                new MainmenuView().setVisible(true);
             }
         });
     }

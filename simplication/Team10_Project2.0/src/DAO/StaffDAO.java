@@ -79,17 +79,11 @@ public class StaffDAO {
         return null;
     }
     
-    public String authenticateUser(LoginBean loginBean) {
- 
-        String userName = loginBean.getUserName();
-        String password = loginBean.getPassword();
+    public String authenticateLogin(String username, String password) {
  
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;
- 
-        String usernameDB = "";
-        String passwordDB = "";
  
         try {
             con = DBConnection.createConnection();
@@ -97,10 +91,8 @@ public class StaffDAO {
             resultSet = statement.executeQuery("select username,password from staff");
  
             while(resultSet.next()) {
-                usernameDB = resultSet.getString("username");
-                passwordDB = resultSet.getString("password");
  
-                if(userName.equals(usernameDB) && password.equals(passwordDB))
+                if(username.equals(resultSet.getString("username")) && password.equals(resultSet.getString("password")))
                     return "SUCCESS";
             }
         } catch(SQLException e) {
