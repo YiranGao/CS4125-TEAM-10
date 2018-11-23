@@ -1,7 +1,7 @@
 
 package DAO;
 
-import bean.restaurantBean;
+import bean.RestaurantBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +11,9 @@ import util.DBConnection;
 
 public class RestaurantDAO {
         
-    private restaurantBean restaurant;
+    private RestaurantBean restaurant = new RestaurantBean();
 
-    public String addRestaurant(restaurantBean restaurantBean) {
+    public String addRestaurant(RestaurantBean restaurantBean) {
  
         Connection con = null;
         Statement statement = null;
@@ -42,7 +42,7 @@ public class RestaurantDAO {
         return "Invalid user credentials";
     }
     
-    public restaurantBean getRestaurant(int restID)
+    public RestaurantBean getRestaurant(int restID)
     {
         Connection con = null;
         Statement statement = null;
@@ -60,6 +60,8 @@ public class RestaurantDAO {
                     restaurant.setName(resultSet.getString("name"));
                     restaurant.setLocation(resultSet.getString("location"));
                     restaurant.setTableAmount(resultSet.getInt("tableamount"));
+                    
+                    return restaurant;
                 }
                     
             }

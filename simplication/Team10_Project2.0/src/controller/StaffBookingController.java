@@ -1,20 +1,20 @@
 package controller;
 
 import DAO.CustomerDAO;
-import DAO.ReservationDAO;
+import DAO.BookingDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
+import bean.UserBean;
 import javax.swing.JOptionPane;
-import view.java_app.ReservationBooking;
+import view.ReservationBookingView;
 //import view.java_app.createReservation2;
 //import view.java_app.mainmenu;
-
 public class StaffBookingController {
     
     private BookingBean bookingBean; //model
-    private ReservationBooking view;
+    private ReservationBookingView view;
     
-    public StaffBookingController(BookingBean m, ReservationBooking v) {
+    public StaffBookingController(BookingBean m, ReservationBookingView v) {
         bookingBean = m;
         view = v;
         //view.setVisible(true);
@@ -39,7 +39,7 @@ public class StaffBookingController {
         bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));
            
         String time = "18:00";
-        String dateTime = view.getDateTextField().getText() + " " + time;
+        String dateTime = view.getDateTextField().getText() + " " + time + ":00";
         bookingBean.setDate(dateTime);
 
         if(view.getAllergyDairy().isSelected())
@@ -67,8 +67,8 @@ public class StaffBookingController {
             bookingBean.setAllergySoya(1);
         }
         
-        ReservationDAO reservationDAO = new ReservationDAO();
-        String userValidate = reservationDAO.addReservation(bookingBean);
+        BookingDAO bookingDAO = new BookingDAO();
+        String userValidate = bookingDAO.addBooking(bookingBean);
         
         if(userValidate.equals("SUCCESS")){
             JOptionPane.showMessageDialog(null,"Table has been reserved");

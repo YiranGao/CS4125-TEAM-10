@@ -9,7 +9,7 @@ package bean;
  *
  * @author gtara
  */
-public class creditcardBean {
+public class CreditcardBean {
     
     private int cardID;
     private String holderName;
@@ -17,7 +17,7 @@ public class creditcardBean {
     private int month;
     private String number;
     
-    public creditcardBean() {
+    public CreditcardBean() {
         cardID = 0;
         holderName = "";
         year = 0;

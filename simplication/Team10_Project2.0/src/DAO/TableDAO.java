@@ -1,7 +1,7 @@
 
 package DAO;
 
-import bean.tableBean;
+import bean.TableBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,9 +15,9 @@ import util.DBConnection;
  */
 public class TableDAO {
     
-    private tableBean table = new tableBean();
+    private TableBean table = new TableBean();
     
-    public String addTable(tableBean table) {
+    public String addTable(TableBean table) {
         
         int restaurantID = table.getRestaurantID();
         int tableState = table.getTableState();
@@ -45,7 +45,7 @@ public class TableDAO {
         return "ERROR";
     }
     
-    public tableBean getTable(int tableID) {
+    public TableBean getTable(int tableID) {
         
         Connection con = null;
         Statement statement = null;
@@ -63,6 +63,8 @@ public class TableDAO {
                     table.setRestaurantID(resultSet.getInt("restaurant_id"));
                     table.setTableState(resultSet.getInt("table_state"));
                     table.setSeatAmount(resultSet.getInt("seat_amount"));
+                    
+                    return table;
                 }
             }
         } catch(SQLException e) {

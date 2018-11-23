@@ -1,7 +1,6 @@
 
-package view.java_app;
+package view;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,19 +13,21 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JOptionPane;
 
-import controller.StaffLoginController;
+import controller.LoginController;
 
-public class Login extends JFrame {
+public class LoginView extends JFrame {
     
     private JPanel contentPane;
     private JTextField password;
     private JTextField username;
-    private Login login;
+    
+    private LoginController login;
 
-    public Login() {
-        login = this;
+    public LoginView(LoginController aLogin) {
+        
+        login = aLogin;
+                
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 340, 382);
         contentPane = new JPanel();
@@ -62,7 +63,7 @@ public class Login extends JFrame {
         JButton loginButton = new JButton("Login");
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                StaffLoginController loginCon = new StaffLoginController(username.getText(),password.getText(), login);
+                login.submitLogin(username.getText(), password.getText());
             }
         });
         loginButton.setFont(new Font("Tahoma", Font.PLAIN, 16));

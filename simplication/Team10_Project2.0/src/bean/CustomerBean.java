@@ -4,19 +4,13 @@ package bean;
  *
  * @author Sean
  */
-public class CustomerBean extends userBean{
+public class CustomerBean extends UserBean{
     
     
     private String DOB;
     private String CC;
     private int loyaltyPoints = 0;
-    private int userID;
-    private String userName;
-    private String password;
-    private String firstName;
-    private String surName;
-    private String phoneNum;
-    private String emailAddress;
+
     
     public CustomerBean() {
         super();

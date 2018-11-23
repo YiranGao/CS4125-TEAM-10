@@ -17,9 +17,9 @@ import util.DBConnection;
  */
 public class StaffDAO {
     
-    private StaffBean staff;
+    private StaffBean staff = new StaffBean();
 
-    public void RegisterCusotmer(StaffBean StaffRegBean) {
+    public void RegisterStaff(StaffBean StaffRegBean) {
         
         Connection con;
         Statement statement;
@@ -46,7 +46,7 @@ public class StaffDAO {
         }   
     }
     
-    public StaffBean getCustomer(String username) {
+    public StaffBean getStaff(String username) {
         
         Connection con = null;
         Statement statement = null;
@@ -69,6 +69,8 @@ public class StaffDAO {
                     staff.setUserType(resultSet.getInt("usertype"));
                     staff.setFeedBackMark(resultSet.getInt("feedback_mark"));
                     staff.setRestaurantID(resultSet.getInt("restaurant_id"));
+                    
+                    return staff;
                 }
             }
         } catch(SQLException e) {
@@ -77,17 +79,11 @@ public class StaffDAO {
         return null;
     }
     
-    public String authenticateUser(LoginBean loginBean) {
- 
-        String userName = loginBean.getUserName();
-        String password = loginBean.getPassword();
+    public String authenticateLogin(String username, String password) {
  
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;
- 
-        String usernameDB = "";
-        String passwordDB = "";
  
         try {
             con = DBConnection.createConnection();
@@ -95,15 +91,36 @@ public class StaffDAO {
             resultSet = statement.executeQuery("select username,password from staff");
  
             while(resultSet.next()) {
-                usernameDB = resultSet.getString("username");
-                passwordDB = resultSet.getString("password");
  
-                if(userName.equals(usernameDB) && password.equals(passwordDB))
+                if(username.equals(resultSet.getString("username")) && password.equals(resultSet.getString("password")))
                     return "SUCCESS";
             }
         } catch(SQLException e) {
             e.printStackTrace();
         }
         return "Invalid user credentials";
+    }
+    
+    public boolean autheticateUserDetails(String username){
+        
+        Connection con;
+        Statement statement;
+        ResultSet resultSet;
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("select username from staff");
+ 
+            while(resultSet.next()) {
+                username = resultSet.getString(username);
+ 
+                if(username.equals("username"))
+                    return false;
+            }
+        } catch(SQLException e) {
+            return true;
+        }   
+       return true;
     }
 }

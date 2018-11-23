@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import util.DBConnection;
 
 /**
@@ -15,7 +16,7 @@ import util.DBConnection;
  */
 public class CustomerDAO {
     
-    private CustomerBean customer;
+    private CustomerBean customer = new CustomerBean();
 
     public void addCusotmer(CustomerBean CustRegBean) {
         
@@ -57,6 +58,7 @@ public class CustomerDAO {
             while(resultSet.next()) {
  
                 if(username.equals(resultSet.getString("username"))) {
+                    customer.setUserID(resultSet.getInt("customer_id"));
                     customer.setUserName(resultSet.getString("username"));
                     customer.setPassword(resultSet.getString("password"));
                     customer.setFirstName(resultSet.getString("firstname"));
@@ -66,6 +68,10 @@ public class CustomerDAO {
                     customer.setDOB(resultSet.getString("birthday"));
                     customer.setCC(resultSet.getString("creditcard_id"));
                     customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
+                    
+                    String name = customer.getFirstName();
+                    
+                    return customer;
                 }
             }
         } catch(SQLException e) {
@@ -79,6 +85,8 @@ public class CustomerDAO {
         Connection con;
         Statement statement;
         ResultSet resultSet;
+        String checkUsername;
+        
  
         try {
             con = DBConnection.createConnection();
@@ -86,14 +94,17 @@ public class CustomerDAO {
             resultSet = statement.executeQuery("select username from customers");
  
             while(resultSet.next()) {
-                username = resultSet.getString(username);
+                checkUsername = resultSet.getString("username");
  
-                if(username.equals("username"))
-                    return false;
+                if(username.equals(checkUsername))
+                    
+                    return true;
             }
         } catch(SQLException e) {
-            return true;
-        }   
-       return true;
+            return false;
+        }
+        
+        return false;
     }
+
 }
