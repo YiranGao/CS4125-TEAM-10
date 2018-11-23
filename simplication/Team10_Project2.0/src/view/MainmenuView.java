@@ -76,7 +76,7 @@ public class MainmenuView extends javax.swing.JFrame {
             }
         });
 
-        usernameLabel.setText("Username");
+        usernameLabel.setText(staff.getUserName());
         /* SeanHelpMe 
         the username label needs text for username.
         usernameLabel.setText(fetchUsername(String username));

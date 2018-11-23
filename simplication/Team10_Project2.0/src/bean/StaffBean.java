@@ -6,13 +6,6 @@ package bean;
  */
 public class StaffBean extends UserBean {
     
-    private int userID;
-    private String userName;
-    private String password;
-    private String firstName;
-    private String surName;
-    private String phoneNum;
-    private String emailAddress;
     private int userType;
     private int staffFeedBackMark;
     private int restaurantID;

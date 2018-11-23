@@ -18,8 +18,6 @@ import view.LoginView;
  */
 public class LoginController {
     
-    private String username;
-    private String password;
     LoginView login;
     
     public LoginController() {
@@ -28,10 +26,7 @@ public class LoginController {
         login.setVisible(true);
     }
     
-    public void submitLogin(String aUsername, String aPassword){
-        
-        username = aUsername;
-        password = aPassword;
+    public void submitLogin(String username, String password){
         
         StaffDAO loginDao = new StaffDAO();
         

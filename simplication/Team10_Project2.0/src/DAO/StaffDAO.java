@@ -55,15 +55,16 @@ public class StaffDAO {
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select * from customers");
+            resultSet = statement.executeQuery("select * from staff");
  
             while(resultSet.next()) {
  
                 if(username.equals(resultSet.getString("username"))) {
+                    staff.setUserID(resultSet.getInt("staff_id"));
                     staff.setUserName(resultSet.getString("username"));
                     staff.setPassword(resultSet.getString("password"));
                     staff.setFirstName(resultSet.getString("firstname"));
-                    staff.setSurName(resultSet.getString("lastname"));
+                    staff.setSurName(resultSet.getString("surname"));
                     staff.setPhoneNum(resultSet.getString("phone_number"));
                     staff.setEmailAddress(resultSet.getString("email"));
                     staff.setUserType(resultSet.getInt("usertype"));

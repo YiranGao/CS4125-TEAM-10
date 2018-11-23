@@ -105,7 +105,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="usernameLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Username"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="staff.getUserName()" type="code"/>
+        </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="/* SeanHelpMe &#xd;&#xa;    the username label needs text for username.&#xd;&#xa;    usernameLabel.setText(fetchUsername(String username));&#xd;&#xa;*/"/>

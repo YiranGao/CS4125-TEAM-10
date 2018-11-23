@@ -16,4 +16,12 @@ public class MainmenuController {
         MainmenuView mainmenu = new MainmenuView(staff);
         mainmenu.setVisible(true);
     }
+    
+    public void goToCreateBooking(){
+        
+    }
+    
+    public void goToModifyBooking() {
+        
+    }
 }
