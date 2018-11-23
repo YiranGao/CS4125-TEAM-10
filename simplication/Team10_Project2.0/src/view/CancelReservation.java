@@ -64,6 +64,10 @@ public class CancelReservation extends javax.swing.JFrame {
 
         usernameLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         usernameLabel.setText("username");
+        /* SeanHelpMe 
+        the username label needs text for username.
+        usernameLabel.setText(fetchUsername());
+        */
 
         confirmButton.setText("Confirm");
         confirmButton.addActionListener(new java.awt.event.ActionListener() {
