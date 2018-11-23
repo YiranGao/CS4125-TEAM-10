@@ -1,15 +1,10 @@
 package view.java_app;
 
 import controller.CustomerRegisterController;
-import java.awt.BorderLayout;
-import java.sql.*;
-import java.awt.EventQueue;
-import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -30,6 +25,7 @@ public class CustomerRegister extends JFrame {
 	private JTextField DateOfBirth;
         private JTextField CreditCard;
         private JTextField emailAddress;
+        private CustomerRegister register;
 
 	public CustomerRegister() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +54,7 @@ public class CustomerRegister extends JFrame {
                                 createCust.checkPW(String.valueOf(passwordField.getPassword()));
                                 createCust.checkPhoneNumber(phoneNumber.getText());
                                 createCust.checkDOB(DateOfBirth.getText());
-                                                    
+                                register.closeRegister();                    
                         }                
 		});
 		btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -146,4 +142,8 @@ public class CustomerRegister extends JFrame {
 		contentPane.add(emailAddress);
 
 	}
+
+    private void closeRegister() {
+        this.dispose();
+    }
 }

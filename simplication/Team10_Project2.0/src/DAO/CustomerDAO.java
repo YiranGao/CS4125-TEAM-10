@@ -79,6 +79,8 @@ public class CustomerDAO {
         Connection con;
         Statement statement;
         ResultSet resultSet;
+        String checkUsername;
+        
  
         try {
             con = DBConnection.createConnection();
@@ -86,14 +88,17 @@ public class CustomerDAO {
             resultSet = statement.executeQuery("select username from customers");
  
             while(resultSet.next()) {
-                username = resultSet.getString(username);
+                checkUsername = resultSet.getString("username");
  
-                if(username.equals("username"))
-                    return false;
+                if(username.equals(checkUsername))
+                    
+                    return true;
             }
         } catch(SQLException e) {
-            return true;
-        }   
-       return true;
+            return false;
+        }
+        
+        return false;
     }
+
 }

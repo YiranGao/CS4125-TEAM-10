@@ -173,6 +173,7 @@ public class mainmenu extends JFrame {
     }
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         CustomerRegister createCust = new CustomerRegister();
+        
         createCust.setVisible(true);
     }
     
