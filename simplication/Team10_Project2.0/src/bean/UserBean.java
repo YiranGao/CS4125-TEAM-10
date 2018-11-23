@@ -4,7 +4,7 @@ package bean;
  *
  * @author Sean
  */
-public class userBean {
+public class UserBean {
     
     private int userID;
     private String userName;
@@ -14,7 +14,7 @@ public class userBean {
     private String phoneNum;
     private String emailAddress;
     
-    public userBean(){
+    public UserBean(){
         
         this.userID = 0;
         this.userName = null;

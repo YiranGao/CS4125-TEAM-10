@@ -4,7 +4,7 @@ package bean;
  *
  * @author Sean
  */
-public class CustomerBean extends userBean{
+public class CustomerBean extends UserBean{
     
     
     private String DOB;

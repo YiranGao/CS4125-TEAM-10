@@ -9,14 +9,14 @@ package bean;
  *
  * @author gtara
  */
-public class restaurantBean {
+public class RestaurantBean {
     
     private int restaurant_id;
     private String name;
     private String location;
     private int tableAmount;
     
-    public restaurantBean(){
+    public RestaurantBean(){
         restaurant_id = 0;
         name = "";
         location = "";

@@ -9,14 +9,14 @@ package bean;
  *
  * @author gtara
  */
-public class tableBean {
+public class TableBean {
     
     private int tableID;
     private int restaurantID;
     private int tableState;
     private int seatAmount;
     
-    public tableBean() {
+    public TableBean() {
         tableID = 0;
         restaurantID = 0;
         tableState = 0;

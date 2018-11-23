@@ -9,13 +9,13 @@ package bean;
  *
  * @author gtara
  */
-public class feedbackBean {
+public class FeedbackBean {
     private int feedbackID;
     private int staffID;
     private int feedbackMark;
     private int reservationID;
     
-    public feedbackBean() {
+    public FeedbackBean() {
         feedbackID = 0;
         staffID = 0;
         feedbackMark = 0;
