@@ -5,16 +5,15 @@ import DAO.ReservationDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
 import javax.swing.JOptionPane;
-import view.java_app.ReservationBooking;
+import view.ReservationBookingView;
 //import view.java_app.createReservation2;
 //import view.java_app.mainmenu;
-
 public class StaffBookingController {
     
     private BookingBean bookingBean; //model
-    private ReservationBooking view;
+    private ReservationBookingView view;
     
-    public StaffBookingController(BookingBean m, ReservationBooking v) {
+    public StaffBookingController(BookingBean m, ReservationBookingView v) {
         bookingBean = m;
         view = v;
         //view.setVisible(true);

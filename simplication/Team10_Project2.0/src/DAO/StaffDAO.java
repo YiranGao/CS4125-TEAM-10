@@ -19,7 +19,7 @@ public class StaffDAO {
     
     private StaffBean staff;
 
-    public void RegisterCusotmer(StaffBean StaffRegBean) {
+    public void RegisterStaff(StaffBean StaffRegBean) {
         
         Connection con;
         Statement statement;
@@ -46,7 +46,7 @@ public class StaffDAO {
         }   
     }
     
-    public StaffBean getCustomer(String username) {
+    public StaffBean getStaff(String username) {
         
         Connection con = null;
         Statement statement = null;
@@ -105,5 +105,28 @@ public class StaffDAO {
             e.printStackTrace();
         }
         return "Invalid user credentials";
+    }
+    
+    public boolean autheticateUserDetails(String username){
+        
+        Connection con;
+        Statement statement;
+        ResultSet resultSet;
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("select username from staff");
+ 
+            while(resultSet.next()) {
+                username = resultSet.getString(username);
+ 
+                if(username.equals("username"))
+                    return false;
+            }
+        } catch(SQLException e) {
+            return true;
+        }   
+       return true;
     }
 }

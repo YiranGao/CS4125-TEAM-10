@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.java_app;
+package view;
 
 import javax.swing.JOptionPane;
 
@@ -11,17 +11,17 @@ import javax.swing.JOptionPane;
  *
  * @author Yiran Gao - 17083214
  */
-public class modifyreservation extends javax.swing.JFrame {
-    private int userid = mainmenu.fetchUserid();
+public class ModifyReservationView extends javax.swing.JFrame {
+    /*private int userid = mainmenu.fetchUserid();
     private String username = mainmenu.fetchUsername();
     private boolean isSearched = false;
-    private boolean isVerified = false;
+    private boolean isVerified = false;*/
     /**
      * Creates new form modifyreservation
      */
-    public modifyreservation() {
-        userid = mainmenu.fetchUserid();
-        username = mainmenu.fetchUsername();
+    public ModifyReservationView() {
+      /*  userid = mainmenu.fetchUserid();
+        username = mainmenu.fetchUsername();*/
         initComponents();
     }
 
@@ -68,7 +68,6 @@ public class modifyreservation extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         jLabel2.setText("jLabel2");
-        jLabel2.setText(mainmenu.fetchUsername());
 
         jLabel3.setText("Search Order:");
 
@@ -80,12 +79,6 @@ public class modifyreservation extends javax.swing.JFrame {
         });
 
         jLabel4.setText("Order ID:");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("User Name:");
 
@@ -265,9 +258,11 @@ public class modifyreservation extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        /*
         if(mainmenu.fetchUsertype() == 1){
             if((jTextField2.getText().equals("")&&jTextField1.getText()!="")||(jTextField1.getText()!=""&&jTextField2.getText().equals(username))){
-                /*CUSTOMER behaviour
+                CUSTOMER behaviour
                  int orderid = Integer.parseInt(jTextField2.getText();
                     REQUEST API
                     return boolean getOrderById(int orderid,string username);  if has this order, true else false;
@@ -275,23 +270,19 @@ public class modifyreservation extends javax.swing.JFrame {
                     example should like this userid,username,restaurant,tableSelected,date,email,cardNum,phoneNum,note
                     and i will split up with comma, and push it to a arraylist
                     then using arraylist like seperate order info to setText() to each textfield.
-                */
+                
             }else{
                 JOptionPane.showMessageDialog(null,"Incorrect username!");
             }
         }else{
-            /*
+            
                 return boolean getOrderById(int orderid,string username); 
                 if have this order
                 getorderToString(int orderid);
                 also filled the splited string to different jTextField setText();
-            */
-        }
+            
+        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -337,21 +328,35 @@ public class modifyreservation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(modifyreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(modifyreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(modifyreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(modifyreservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ModifyReservationView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editorld>
         //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
+        //</editor-fold>
+        //</editorld>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new modifyreservation().setVisible(true);
+                new ModifyReservationView().setVisible(true);
             }
         });
     }
