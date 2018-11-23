@@ -1,19 +1,21 @@
 
 package DAO;
 
-import bean.BookingBean;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import bean.BookingBean;
 import util.DBConnection;
 
-public class ReservationDAO {
+public class BookingDAO {
         
-    private BookingBean booking;
+    private BookingBean booking = new BookingBean();
 
-    public String addReservation(BookingBean bookingBean) {
+    public String addBooking(BookingBean bookingBean) {
  
         Connection con = null;
         Statement statement = null;
@@ -49,7 +51,7 @@ public class ReservationDAO {
         return "Invalid user credentials";
     }
     
-    public BookingBean getReservation(int resID)
+    public BookingBean getBooking(int resID)
     {
         Connection con = null;
         Statement statement = null;
@@ -75,6 +77,8 @@ public class ReservationDAO {
                     booking.setAllergyShellfish(resultSet.getInt("shellfish_allergy"));
                     booking.setAllergyPeanuts(resultSet.getInt("peanuts_allergy"));
                     booking.setAllergySoya(resultSet.getInt("soya_allergy"));
+                    
+                    return booking;
                 }
                     
             }

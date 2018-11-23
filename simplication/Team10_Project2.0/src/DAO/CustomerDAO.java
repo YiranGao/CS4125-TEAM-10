@@ -15,7 +15,7 @@ import util.DBConnection;
  */
 public class CustomerDAO {
     
-    private CustomerBean customer;
+    private CustomerBean customer = new CustomerBean();
 
     public void addCusotmer(CustomerBean CustRegBean) {
         
@@ -66,6 +66,8 @@ public class CustomerDAO {
                     customer.setDOB(resultSet.getString("birthday"));
                     customer.setCC(resultSet.getString("creditcard_id"));
                     customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
+                    
+                    return customer;
                 }
             }
         } catch(SQLException e) {

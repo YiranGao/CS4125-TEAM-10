@@ -1,13 +1,15 @@
 
 package DAO;
 
-import bean.creditcardBean;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import bean.CreditcardBean;
 import util.DBConnection;
 
 /**
@@ -16,9 +18,9 @@ import util.DBConnection;
  */
 public class CreditcardDAO {
     
-    private creditcardBean creditcard = new creditcardBean();
+    private CreditcardBean creditcard = new CreditcardBean();
     
-    public String addCreditcard(creditcardBean creditcard) {
+    public String addCreditcard(CreditcardBean creditcard) {
         
         String holderName = creditcard.getHolderName();
         int year = creditcard.getYear();
@@ -48,7 +50,7 @@ public class CreditcardDAO {
         return "ERROR";
     }
     
-    public creditcardBean getCreditcard(int cardID) {
+    public CreditcardBean getCreditcard(int cardID) {
         
         Connection con = null;
         Statement statement = null;
@@ -67,6 +69,8 @@ public class CreditcardDAO {
                     creditcard.setYear(resultSet.getInt("validdate_year"));
                     creditcard.setMonth(resultSet.getInt("validdate_month"));
                     creditcard.setNumber(resultSet.getString("card_number"));
+                    
+                    return creditcard;
                 }
             }
         } catch(SQLException e) {

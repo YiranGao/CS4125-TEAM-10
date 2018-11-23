@@ -1,7 +1,7 @@
 package controller;
 
 import DAO.CustomerDAO;
-import DAO.ReservationDAO;
+import DAO.BookingDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
 import javax.swing.JOptionPane;
@@ -66,8 +66,8 @@ public class StaffBookingController {
             bookingBean.setAllergySoya(1);
         }
         
-        ReservationDAO reservationDAO = new ReservationDAO();
-        String userValidate = reservationDAO.addReservation(bookingBean);
+        BookingDAO bookingDAO = new BookingDAO();
+        String userValidate = bookingDAO.addBooking(bookingBean);
         
         if(userValidate.equals("SUCCESS")){
             JOptionPane.showMessageDialog(null,"Table has been reserved");

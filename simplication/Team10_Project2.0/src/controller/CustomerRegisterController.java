@@ -89,7 +89,7 @@ public class CustomerRegisterController {
         public void RegisterCustomer(CustomerBean CustRegBean){
             CustomerDAO genCust = new CustomerDAO();
                  genCust.addCusotmer(CustRegBean);
-                 createCust.closeLogin();
+//                 createCust.closeLogin();
             
         }         
 }

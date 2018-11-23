@@ -17,7 +17,7 @@ import util.DBConnection;
  */
 public class StaffDAO {
     
-    private StaffBean staff;
+    private StaffBean staff = new StaffBean();
 
     public void RegisterStaff(StaffBean StaffRegBean) {
         
@@ -69,6 +69,8 @@ public class StaffDAO {
                     staff.setUserType(resultSet.getInt("usertype"));
                     staff.setFeedBackMark(resultSet.getInt("feedback_mark"));
                     staff.setRestaurantID(resultSet.getInt("restaurant_id"));
+                    
+                    return staff;
                 }
             }
         } catch(SQLException e) {

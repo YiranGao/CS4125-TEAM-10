@@ -1,6 +1,6 @@
 package DAO;
 
-import bean.feedbackBean;
+import bean.FeedbackBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,9 +14,9 @@ import util.DBConnection;
  */
 public class FeedbackDAO {
     
-    private feedbackBean feedback;
+    private FeedbackBean feedback = new FeedbackBean();
     
-    public void setFeedback(feedbackBean feedback){
+    public void setFeedback(FeedbackBean feedback){
         
         Connection con = null;
         Statement statement = null;
@@ -41,7 +41,7 @@ public class FeedbackDAO {
     }
     
     
-    public feedbackBean getFeedback(int feedbackID){
+    public FeedbackBean getFeedback(int feedbackID){
         
         Connection con = null;
         Statement statement = null;
@@ -59,6 +59,8 @@ public class FeedbackDAO {
                     feedback.setStaffID(resultSet.getInt("staff_id"));
                     feedback.setFeedbackMark(resultSet.getInt("feedback_mark"));
                     feedback.setReservationID(resultSet.getInt("reservation_id"));
+                    
+                    return feedback;
                 }
                     
             }
