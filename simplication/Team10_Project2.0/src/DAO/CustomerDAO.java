@@ -52,13 +52,13 @@ public class CustomerDAO {
  
         try {
             con = DBConnection.createConnection();
-            JOptionPane.showMessageDialog(null, con + " -------------------------------");
             statement = con.createStatement();
             resultSet = statement.executeQuery("select * from customers");
  
             while(resultSet.next()) {
  
                 if(username.equals(resultSet.getString("username"))) {
+                    customer.setUserID(resultSet.getInt("customer_id"));
                     customer.setUserName(resultSet.getString("username"));
                     customer.setPassword(resultSet.getString("password"));
                     customer.setFirstName(resultSet.getString("firstname"));
@@ -68,6 +68,8 @@ public class CustomerDAO {
                     customer.setDOB(resultSet.getString("birthday"));
                     customer.setCC(resultSet.getString("creditcard_id"));
                     customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
+                    
+                    String name = customer.getFirstName();
                     
                     return customer;
                 }
