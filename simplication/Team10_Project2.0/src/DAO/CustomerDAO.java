@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import util.DBConnection;
 
 /**
@@ -51,6 +52,7 @@ public class CustomerDAO {
  
         try {
             con = DBConnection.createConnection();
+            JOptionPane.showMessageDialog(null, con + " -------------------------------");
             statement = con.createStatement();
             resultSet = statement.executeQuery("select * from customers");
  
