@@ -7,6 +7,7 @@ package view;
 
 import java.awt.Color;
 import java.util.Calendar;
+import javax.swing.JTextField;
 
 /**
  *
@@ -31,29 +32,29 @@ public class UserProfileView extends javax.swing.JFrame {
     private void initComponents() {
 
         welcomeTextLabel = new javax.swing.JLabel();
-        usernameTextLabel = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         birthTextLabel = new javax.swing.JLabel();
         birthLabel = new javax.swing.JLabel();
         emailTextLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         cardnumTextLabel = new javax.swing.JLabel();
         cardnumLabel = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        usernameLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        currentDateLabel = new javax.swing.JLabel();
+        newcardTextField = new javax.swing.JTextField();
+        newcardholderTextField = new javax.swing.JTextField();
+        newcardDateTextField = new javax.swing.JTextField();
         changecardButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         welcomeTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         welcomeTextLabel.setText("WELCOME !");
 
-        usernameTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        usernameTextLabel.setText("Username");
+        usernameLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        usernameLabel.setText("Username");
 
         birthTextLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         birthTextLabel.setText("Birth:");
@@ -73,14 +74,8 @@ public class UserProfileView extends javax.swing.JFrame {
         cardnumLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         cardnumLabel.setText("jLabel8");
 
-        jLabel9.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel9.setText("Current Order:");
-
-        jLabel10.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        jLabel10.setText("jLabel10");
-
-        usernameLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        usernameLabel.setText("username");
+        currentDateLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
+        currentDateLabel.setText("username");
         Calendar c = Calendar.getInstance();
  
  int year = c.get(Calendar.YEAR);  
@@ -89,33 +84,42 @@ public class UserProfileView extends javax.swing.JFrame {
  
  int date = c.get(Calendar.DATE);      
  
- usernameLabel.setText(year + "/" + (month+1) + "/" + date);
+ currentDateLabel.setText(year + "/" + (month+1) + "/" + date);
 
-        jTextField1.setText("New Card Num");
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        newcardTextField.setForeground(new java.awt.Color(153, 153, 153));
+        newcardTextField.setText("NEW CARD NUMBER");
+        newcardTextField.setText("New Card Num");
+        newcardTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField1MouseClicked(evt);
+                newcardTextFieldMouseClicked(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        newcardTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                newcardTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jTextField2");
-        jTextField2.setText("Card Holder");
-        jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
+        newcardholderTextField.setForeground(new java.awt.Color(153, 153, 153));
+        newcardholderTextField.setText("NEW CARD HOLDER");
+        newcardholderTextField.setText("Card Holder");
+        newcardholderTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField2MouseClicked(evt);
+                newcardholderTextFieldMouseClicked(evt);
+            }
+        });
+        newcardholderTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newcardholderTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("jTextField3");
-        jTextField3.setText("Valid Date (MM/YY)");
-        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+        newcardDateTextField.setForeground(new java.awt.Color(153, 153, 153));
+        newcardDateTextField.setText("EXPIRE DATE");
+        newcardDateTextField.setText("Valid Date (MM/YY)");
+        newcardDateTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField3MouseClicked(evt);
+                newcardDateTextFieldMouseClicked(evt);
             }
         });
 
@@ -133,53 +137,61 @@ public class UserProfileView extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(emailTextLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                                .addComponent(emailLabel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(birthTextLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(birthLabel))
-                            .addComponent(welcomeTextLabel))
-                        .addGap(162, 162, 162)
+                        .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(welcomeTextLabel)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))
-                                .addContainerGap(189, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(usernameTextLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(usernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(59, 59, 59))))
+                                    .addComponent(emailTextLabel)
+                                    .addComponent(cardnumTextLabel)
+                                    .addComponent(birthTextLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(birthLabel)
+                                    .addComponent(cardnumLabel)
+                                    .addComponent(emailLabel)))
+                            .addComponent(newcardTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(newcardholderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(newcardDateTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(changecardButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(52, 52, 52)
+                                .addComponent(closeButton)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(usernameLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
+                        .addComponent(currentDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(changecardButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(closeButton)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cardnumTextLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cardnumLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,30 +199,36 @@ public class UserProfileView extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(welcomeTextLabel)
-                    .addComponent(usernameTextLabel)
-                    .addComponent(usernameLabel))
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(birthTextLabel)
-                    .addComponent(birthLabel)
-                    .addComponent(jLabel9))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailTextLabel)
-                    .addComponent(emailLabel)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardnumTextLabel)
-                    .addComponent(cardnumLabel))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(changecardButton)
-                    .addComponent(closeButton))
-                .addContainerGap(264, Short.MAX_VALUE))
+                    .addComponent(usernameLabel)
+                    .addComponent(currentDateLabel))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(birthTextLabel)
+                            .addComponent(birthLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailTextLabel)
+                            .addComponent(emailLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cardnumLabel)
+                            .addComponent(cardnumTextLabel))
+                        .addGap(18, 18, 18)
+                        .addComponent(newcardTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(newcardholderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(newcardDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(changecardButton)
+                            .addComponent(closeButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -220,29 +238,34 @@ public class UserProfileView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_changecardButtonActionPerformed
 
-    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+    private void newcardTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newcardTextFieldMouseClicked
         // TODO add your handling code here:
-        jTextField1.setText("");
-    }//GEN-LAST:event_jTextField1MouseClicked
+        textField(newcardTextField);
+        newcardTextField.setText("");
+    }//GEN-LAST:event_newcardTextFieldMouseClicked
 
-    private void jTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseClicked
+    private void newcardholderTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newcardholderTextFieldMouseClicked
         // TODO add your handling code here:
-        jTextField2.setText("");
-    }//GEN-LAST:event_jTextField2MouseClicked
+        textField(newcardholderTextField);
+    }//GEN-LAST:event_newcardholderTextFieldMouseClicked
 
-    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+    private void newcardDateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newcardDateTextFieldMouseClicked
         // TODO add your handling code here:
-        jTextField3.setText("");
-    }//GEN-LAST:event_jTextField3MouseClicked
+        textField(newcardDateTextField);
+    }//GEN-LAST:event_newcardDateTextFieldMouseClicked
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_closeButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void newcardTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newcardTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_newcardTextFieldActionPerformed
+
+    private void newcardholderTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newcardholderTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newcardholderTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,15 +310,21 @@ public class UserProfileView extends javax.swing.JFrame {
     private javax.swing.JLabel cardnumTextLabel;
     private javax.swing.JButton changecardButton;
     private javax.swing.JButton closeButton;
+    private javax.swing.JLabel currentDateLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel emailTextLabel;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField newcardDateTextField;
+    private javax.swing.JTextField newcardTextField;
+    private javax.swing.JTextField newcardholderTextField;
     private javax.swing.JLabel usernameLabel;
-    private javax.swing.JLabel usernameTextLabel;
     private javax.swing.JLabel welcomeTextLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void textField(JTextField t) {
+        t.setForeground(Color.black);
+        t.setText("");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

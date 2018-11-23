@@ -147,6 +147,11 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         dateTextField.setForeground(new java.awt.Color(153, 153, 153));
         dateTextField.setText("DD-MM-YYYY");
+        dateTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dateTextFieldMouseClicked(evt);
+            }
+        });
 
         jLabel3.setText("Number of Covers:");
 
@@ -451,6 +456,10 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void dateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTextFieldMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateTextFieldMouseClicked
 
 
 
