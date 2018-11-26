@@ -42,13 +42,13 @@ public class UserProfileView extends javax.swing.JFrame {
         newcarddateTextField = new javax.swing.JTextField();
         changecardButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         creditTextLabel = new javax.swing.JLabel();
         creditLabel = new javax.swing.JLabel();
         cardnumTextField = new javax.swing.JTextField();
         emailTextField = new javax.swing.JTextField();
         birthTextField = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        orderList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -134,30 +134,18 @@ public class UserProfileView extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Title 1");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Title 2");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Title 3");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Title 4");
-        }
-
         creditTextLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         creditTextLabel.setText("Credit:");
 
         creditLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
         creditLabel.setText("jLabel1");
+
+        orderList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(orderList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,12 +188,13 @@ public class UserProfileView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(167, 167, 167)
                         .addComponent(usernameLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(currentDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                        .addComponent(currentDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +209,7 @@ public class UserProfileView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(currentDateLabel)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(birthTextLabel)
@@ -243,12 +232,12 @@ public class UserProfileView extends javax.swing.JFrame {
                         .addComponent(newcardholderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(newcarddateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(changecardButton)
                             .addComponent(closeButton)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -343,11 +332,11 @@ public class UserProfileView extends javax.swing.JFrame {
     private javax.swing.JLabel currentDateLabel;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel emailTextLabel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField newcardTextField;
     private javax.swing.JTextField newcarddateTextField;
     private javax.swing.JTextField newcardholderTextField;
+    private javax.swing.JList<String> orderList;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JLabel welcomeTextLabel;
     // End of variables declaration//GEN-END:variables
