@@ -1,4 +1,4 @@
-package view.java_app;
+package view;
 
 /**
  *

@@ -51,6 +51,7 @@ public class MainmenuView extends javax.swing.JFrame {
         profileButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         welcomeLabel.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         welcomeLabel.setText("Welcome!");
@@ -136,6 +137,7 @@ public class MainmenuView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void createReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createReservationButtonActionPerformed

@@ -58,6 +58,7 @@ public class CancelReservation extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         cancelTextLabel.setFont(new java.awt.Font("宋体", 0, 36)); // NOI18N
         cancelTextLabel.setText("Cancel");

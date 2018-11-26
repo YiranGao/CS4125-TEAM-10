@@ -60,41 +60,20 @@ public class ReservationBookingView extends javax.swing.JFrame {
         seperatetables = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
         confirmButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        cardNumTextField = new javax.swing.JTextField();
-        phoneNumTextField = new javax.swing.JTextField();
         dateTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tableButton = new javax.swing.JButton();
-        cardNumEmail = new javax.swing.JLabel();
-        phoneNumLabel = new javax.swing.JLabel();
+        cardnumTextEmail = new javax.swing.JLabel();
+        phonenumTextLabel = new javax.swing.JLabel();
         dateLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
         jRadioButton10 = new javax.swing.JRadioButton();
         jRadioButton11 = new javax.swing.JRadioButton();
-        restaurantIdLabel = new javax.swing.JLabel();
-        restaurantLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        userNameTextField = new javax.swing.JTextField();
-        tableLabel = new javax.swing.JLabel();
-        tableIDLabel = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
+        emailTextLabel = new javax.swing.JLabel();
+        nameTextLabel = new javax.swing.JLabel();
         nameEditLabel = new javax.swing.JLabel();
         allergyLabel = new javax.swing.JLabel();
         allergyGluten = new javax.swing.JRadioButton();
@@ -104,42 +83,24 @@ public class ReservationBookingView extends javax.swing.JFrame {
         allergyPeanuts = new javax.swing.JRadioButton();
         allergySoya = new javax.swing.JRadioButton();
         numOfGuestsTextField = new javax.swing.JTextField();
-        userNameLabel = new javax.swing.JLabel();
-        emailTextField1 = new javax.swing.JTextField();
+        userNameTextLabel = new javax.swing.JLabel();
+        usernameLabelLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        cardnumLabel = new javax.swing.JLabel();
+        phonenumLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Table Reservation");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Select Restaurant");
-
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("restaurant1");
-        jRadioButton1.setFocusable(false);
-        jRadioButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jRadioButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        restaurant.add(jRadioButton1);
-
-        jRadioButton2.setText("restaurant2");
-        jRadioButton2.setFocusable(false);
-        jRadioButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jRadioButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        restaurant.add(jRadioButton2);
-
-        jRadioButton3.setText("restaurant3");
-        jRadioButton3.setFocusable(false);
-        jRadioButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jRadioButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        restaurant.add(jRadioButton3);
-
-        jRadioButton4.setText("restaurant4");
-        jRadioButton4.setToolTipText("");
-        jRadioButton4.setFocusable(false);
-        jRadioButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jRadioButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        restaurant.add(jRadioButton4);
 
         confirmButton.setText("Confirm");
 
@@ -157,40 +118,14 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         tableButton.setText("Find a table");
 
-        cardNumEmail.setText("CardNum");
+        cardnumTextEmail.setText("CardNum");
 
-        phoneNumLabel.setText("PhoneNum");
+        phonenumTextLabel.setText("PhoneNum");
 
         dateLabel.setText("Date");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Table List:");
-
-        jLabel9.setText("Table1,Seat1");
-
-        jLabel10.setText("Table2,Seat1");
-
-        jLabel11.setText("Table3,Seat1");
-
-        jLabel12.setText("Table4,Seat1");
-
-        jLabel13.setText("Table5,Seat1");
-
-        jRadioButton5.setSelected(true);
-        jRadioButton5.setText("jRadioButton5");
-        tables.add(jRadioButton5);
-
-        jRadioButton6.setText("jRadioButton6");
-        tables.add(jRadioButton6);
-
-        jRadioButton7.setText("jRadioButton7");
-        tables.add(jRadioButton7);
-
-        jRadioButton8.setText("jRadioButton8");
-        tables.add(jRadioButton8);
-
-        jRadioButton9.setText("jRadioButton9");
-        tables.add(jRadioButton9);
 
         jLabel14.setText("Will you want seperate tables?");
 
@@ -201,17 +136,9 @@ public class ReservationBookingView extends javax.swing.JFrame {
         jRadioButton11.setText("No");
         seperatetables.add(jRadioButton11);
 
-        restaurantIdLabel.setText("1");
+        emailTextLabel.setText("E-mail");
 
-        restaurantLabel.setText("Restaurant:");
-
-        emailLabel.setText("E-mail");
-
-        tableLabel.setText("Table:");
-
-        tableIDLabel.setText("1");
-
-        nameLabel.setText("Name");
+        nameTextLabel.setText("Name");
 
         nameEditLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         nameEditLabel.setText("jLabel21");
@@ -230,74 +157,93 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         allergySoya.setText("soya");
 
-        numOfGuestsTextField.setText("jTextField1");
+        userNameTextLabel.setText("Username");
 
-        userNameLabel.setText("Username");
+        usernameLabelLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        usernameLabelLabel.setText("jLabel4");
+
+        emailLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        emailLabel.setText("jLabel5");
+
+        cardnumLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        cardnumLabel.setText("jLabel6");
+
+        phonenumLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        phonenumLabel.setText("jLabel7");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        tabelList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(tabelList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cardnumTextEmail)
+                                    .addComponent(userNameTextLabel)
+                                    .addComponent(nameTextLabel)
+                                    .addComponent(emailTextLabel)
+                                    .addComponent(phonenumTextLabel))
+                                .addGap(25, 25, 25))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(confirmButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tableButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(dateLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(112, 112, 112))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(allergyGluten)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(cancelButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(allergyDairy)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(39, 39, 39)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jRadioButton3)
-                                            .addComponent(jRadioButton2)
-                                            .addComponent(jRadioButton1)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jRadioButton4)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(restaurantLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(restaurantIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(181, 181, 181))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(cardNumEmail)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(emailLabel)
-                                                        .addComponent(nameLabel)
-                                                        .addComponent(userNameLabel, javax.swing.GroupLayout.Alignment.LEADING)))
-                                                .addGap(25, 25, 25))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(phoneNumLabel)
-                                                .addGap(18, 18, 18)))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 178, Short.MAX_VALUE)
-                                        .addComponent(dateLabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(46, 46, 46))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(allergyGluten)
-                                            .addComponent(confirmButton))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 262, Short.MAX_VALUE)
-                                                .addComponent(cancelButton))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(26, 26, 26)
-                                                .addComponent(allergyDairy)
-                                                .addGap(0, 0, Short.MAX_VALUE))))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(phoneNumTextField)
-                                        .addComponent(cardNumTextField)
-                                        .addComponent(tableButton)
-                                        .addComponent(jLabel14)
-                                        .addComponent(userNameTextField)
-                                        .addComponent(nameEditLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(emailTextField1))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(16, 16, 16)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,130 +256,92 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton11))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(269, 269, 269)
-                                .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(36, 36, 36)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jRadioButton10)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jRadioButton11))
+                                            .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel14)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(usernameLabelLabel)
+                                            .addComponent(nameEditLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(cardnumLabel)
+                                            .addComponent(emailLabel)
+                                            .addComponent(phonenumLabel)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel11)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel9))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addComponent(tableLabel))
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(231, 231, 231)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tableIDLabel)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton7))
-                .addGap(41, 41, 41))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(93, 93, 93))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8)
+                            .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel8)
-                                    .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addComponent(jLabel14)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jRadioButton10)
-                                        .addComponent(jRadioButton11))
-                                    .addGap(18, 18, 18))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jRadioButton5))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jRadioButton6)
-                                        .addComponent(jLabel10)))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGap(30, 30, 30)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(dateLabel)
-                                            .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tableButton)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton8)
-                                    .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton9)
-                                    .addComponent(jLabel13))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton4))
+                                .addGap(22, 22, 22)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel14)
+                        .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tableLabel)
-                            .addComponent(tableIDLabel))))
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(restaurantIdLabel)
-                    .addComponent(restaurantLabel))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameLabel)
-                    .addComponent(nameEditLabel))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userNameLabel)
-                    .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLabel)
-                    .addComponent(emailTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cardNumEmail))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(phoneNumLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(phoneNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                            .addComponent(jRadioButton10)
+                            .addComponent(jRadioButton11))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateLabel))
+                        .addGap(18, 18, 18)
+                        .addComponent(tableButton)
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nameTextLabel)
+                            .addComponent(nameEditLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(userNameTextLabel)
+                            .addComponent(usernameLabelLabel))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailTextLabel)
+                            .addComponent(emailLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cardnumTextEmail)
+                            .addComponent(cardnumLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(phonenumTextLabel)
+                            .addComponent(phonenumLabel))
+                        .addGap(39, 39, 39)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(allergyGluten)
@@ -454,10 +362,13 @@ public class ReservationBookingView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void dateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTextFieldMouseClicked
         // TODO add your handling code here:
+        dateTextField.setText("");
+        dateTextField.setForeground(Color.BLACK);
     }//GEN-LAST:event_dateTextFieldMouseClicked
 
 
@@ -471,49 +382,35 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JRadioButton allergyShellfish;
     private javax.swing.JRadioButton allergySoya;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JLabel cardNumEmail;
-    private javax.swing.JTextField cardNumTextField;
+    private javax.swing.JLabel cardnumLabel;
+    private javax.swing.JLabel cardnumTextEmail;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JTextField dateTextField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JTextField emailTextField1;
+    private javax.swing.JLabel emailTextLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel nameEditLabel;
-    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel nameTextLabel;
     private javax.swing.JTextField numOfGuestsTextField;
-    private javax.swing.JLabel phoneNumLabel;
-    private javax.swing.JTextField phoneNumTextField;
+    private javax.swing.JLabel phonenumLabel;
+    private javax.swing.JLabel phonenumTextLabel;
     private javax.swing.ButtonGroup restaurant;
-    private javax.swing.JLabel restaurantIdLabel;
-    private javax.swing.JLabel restaurantLabel;
     private javax.swing.ButtonGroup seperatetables;
+    private javax.swing.JList<String> tabelList;
     private javax.swing.JButton tableButton;
-    private javax.swing.JLabel tableIDLabel;
-    private javax.swing.JLabel tableLabel;
     private javax.swing.ButtonGroup tables;
-    private javax.swing.JLabel userNameLabel;
-    private javax.swing.JTextField userNameTextField;
+    private javax.swing.JLabel userNameTextLabel;
+    private javax.swing.JLabel usernameLabelLabel;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -618,14 +515,14 @@ public class ReservationBookingView extends javax.swing.JFrame {
      * @return the cardNumEmail
      */
     public JLabel getCardNumEmail() {
-        return cardNumEmail;
+        return cardnumTextEmail;
     }
 
     /**
      * @param cardNumEmail the cardNumEmail to set
      */
     public void setCardNumEmail(javax.swing.JLabel cardNumEmail) {
-        this.cardNumEmail = cardNumEmail;
+        this.cardnumTextEmail = cardNumEmail;
     }
 
     /**
