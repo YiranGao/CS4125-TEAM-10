@@ -20,15 +20,21 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the userNameTextField
      */
-    public javax.swing.JTextField getUserNameTextField() {
-        return userNameTextField;
+//    public javax.swing.JLabel getUserNameLabel() {
+//        return userNameTextField;
+//    }
+    public javax.swing.JLabel getUserNameLabel() {
+        return usernameLabel;
     }
 
     /**
      * @param userNameTextField the userNameTextField to set
      */
-    public void setUserNameTextField(javax.swing.JTextField userNameTextField) {
-        this.userNameTextField = userNameTextField;
+//    public void setUserNameTextField(javax.swing.JTextField userNameTextField) {
+//        this.userNameTextField = userNameTextField;
+//    }
+        public void setUserNameTextField(javax.swing.JLabel usernameLabel) {
+        this.usernameLabel = usernameLabel;
     }
 
     private boolean verifyTable = false;
@@ -84,7 +90,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
         allergySoya = new javax.swing.JRadioButton();
         numOfGuestsTextField = new javax.swing.JTextField();
         userNameTextLabel = new javax.swing.JLabel();
-        usernameLabelLabel = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         cardnumLabel = new javax.swing.JLabel();
         phonenumLabel = new javax.swing.JLabel();
@@ -159,8 +165,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         userNameTextLabel.setText("Username");
 
-        usernameLabelLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        usernameLabelLabel.setText("jLabel4");
+        usernameLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        usernameLabel.setText("jLabel4");
 
         emailLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         emailLabel.setText("jLabel5");
@@ -266,7 +272,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(33, 33, 33)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(usernameLabelLabel)
+                                            .addComponent(usernameLabel)
                                             .addComponent(nameEditLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(33, 33, 33)
@@ -327,7 +333,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(userNameTextLabel)
-                            .addComponent(usernameLabelLabel))
+                            .addComponent(usernameLabel))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(emailTextLabel)
@@ -410,7 +416,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JButton tableButton;
     private javax.swing.ButtonGroup tables;
     private javax.swing.JLabel userNameTextLabel;
-    private javax.swing.JLabel usernameLabelLabel;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -528,15 +534,21 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the cardNumTextField
      */
-    public JTextField getCardNumTextField() {
-        return cardNumTextField;
+//    public JTextField getCardNumTextField() {
+//        return cardNumTextField;
+//    }
+    public JLabel getCardNumLabel() {
+        return cardnumLabel;
     }
 
     /**
      * @param cardNumTextField the cardNumTextField to set
      */
-    public void setCardNumTextField(javax.swing.JTextField cardNumTextField) {
-        this.cardNumTextField = cardNumTextField;
+//    public void setCardNumTextField(javax.swing.JTextField cardNumTextField) {
+//        this.cardNumTextField = cardNumTextField;
+//    }
+    public void setCardNumLabel(javax.swing.JLabel cardnumLabel) {
+        this.cardnumLabel = cardnumLabel;
     }
 
     /**
@@ -570,15 +582,21 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the emailTextField
      */
-    public JTextField getEmailTextField() {
-        return getUserNameTextField();
+//    public JTextField getEmailTextField() {
+//        return getUserNameTextField();
+//    }
+      public JLabel getEmailLabel() {
+        return emailLabel;
     }
 
     /**
      * @param emailTextField the emailTextField to set
      */
-    public void setEmailTextField(javax.swing.JTextField emailTextField) {
-        this.setUserNameTextField(emailTextField);
+//    public void setEmailTextField(javax.swing.JTextField emailTextField) {
+//        this.setUserNameTextField(emailTextField);
+//    }
+    public void setEmailLabel(javax.swing.JLabel emailLabel) {
+        this.setEmailLabel(emailLabel);
     }
 
     /**
@@ -598,30 +616,34 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the phoneNumTextField
      */
-    public JTextField getPhoneNumTextField() {
-        return phoneNumTextField;
+    public JTextField getPhoneNumLabel() {
+        return phonenumLabel;
     }
 
     /**
      * @param phoneNumTextField the phoneNumTextField to set
      */
-    public void setPhoneNumTextField(javax.swing.JTextField phoneNumTextField) {
-        this.phoneNumTextField = phoneNumTextField;
+//    public void setPhoneNumTextField(javax.swing.JTextField phoneNumTextField) {
+//        this.phoneNumTextField = phoneNumTextField;
+//    }
+    public void setPhoneNumTextField(javax.swing.JLabel phonenumLabel) {
+        this.phonenumLabel = phonenumLabel;
     }
+
 
     /**
      * @return the restaurantIdLabel
      */
-    public JLabel getRestaurantIdLabel() {
-        return restaurantIdLabel;
-    }
+//    public JLabel getRestaurantIdLabel() {
+//        return restaurantIdLabel;
+//    }
 
     /**
      * @param restaurantIdLabel the restaurantIdLabel to set
      */
-    public void setRestaurantIdLabel(javax.swing.JLabel restaurantIdLabel) {
-        this.restaurantIdLabel = restaurantIdLabel;
-    }
+//    public void setRestaurantIdLabel(javax.swing.JLabel restaurantIdLabel) {
+//        this.restaurantIdLabel = restaurantIdLabel;
+//    }
 
     /**
      * @return the tableButton
@@ -640,16 +662,16 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the tableIDLabel
      */
-    public JLabel getTableIDLabel() {
-        return tableIDLabel;
-    }
+//    public JLabel getTableIDLabel() {
+//        return tableIDLabel;
+//    }
 
     /**
      * @param tableIDLabel the tableIDLabel to set
      */
-    public void setTableIDLabel(javax.swing.JLabel tableIDLabel) {
-        this.tableIDLabel = tableIDLabel;
-    }
+//    public void setTableIDLabel(javax.swing.JLabel tableIDLabel) {
+//        this.tableIDLabel = tableIDLabel;
+//    }
 
     /**
      * @return the numOfGuestsTextField
@@ -659,7 +681,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     }
 
     /**
-     * @param jTextField1 the numOfGuestsTextField to set
+     * @param numOfGuestsTextField
      */
     public void setNumOfGuestsTextField(javax.swing.JTextField numOfGuestsTextField) {
         this.numOfGuestsTextField = numOfGuestsTextField;
