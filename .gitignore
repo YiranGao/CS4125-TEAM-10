@@ -44,3 +44,7 @@ hs_err_pid*
 /JJ Project Restaurant/TTTWebApplication/dist/
 *.properties
 /simplication/Team10_Project2.0/dist/
+/simplication/BookingSystem/nbproject/private/
+/simplication/Team10_Project/nbproject/private/
+/simplication/Team10_Project/build/
+/simplication/Team10_Project/dist/
