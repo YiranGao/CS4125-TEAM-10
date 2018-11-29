@@ -19,11 +19,13 @@ public class StaffRegisterController {
         StaffDAO authUser = new StaffDAO();
             
         if(authUser.autheticateUserDetails(userName)){//this needs to call the DAO and return true so we know that username isnt taken
-                
-            checkUsername(JOptionPane.showInputDialog(null,"The username: " + userName + " is taken please enter a new user name", JOptionPane.ERROR_MESSAGE));
+            
+            staffRegBean.setUserName(userName);
         }
         else{
-            staffRegBean.setUserName(userName);
+            
+            checkUsername(JOptionPane.showInputDialog(null,"The username: " + userName + " is taken please enter a new user name", JOptionPane.ERROR_MESSAGE));
+            
         }
     }
     public void checkEmailAddress(String emailAddress){
@@ -76,6 +78,11 @@ public class StaffRegisterController {
                    genStaff.RegisterStaff(staffRegBean);
             
         }
+    public void setUserType(StaffBean staffUserType){
+        
+        staffRegBean.setUserType(staffUserType);
+        
+    }
     //userType will be set from a drop down so we wont need to valdated 
     //Resturant ID will also be selected this way
 }

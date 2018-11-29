@@ -107,6 +107,7 @@ public class StaffDAO {
         Connection con;
         Statement statement;
         ResultSet resultSet;
+        String checkUsername;
  
         try {
             con = DBConnection.createConnection();
@@ -114,14 +115,14 @@ public class StaffDAO {
             resultSet = statement.executeQuery("select username from staff");
  
             while(resultSet.next()) {
-                username = resultSet.getString(username);
+                checkUsername = resultSet.getString("username");
  
-                if(username.equals("username"))
-                    return false;
+                if(username.equals(checkUsername))
+                    return true;
             }
         } catch(SQLException e) {
-            return true;
+            return false;
         }   
-       return true;
+       return false;
     }
 }
