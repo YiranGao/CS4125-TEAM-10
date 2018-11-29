@@ -5,6 +5,7 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -68,7 +69,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         confirmButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        dateTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tableButton = new javax.swing.JButton();
         cardnumTextEmail = new javax.swing.JLabel();
@@ -98,6 +98,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
         tabelList = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         restaurantList = new javax.swing.JList<>();
+        jDateChooser = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -111,14 +112,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         confirmButton.setText("Confirm");
 
         cancelButton.setText("Cancel");
-
-        dateTextField.setForeground(new java.awt.Color(153, 153, 153));
-        dateTextField.setText("DD-MM-YYYY");
-        dateTextField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dateTextFieldMouseClicked(evt);
-            }
-        });
 
         jLabel3.setText("Number of Covers:");
 
@@ -225,9 +218,9 @@ public class ReservationBookingView extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(dateLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(112, 112, 112))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(113, 113, 113))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addComponent(allergyGluten)
@@ -297,10 +290,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton10)
                             .addComponent(jRadioButton11))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateLabel))
+                        .addGap(41, 41, 41)
+                        .addComponent(dateLabel)
                         .addGap(18, 18, 18)
                         .addComponent(tableButton)
                         .addGap(47, 47, 47)
@@ -335,8 +326,12 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(284, 284, 284)))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,12 +356,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dateTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateTextFieldMouseClicked
-        // TODO add your handling code here:
-        dateTextField.setText("");
-        dateTextField.setForeground(Color.BLACK);
-    }//GEN-LAST:event_dateTextFieldMouseClicked
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -382,9 +371,9 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JLabel cardnumTextEmail;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel dateLabel;
-    private javax.swing.JTextField dateTextField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel emailTextLabel;
+    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -555,19 +544,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         this.confirmButton = confirmButton;
     }
 
-    /**
-     * @return the dateTextField
-     */
-    public JTextField getDateTextField() {
-        return dateTextField;
-    }
-
-    /**
-     * @param dateTextField the dateTextField to set
-     */
-    public void setDateTextField(javax.swing.JTextField dateTextField) {
-        this.dateTextField = dateTextField;
-    }
 
     /**
      * @return the emailTextField
@@ -675,5 +651,19 @@ public class ReservationBookingView extends javax.swing.JFrame {
      */
     public void setNumOfGuestsTextField(javax.swing.JTextField numOfGuestsTextField) {
         this.numOfGuestsTextField = numOfGuestsTextField;
+    }
+
+    /**
+     * @return the jDateChooser
+     */
+    public JDateChooser getjDateChooser() {
+        return jDateChooser;
+    }
+
+    /**
+     * @param jDateChooser the jDateChooser to set
+     */
+    public void setjDateChooser(JDateChooser jDateChooser) {
+        this.jDateChooser = jDateChooser;
     }
 }

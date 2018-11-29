@@ -69,9 +69,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="dateTextField" min="-2" pref="74" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jDateChooser" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -168,11 +168,8 @@
                           <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jRadioButton11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="dateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="tableButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -215,8 +212,14 @@
                               <Component id="jScrollPane2" min="-2" pref="276" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="272" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane3" alignment="1" min="-2" pref="272" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jDateChooser" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -273,17 +276,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="dateTextField">
-      <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="DD-MM-YYYY"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dateTextFieldMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -482,5 +474,7 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser">
+    </Component>
   </SubComponents>
 </Form>
