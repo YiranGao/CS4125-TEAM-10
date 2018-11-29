@@ -606,7 +606,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     /**
      * @return the phoneNumTextField
      */
-    public JTextField getPhoneNumLabel() {
+    public JLabel getPhoneNumLabel() {
         return phonenumLabel;
     }
 

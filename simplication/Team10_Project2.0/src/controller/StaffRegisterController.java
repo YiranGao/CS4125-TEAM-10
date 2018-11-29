@@ -78,11 +78,13 @@ public class StaffRegisterController {
                    genStaff.RegisterStaff(staffRegBean);
             
         }
-    public void setUserType(StaffBean staffUserType){
+    public void addUserType(int staffUserType){
         
         staffRegBean.setUserType(staffUserType);
         
     }
-    //userType will be set from a drop down so we wont need to valdated 
-    //Resturant ID will also be selected this way
+    public void addResturantID(int resturantID){
+        
+        staffRegBean.setRestaurantID(resturantID);
+    }
 }

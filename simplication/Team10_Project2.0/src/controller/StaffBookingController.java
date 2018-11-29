@@ -29,14 +29,14 @@ public class StaffBookingController {
     
     
     private void makeBooking() {                                                     
-        String userName = view.getUserNameTextField().getText();
+       /* String userName = view.getUserNameTextField().getText();
         CustomerDAO customerDAO = new CustomerDAO();
         CustomerBean customer = customerDAO.getCustomer(userName);
         
         bookingBean.setCustomerID(customer.getUserID());
         bookingBean.setRestID(Integer.parseInt(view.getRestaurantIdLabel().getText()));
         bookingBean.setTableID(Integer.parseInt(view.getTableIDLabel().getText()));
-        bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));
+        bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));*/
            
         String time = "18:00";
         String dateTime = view.getDateTextField().getText() + " " + time + ":00";
