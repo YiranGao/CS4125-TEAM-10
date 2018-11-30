@@ -17,11 +17,11 @@ import util.DBConnection;
 public class CustomerDAO {
     
     private CustomerBean customer = new CustomerBean();
+    private Connection con;
+    private Statement statement;
+    private ResultSet resultSet;
 
     public void addCusotmer(CustomerBean CustRegBean) {
-        
-        Connection con;
-        Statement statement;
         
         try {
             con = DBConnection.createConnection();
@@ -45,10 +45,6 @@ public class CustomerDAO {
     }
     
     public CustomerBean getCustomer(String username) {
-        
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
  
         try {
             con = DBConnection.createConnection();
@@ -81,13 +77,8 @@ public class CustomerDAO {
     }
     
     public boolean autheticateUserDetails(String username){
-        
-        Connection con;
-        Statement statement;
-        ResultSet resultSet;
         String checkUsername;
         
- 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
@@ -106,5 +97,19 @@ public class CustomerDAO {
         
         return false;
     }
-
+    
+    public void updateLoyaltyPoints(int points, int userID) {
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "UPDATE `customers` SET `loyalty_points` = ? WHERE `customer_id` = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, points);
+            ps.setInt(2, userID);
+            ps.executeUpdate();
+            
+        } catch(SQLException e) {
+            System.out.print(e);
+        }
+    }
 }

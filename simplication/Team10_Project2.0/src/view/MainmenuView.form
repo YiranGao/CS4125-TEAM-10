@@ -84,25 +84,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Reservation"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createReservationButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cancelReservationButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancel Reservation"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelReservationButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="modifyReservationButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modify Reservation"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyReservationButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="usernameLabel">
       <Properties>

@@ -5,12 +5,8 @@
  */
 package view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 import bean.StaffBean;
+import javax.swing.JButton;
 
 /**
  *
@@ -32,6 +28,7 @@ public class MainmenuView extends javax.swing.JFrame {
       type = Team10_ProjectClient.fetchUsertype();*/
       //JOptionPane.showMessageDialog(null,name + id);
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -57,25 +54,10 @@ public class MainmenuView extends javax.swing.JFrame {
         welcomeLabel.setText("Welcome!");
 
         createReservationButton.setText("Create Reservation");
-        createReservationButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createReservationButtonActionPerformed(evt);
-            }
-        });
 
         cancelReservationButton.setText("Cancel Reservation");
-        cancelReservationButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelReservationButtonActionPerformed(evt);
-            }
-        });
 
         modifyReservationButton.setText("Modify Reservation");
-        modifyReservationButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyReservationButtonActionPerformed(evt);
-            }
-        });
 
         usernameLabel.setText(staff.getUserName());
         /* SeanHelpMe 
@@ -140,63 +122,11 @@ public class MainmenuView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createReservationButtonActionPerformed
-        // Once clicks the create reservation button it will handle a booking view:
-        /* SeanHelpMe
-        
-        createReservationView(usernameLabel.getText());
-        
-        ***** those codes should be put on controller:*****
-        createReservationView(String username){
-            ReservationBooking booking = new ReservationBooking();
-            booking.setResizable(false);
-            booking.setVisible(true);
-            booking.setLocationRelativeTo(null);
-        }
-        ***** i did not put package info on it*****
-        */
-        //booking.setAlwaysOnTop(true);
-    }//GEN-LAST:event_createReservationButtonActionPerformed
-
     private void profileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMouseClicked
         // TODO add your handling code here:
         UserProfileView profile = new UserProfileView();
         profile.setVisible(true);
     }//GEN-LAST:event_profileButtonMouseClicked
-
-    private void cancelReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelReservationButtonActionPerformed
-       // Once clicks the create reservation button it will handle a cancel booking view:
-       /* SeanHelpMe
-        
-        cancelReservationView(usernameLabel.getText());
-        
-        ***** those codes should be put on controller:*****
-        cancelReservationView(String username){
-            CancelReservation cancel = new CancelReservation();
-            cancel.setResizable(false);
-            cancel.setVisible(true);
-            cancel.setLocationRelativeTo(null);
-       }
-        ***** i did not put package info on it*****
-        */
-    }//GEN-LAST:event_cancelReservationButtonActionPerformed
-
-    private void modifyReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyReservationButtonActionPerformed
-        // Once clicks the create reservation button it will handle a modify booking view:
-        /* SeanHelpMe
-        
-        modifyReservationView(usernameLabel.getText());
-        
-        ***** those codes should be put on controller:*****
-        modifyReservationView(String username){
-            ModifyReservation modify = new ModifyReservation();
-            modify.setResizable(false);
-            modify.setVisible(true);
-            modify.setLocationRelativeTo(null);
-        }
-        ***** i did not put package info on it*****
-        */
-    }//GEN-LAST:event_modifyReservationButtonActionPerformed
 
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
         //Once the button clicks, lead user to user profile view:
@@ -287,5 +217,25 @@ public class MainmenuView extends javax.swing.JFrame {
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * @return the cancelReservationButton
+     */
+    public JButton getCancelReservationButton() {
+        return cancelReservationButton;
+    }
+
+    /**
+     * @return the createReservationButton
+     */
+    public JButton getCreateReservationButton() {
+        return createReservationButton;
+    }
+
+    /**
+     * @return the modifyReservationButton
+     */
+    public JButton getModifyReservationButton() {
+        return modifyReservationButton;
+    }
     
 }

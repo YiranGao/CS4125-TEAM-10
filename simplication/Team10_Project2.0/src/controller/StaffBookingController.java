@@ -4,6 +4,7 @@ import DAO.CustomerDAO;
 import DAO.BookingDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
+import bean.StaffBean;
 import bean.UserBean;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -16,13 +17,28 @@ public class StaffBookingController {
     
     private BookingBean bookingBean; //model
     private ReservationBookingView view;
+    private CustomerBean customer;
+    private StaffBean staff;
+    private int loyaltyPoints = 100;
     
-    public StaffBookingController(BookingBean m, ReservationBookingView v) {
+    public StaffBookingController(BookingBean m, ReservationBookingView v, CustomerBean c, StaffBean s) {
         bookingBean = m;
         view = v;
+        customer = c;
+        staff = s;
+        initLabels();
         //view.setVisible(true);
     }
     
+    public void initLabels() {
+//        view.getRestaurantLabel().setText();
+        view.getNameLabel().setText(customer.getFirstName() + " " + customer.getSurName());
+        view.getUserNameLabel().setText(customer.getUserName());
+        view.getEmailLabel().setText(customer.getEmailAddress());
+        view.getCardNumLabel().setText(customer.getCC());
+        view.getPhoneNumLabel().setText(customer.getPhoneNum());
+        
+    }
     
     public void initController() {
         view.getTableButton().addActionListener(e -> pickTable());
@@ -32,49 +48,22 @@ public class StaffBookingController {
     
     
     private void makeBooking() {                                                     
-        CustomerBean customer = initializeCustomer();
-        
         bookingBean.setCustomerID(customer.getUserID());
         setBookingValues();
-           
-
         boolean validDate = validDate();
         if(validDate){
             String time = "18:00";
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String dateTime = df.format(view.getjDateChooser().getDate()) + " " + time + ":00";
             bookingBean.setDate(dateTime);
-
-            if(view.getAllergyDairy().isSelected())
-            {
-                bookingBean.setAllergyDairy(1);
-            }
-            if(view.getAllergyFish().isSelected())
-            {
-                bookingBean.setAllergyFish(1);
-            }
-            if(view.getAllergyGluten().isSelected())
-            {
-                bookingBean.setAllergyGluten(1);
-            }
-            if(view.getAllergyPeanuts().isSelected())
-            {
-                bookingBean.setAllergyPeanuts(1);
-            }
-            if(view.getAllergyShellfish().isSelected())
-            {
-                bookingBean.setAllergyShellfish(1);
-            }
-            if(view.getAllergySoya().isSelected())
-            {
-                bookingBean.setAllergySoya(1);
-            }
-
+            checkAllergies();
             BookingDAO bookingDAO = new BookingDAO();
             String userValidate = bookingDAO.addBooking(bookingBean);
 
             if(userValidate.equals("SUCCESS")){
                 JOptionPane.showMessageDialog(null,"Table has been reserved");
+                CustomerDAO customerDAO = new CustomerDAO();
+                customerDAO.updateLoyaltyPoints(customer.getLoyaltyPoints() + loyaltyPoints, customer.getUserID());
                 view.dispose();
 
             } else {
@@ -86,13 +75,6 @@ public class StaffBookingController {
     
     private void pickTable() {
         
-    }
-    
-    private CustomerBean initializeCustomer() {
-        String userName = "grand1"; //view.getUserNameTextField().getText();
-        CustomerDAO customerDAO = new CustomerDAO();
-        CustomerBean customer = customerDAO.getCustomer(userName);
-        return customer;
     }
     
     private void setBookingValues() {
@@ -111,8 +93,35 @@ public class StaffBookingController {
         return validDate;
     }
     
+    public void checkAllergies() {
+        if(view.getAllergyDairy().isSelected())
+        {
+            bookingBean.setAllergyDairy(1);
+        }
+        if(view.getAllergyFish().isSelected())
+        {
+            bookingBean.setAllergyFish(1);
+        }
+        if(view.getAllergyGluten().isSelected())
+        {
+            bookingBean.setAllergyGluten(1);
+        }
+        if(view.getAllergyPeanuts().isSelected())
+        {
+            bookingBean.setAllergyPeanuts(1);
+        }
+        if(view.getAllergyShellfish().isSelected())
+        {
+            bookingBean.setAllergyShellfish(1);
+        }
+        if(view.getAllergySoya().isSelected())
+        {
+            bookingBean.setAllergySoya(1);
+        }
+    }
+    
     private void cancel() {
-        
+        view.dispose();
     }
     
 }
