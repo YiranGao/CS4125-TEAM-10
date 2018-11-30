@@ -3,12 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/ReservationBookingView.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/MainmenuView.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/LoginController.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/CustomerDAO.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffBookingController.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/MainmenuController.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/CustomerRegister.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffBookingController.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/ReservationBookingView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/ModifyReservationView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/LoginBean.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/LoginView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/feedback.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/FeedBackView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/team10_project2/Team10_Project.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/MainmenuView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/UserBean.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/Customer.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/ReservationTest.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/CustomerBean.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/UserProfileView.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/CreditcardBean.java</file>
+            <file>file:/C:/Users/admin/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/CancelReservation.java</file>
         </group>
     </open-files>
 </project-private>
