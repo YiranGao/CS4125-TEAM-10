@@ -68,7 +68,7 @@ public class SearchController {
             if(booking == null) {
                 JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
             } else {
-                deleteBookingController delete = new deleteBookingController();
+                DeleteBookingController delete = new DeleteBookingController();
                 delete.deleteBooking(booking);
             }
         } catch(NumberFormatException nfe) {

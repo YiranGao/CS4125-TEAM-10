@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
  *
  * @author Sean
  */
-public class creditcardView extends JFrame {
+public class CreditcardView extends JFrame {
     
     private JPanel contentPane;
     private JTextField cardHolderName;
@@ -26,7 +26,7 @@ public class creditcardView extends JFrame {
     private JTextField cardNumber;
     private CreditCardController aCard;
 
-    public creditcardView(CreditCardController creditcard) {
+    public CreditcardView(CreditCardController creditcard) {
         
         aCard = creditcard;
                 
@@ -82,6 +82,9 @@ public class creditcardView extends JFrame {
         cardNumber.setBounds(12, 128, 298, 35);
         contentPane.add(cardNumber);
         cardNumber.setColumns(10);
+        
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         
 	
         JButton AddCard = new JButton("Add Card");

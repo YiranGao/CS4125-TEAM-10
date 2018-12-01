@@ -10,13 +10,13 @@ import view.FeedBackView;
  *
  * @author mjs-laptop
  */
-public class feedbackController {
+public class FeedbackController {
     
     FeedBackView feedback;
     private final FeedbackBean feedbackBean = new FeedbackBean();
     StaffBean staff;
     
-    public feedbackController(StaffBean aStaff) {
+    public FeedbackController(StaffBean aStaff) {
         
         staff = aStaff;
         feedback = new FeedBackView();

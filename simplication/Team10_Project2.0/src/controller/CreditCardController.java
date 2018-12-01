@@ -2,7 +2,7 @@ package controller;
 
 import DAO.CreditcardDAO;
 import bean.CreditcardBean;
-import view.creditcardView;
+import view.CreditcardView;
 
 /**
  *
@@ -10,12 +10,12 @@ import view.creditcardView;
  */
 public class CreditCardController {
     
-        creditcardView aCard;
+        CreditcardView aCard;
         CreditcardBean newCard;
     
     public CreditCardController() {
         
-        aCard = new creditcardView(this);
+        aCard = new CreditcardView(this);
         aCard.setVisible(true);
     }
 

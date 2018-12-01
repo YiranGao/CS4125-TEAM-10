@@ -5,7 +5,7 @@ package view;
  * @author mjs-laptop
  */
 import bean.StaffBean;
-import controller.staffProfileController;
+import controller.StaffProfileController;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -19,7 +19,7 @@ public class StaffProfileView extends JFrame{
 
 	private JPanel contentPane;
 
-        private staffProfileController staffProfile;  
+        private StaffProfileController staffProfile;  
 
         
 	public StaffProfileView(StaffBean staff) {

@@ -11,7 +11,7 @@ import bean.CustomerBean;
 import javax.swing.JOptionPane;
 
 
-public class deleteBookingController {
+public class DeleteBookingController {
     public void deleteBooking(BookingBean booking)
     {
         CustomerBean cust1 = new CustomerBean();

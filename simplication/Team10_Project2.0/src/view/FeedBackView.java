@@ -1,7 +1,7 @@
 package view;
 
 import java.util.Calendar;
-import controller.feedbackController;
+import controller.FeedbackController;
 import javax.swing.AbstractButton;
 
 /**
@@ -18,9 +18,9 @@ public class FeedBackView extends javax.swing.JFrame {
         initComponents();
     }
     
-    private feedbackController feedback;
+    private FeedbackController feedback;
     
-    public FeedBackView(feedbackController aFeedback)
+    public FeedBackView(FeedbackController aFeedback)
     {
         feedback = aFeedback;
     }
