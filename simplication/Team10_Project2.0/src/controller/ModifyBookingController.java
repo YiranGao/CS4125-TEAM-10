@@ -77,7 +77,7 @@ public class ModifyBookingController extends BookingController{
     @Override
     void connectToDAO() {
         BookingDAO bookingDAO = new BookingDAO();
-        String userValidate = "SUCCESS"; // bookingDAO.modifyBooking(getBookingBean()) to implement function
+        String userValidate = bookingDAO.updateBooking(getBookingBean());
         if(userValidate.equals("SUCCESS")){
             JOptionPane.showMessageDialog(null,"Reservtion has been updated");
             getView().dispose();
