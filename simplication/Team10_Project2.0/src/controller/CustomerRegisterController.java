@@ -5,13 +5,24 @@ import bean.CustomerBean;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
+import view.CustomerRegisterView;
+;
 
 /**
  *
  * @author Sean
  */
 public class CustomerRegisterController {
-    
+        
+        private CustomerRegisterView register;
+        private CreditCardController card;
+        
+        
+        public CustomerRegisterController(){
+            
+            register = new CustomerRegisterView(this);
+            register.setVisible(true);
+        }
         private final String userNamePattern = "^[A-Za-z0-9]+$";
         private final String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         private final String namePattern = "^[A-Za-z]+$";
@@ -86,11 +97,18 @@ public class CustomerRegisterController {
                     checkDOB(JOptionPane.showInputDialog(null,"Date of birth should be yyyy-MM-dd", JOptionPane.ERROR_MESSAGE));
                     }
         }
+        public void addCreditCard(){
+            card = new CreditCardController();
+            
+            int cardID = card.getCreditCard();
+            CustRegBean.setCC(cardID);
+            
+        }
         public void RegisterCustomer(CustomerBean CustRegBean){
             CustomerDAO genCust = new CustomerDAO();
                  genCust.addCusotmer(CustRegBean);
-//                 createCust.closeLogin();
+                 register.closeRegister();
             
-        }         
+        }
 }
         

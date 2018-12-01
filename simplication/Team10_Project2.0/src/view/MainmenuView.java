@@ -46,6 +46,9 @@ public class MainmenuView extends javax.swing.JFrame {
         modifyReservationButton = new javax.swing.JButton();
         usernameLabel = new javax.swing.JLabel();
         profileButton = new javax.swing.JButton();
+        createCustomerButton1 = new javax.swing.JButton();
+        modifyCustomerButton1 = new javax.swing.JButton();
+        deleteCustomerButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -66,30 +69,19 @@ public class MainmenuView extends javax.swing.JFrame {
         */
 
         profileButton.setText("Profile");
-        profileButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                profileButtonMouseClicked(evt);
-            }
-        });
-        profileButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileButtonActionPerformed(evt);
-            }
-        });
+
+        createCustomerButton1.setText("Create Customer");
+
+        modifyCustomerButton1.setText("Modify Customer");
+
+        deleteCustomerButton1.setText("Delete Customer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancelReservationButton)
-                    .addComponent(modifyReservationButton)
-                    .addComponent(createReservationButton))
-                .addContainerGap(256, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(142, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(welcomeLabel)
@@ -98,7 +90,22 @@ public class MainmenuView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileButton)
                             .addComponent(usernameLabel))
-                        .addGap(20, 20, 20))))
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(deleteCustomerButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cancelReservationButton))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(modifyCustomerButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(modifyReservationButton))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(createCustomerButton1)
+                                .addGap(102, 102, 102)
+                                .addComponent(createReservationButton)))
+                        .addGap(118, 118, 118))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,41 +116,24 @@ public class MainmenuView extends javax.swing.JFrame {
                 .addComponent(usernameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profileButton)
-                .addGap(40, 40, 40)
-                .addComponent(createReservationButton)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createReservationButton)
+                    .addComponent(createCustomerButton1))
                 .addGap(18, 18, 18)
-                .addComponent(modifyReservationButton)
-                .addGap(18, 18, 18)
-                .addComponent(cancelReservationButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modifyReservationButton)
+                    .addComponent(modifyCustomerButton1))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelReservationButton)
+                    .addComponent(deleteCustomerButton1))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void profileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileButtonMouseClicked
-        // TODO add your handling code here:
-        UserProfileView profile = new UserProfileView();
-        profile.setVisible(true);
-    }//GEN-LAST:event_profileButtonMouseClicked
-
-    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-        //Once the button clicks, lead user to user profile view:
-        /* SeanHelpMe
-        
-        profileView(usernameLabel.getText());
-        
-        ***** those codes should be put on controller:*****
-        profileView(String username){
-            UserProfileView profile = new UserProfileView();
-            profile.setResizable(false);
-            profile.setVisible(true);
-            profile.setLocationRelativeTo(null);
-        }
-        ***** i did not put package info on it*****
-        */
-    }//GEN-LAST:event_profileButtonActionPerformed
   /*  public static int fetchUserid() {
          return id;
      }
@@ -210,13 +200,23 @@ public class MainmenuView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelReservationButton;
+    private javax.swing.JButton createCustomerButton1;
     private javax.swing.JButton createReservationButton;
+    private javax.swing.JButton deleteCustomerButton1;
+    private javax.swing.JButton modifyCustomerButton1;
     private javax.swing.JButton modifyReservationButton;
     private javax.swing.JButton profileButton;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * @return the profileButton
+     */
+    public JButton getUserProfileButton() {
+        return profileButton;
+    }
+    
     /**
      * @return the cancelReservationButton
      */
@@ -236,6 +236,27 @@ public class MainmenuView extends javax.swing.JFrame {
      */
     public JButton getModifyReservationButton() {
         return modifyReservationButton;
+    }
+    
+    /**
+     * @return the createCustomerButton1
+     */
+    public JButton getCreateCustomerButton() {
+        return createCustomerButton1;
+    }
+
+    /**
+     * @return the modifyCustomerButton1
+     */
+    public JButton getModifyCustomerButton() {
+        return modifyCustomerButton1;
+    }
+
+    /**
+     * @return the deleteCustomerButton1
+     */
+    public JButton getDeleteCustomerButton() {
+        return deleteCustomerButton1;
     }
     
 }

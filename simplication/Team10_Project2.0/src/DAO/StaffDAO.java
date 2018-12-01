@@ -88,9 +88,8 @@ public class StaffDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
 
-            String sql = "UPDATE `staff`, SET `username` = ?, `password` = ?, `firstname` = ?, `lastname` = ?, `phone_number` = ?";
-            sql += "`email` = ?, `usertype` = ?, `resturant_id` = ?) WHERE `username` = ?";
-
+            String sql = "UPDATE staff SET username = ? , password = ?, firstname = ?, lastname = ?, phone_number = ?,";
+            sql += "email = ?, usertype = ?, restaurant_id = ?) where username = ?";
            
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,StaffRegBean.getUserName());
@@ -101,6 +100,7 @@ public class StaffDAO {
             ps.setString(6,StaffRegBean.getEmailAddress());
             ps.setInt(7,StaffRegBean.getFeedBackMark());
             ps.setInt(8, StaffRegBean.getRestaurantID());
+            ps.setString(9, StaffRegBean.getUserName());
             ps.executeUpdate();
             
             

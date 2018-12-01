@@ -121,10 +121,13 @@ public class BookingDAO {
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = "delete from reservations where reservation_id = " + bookingBean.getReservationID() + ";";
-            statement.executeQuery(sql);
+            String sql = "delete from reservations where reservation_id = ?";
             
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, bookingBean.getReservationID());
 
+            ps.executeUpdate();
+            
         } catch(SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null,e.getMessage());
