@@ -24,10 +24,11 @@ public class feedbackController {
        
     }
     
-        public void submitFeedback(int waiterScoreLabel, int reservationID){
+        public void submitFeedback(String waiterScoreLabel, String reservationID){
         
-         feedbackBean.setFeedbackMark(waiterScoreLabel);
-         feedbackBean.setReservationID(reservationID);
+         
+         feedbackBean.setFeedbackMark(Integer.parseInt(waiterScoreLabel));
+         feedbackBean.setReservationID(Integer.parseInt(reservationID));
          feedbackBean.setStaffID(staff.getUserID());
          
          FeedbackDAO feedbackDao = new FeedbackDAO();
