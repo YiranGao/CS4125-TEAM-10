@@ -89,7 +89,9 @@ public class BookingDAO {
                     booking.setReservationID(resultSet.getInt("reservation_id"));
                     booking.setCustomerID(resultSet.getInt("customer_id"));
                     booking.setNoOfGuests(resultSet.getInt("numofguests"));
-                    booking.setDate(resultSet.getString("bookingdate"));
+                    String date = resultSet.getString("bookingdate");
+                    booking.setDate(date.substring(0, date.length() - 2));
+                    //booking.setDate(resultSet.getString("bookingdate"));
                     booking.setTableID(resultSet.getInt("table_id"));
                     booking.setRestID(resultSet.getInt("restaurant_id"));
                     booking.setAllergyGluten(resultSet.getInt("gluten_allergy"));
@@ -130,7 +132,7 @@ public class BookingDAO {
         return "Booking sucessfully cancelled";
     }
         
-        public String UpdateBooking(BookingBean bookingBean) {
+        public String updateBooking(BookingBean bookingBean) {
  
         Connection con = null;
         Statement statement = null;
