@@ -174,5 +174,20 @@ public class CustomerDAO {
         } catch(SQLException e) {
             System.out.print(e);
         }
+        
+    }    
+    public void deleteCustomer(String userName){
+        
+        try{
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "DELETE customers where username = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, userName);
+            
+        }catch(SQLException e){
+            System.out.print(e);   
+        }
+        
     }
 }
