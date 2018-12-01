@@ -8,13 +8,13 @@ public class CustomerBean extends UserBean{
     
     
     private String DOB;
-    private String CC;
+    private int CC;
     private int loyaltyPoints = 0;
 
     
     public CustomerBean() {
         super();
-        this.CC = null;
+        this.CC = 0;
         this.DOB = null;
         this.loyaltyPoints = 0;
     }
@@ -23,7 +23,7 @@ public class CustomerBean extends UserBean{
         return DOB;
     }
 
-    public String getCC() {
+    public int getCC() {
         return CC;
     }
 
@@ -35,7 +35,7 @@ public class CustomerBean extends UserBean{
         this.DOB = DOB;
     }
 
-    public void setCC(String CC) {
+    public void setCC(int CC) {
         this.CC = CC;
     }
 

@@ -87,8 +87,7 @@ public class creditcardView extends JFrame {
         JButton AddCard = new JButton("Add Card");
         AddCard.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                //login.submitLogin(username.getText(), password.getText());
-                aCard.createCreditCard(cardHolderName.getText(), validMonth.getText(), validYear.getText(), cardNumber.getText());
+               aCard.createCreditCard(cardHolderName.getText(), validMonth.getText(), validYear.getText(), cardNumber.getText());
             }
         });
         AddCard.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -96,7 +95,7 @@ public class creditcardView extends JFrame {
         contentPane.add(AddCard);
     }
     
-    public void closeLogin() {
+    public void closeCreditView() {
         this.dispose();
     }
 

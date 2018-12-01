@@ -11,6 +11,7 @@ import view.creditcardView;
 public class CreditCardController {
     
         creditcardView aCard;
+        CreditcardBean newCard;
     
     public CreditCardController() {
         
@@ -18,7 +19,7 @@ public class CreditCardController {
         aCard.setVisible(true);
     }
 
-    public int createCreditCard(String cardHolderName, String expiryMonth, String expiryYear, String cardNumber){
+    public void createCreditCard(String cardHolderName, String expiryMonth, String expiryYear, String cardNumber){
        
         int month = 0, year = 0, cardNum = 0, cardID;
         try{
@@ -35,7 +36,7 @@ public class CreditCardController {
         }catch(Exception e){
         }
         CreditcardDAO createCard = new CreditcardDAO();
-        CreditcardBean newCard = new CreditcardBean();
+        newCard = new CreditcardBean();
         
         newCard.setHolderName(cardHolderName);
         newCard.setMonth(month);
@@ -43,8 +44,12 @@ public class CreditCardController {
         newCard.setNumber(cardNumber);
         createCard.addCreditcard(newCard);
         cardID = createCard.getCardID(cardNum);
+        newCard.setCardID(cardID);
         
-        return cardID;
+        aCard.closeCreditView();
+    }
+    public int getCreditCard(){
+        return newCard.getCardID();
     }
 
  

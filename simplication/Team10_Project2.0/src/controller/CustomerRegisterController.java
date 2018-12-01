@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import view.CustomerRegisterView;
+;
 
 /**
  *
@@ -13,7 +14,9 @@ import view.CustomerRegisterView;
  */
 public class CustomerRegisterController {
         
-        CustomerRegisterView register;
+        private CustomerRegisterView register;
+        private CreditCardController card;
+        
         
         public CustomerRegisterController(){
             
@@ -94,11 +97,18 @@ public class CustomerRegisterController {
                     checkDOB(JOptionPane.showInputDialog(null,"Date of birth should be yyyy-MM-dd", JOptionPane.ERROR_MESSAGE));
                     }
         }
+        public void addCreditCard(){
+            card = new CreditCardController();
+            
+            int cardID = card.getCreditCard();
+            CustRegBean.setCC(cardID);
+            
+        }
         public void RegisterCustomer(CustomerBean CustRegBean){
             CustomerDAO genCust = new CustomerDAO();
                  genCust.addCusotmer(CustRegBean);
                  register.closeRegister();
             
-        }         
+        }
 }
         

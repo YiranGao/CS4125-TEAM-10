@@ -1,5 +1,6 @@
 package view;
 
+import controller.CreditCardController;
 import controller.CustomerRegisterController;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,8 +24,8 @@ public class CustomerRegisterView extends JFrame {
 	private JTextField firstName;
 	private JTextField SurName;
 	private JTextField DateOfBirth;
-        private JTextField CreditCard;
         private JTextField emailAddress;
+        
         
         private CustomerRegisterController register;
 
@@ -105,17 +106,7 @@ public class CustomerRegisterView extends JFrame {
 		DateOfBirth.setColumns(10);
                 DateOfBirth.setBounds(12, 460, 298, 35);
 		contentPane.add(DateOfBirth);
-		
-		JLabel creditCardLable = new JLabel("Credit Card Number:");
-		creditCardLable.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		creditCardLable.setBounds(12, 510, 143, 26);
-		contentPane.add(creditCardLable);
-
-                CreditCard = new JTextField();
-		CreditCard.setColumns(10);
-                CreditCard.setBounds(12, 540, 298, 35);
-		contentPane.add(CreditCard);
-		
+	
 		JLabel lblEmail = new JLabel("Email Address:");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblEmail.setBounds(12, 590, 143, 26);
@@ -130,7 +121,6 @@ public class CustomerRegisterView extends JFrame {
                 JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int index = 0;
                                 register.checkUsername(userName.getText());
                                 register.checkEmailAddress( emailAddress.getText());
                                 register.checkFirstName(firstName.getText());
@@ -138,6 +128,7 @@ public class CustomerRegisterView extends JFrame {
                                 register.checkPW(String.valueOf(passwordField.getPassword()));
                                 register.checkPhoneNumber(phoneNumber.getText());
                                 register.checkDOB(DateOfBirth.getText());
+                                register.addCreditCard();
                                                     
                         }                
 		});
