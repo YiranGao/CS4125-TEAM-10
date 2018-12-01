@@ -83,11 +83,12 @@ public class StaffBookingController {
         view.getCancelButton().addActionListener(e -> cancel());
         view.getConfirmButton().addActionListener(e -> makeBooking());
         view.getTableButton().addActionListener(e-> initTableList());
-        view.getTableList().addListSelectionListener(e -> timeSelected(e));
+        view.getTimeslotList().addListSelectionListener(e -> timeSelected(e));
+        view.getTableList().addListSelectionListener(e-> tableSelected(e));
     }
     
     public void initTableList() {
-        if(view.getjDateChooser().getDate() != null && time != null) {
+        if(view.getjDateChooser().getDate() != null && time != "") {
             TableDAO tDao = new TableDAO();
             ArrayList<String> list = tDao.getFreeTables(staff.getRestaurantID(), df.format(view.getjDateChooser().getDate()) + " " + time + ":00");
             //String [] labels = {"1, 5 seats", "2, 4 seats"};
@@ -99,6 +100,9 @@ public class StaffBookingController {
                 model.addElement(tables[i]);
             }
             view.getTableList().setModel(model);
+        }
+        else {
+            view.getTableList().setModel(new DefaultListModel());
         }
     }
     
@@ -118,7 +122,7 @@ public class StaffBookingController {
         setBookingValues();
         boolean validDate = validDate();
         if(validDate){
-            String time = "18:00";
+//            String time = "18:00";
             String dateTime = df.format(view.getjDateChooser().getDate()) + " " + time + ":00";
             bookingBean.setDate(dateTime);
             checkAllergies();
@@ -146,8 +150,8 @@ public class StaffBookingController {
     }
     
     private void setBookingValues() {
-        bookingBean.setRestID(1); //(Integer.parseInt(view.getRestaurantIdLabel().getText()));
-        bookingBean.setTableID(1); //(Integer.parseInt(view.getTableIDLabel().getText()));
+        bookingBean.setRestID(staff.getRestaurantID()); //(Integer.parseInt(view.getRestaurantIdLabel().getText()));
+        bookingBean.setTableID(table); //(Integer.parseInt(view.getTableIDLabel().getText()));
         bookingBean.setNoOfGuests(Integer.parseInt(view.getNumOfGuestsTextField().getText()));
     }
     

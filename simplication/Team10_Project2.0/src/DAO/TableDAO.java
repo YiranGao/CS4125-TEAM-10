@@ -88,10 +88,12 @@ public class TableDAO {
             Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = "SELECT tables.table_id, tables.seat_amount FROM `tables` INNER JOIN `reservations` ON tables.table_id = reservations.table_id WHERE reservations.reservation_id = ? AND reservations.bookingdate <> ?";
+            String sql = "SELECT `table_id`, `seat_amount` FROM `tables` WHERE NOT EXISTS\n" +
+                "(SELECT tables.table_id, tables.seat_amount FROM `tables` INNER JOIN `reservations` ON tables.table_id = reservations.table_id WHERE reservations.restaurant_id = ? AND reservations.bookingdate = ?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, reservationID);
             ps.setTimestamp(2, timestamp);
+//            ps.setString(2, datetime);
             resultSet = ps.executeQuery(); //statement.executeQuery(ps);
             while(resultSet.next()) {    
                 tableList.add(resultSet.getInt("table_id") + ", " + resultSet.getInt("seat_amount") + " seats");
