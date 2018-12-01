@@ -76,6 +76,38 @@ public class CustomerDAO {
         return null;
     }
     
+        public CustomerBean getCustomer(int cID) {
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("select * from customers");
+ 
+            while(resultSet.next()) {
+ 
+                if(cID == resultSet.getInt("customer_id")) {
+                    customer.setUserID(resultSet.getInt("customer_id"));
+                    customer.setUserName(resultSet.getString("username"));
+                    customer.setPassword(resultSet.getString("password"));
+                    customer.setFirstName(resultSet.getString("firstname"));
+                    customer.setSurName(resultSet.getString("lastname"));
+                    customer.setPhoneNum(resultSet.getString("phone_number"));
+                    customer.setEmailAddress(resultSet.getString("email"));
+                    customer.setDOB(resultSet.getString("birthday"));
+                    customer.setCC(resultSet.getString("creditcard_id"));
+                    customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
+                    
+                    String name = customer.getFirstName();
+                    
+                    return customer;
+                }
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
     public boolean autheticateUserDetails(String username){
         String checkUsername;
         
