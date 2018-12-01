@@ -25,40 +25,64 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="142" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="273" max="32767" attributes="0"/>
                       <Component id="welcomeLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="profileButton" min="-2" max="-2" attributes="0"/>
                           <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+              <Component id="checkInButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="checkOutButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="addFeedbackButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="deleteCustomerButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="cancelReservationButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="deleteCustomerButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="cancelReservationButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="createCustomerButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="createStaffButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="modifyCustomerButton1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="modifyCustomerButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="modifyReservationButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="createCustomerButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                              <Component id="createReservationButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="deleteStaffButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="modifyStaffButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="modifyReservationButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="createReservationButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,19 +98,28 @@
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="createReservationButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="createCustomerButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="createCustomerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="createStaffButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="modifyReservationButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="modifyCustomerButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="modifyCustomerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="modifyStaffButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cancelReservationButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="deleteCustomerButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="deleteCustomerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="deleteStaffButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="93" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="checkInButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkOutButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addFeedbackButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,6 +147,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Modify Reservation"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyReservationButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="usernameLabel">
       <Properties>
@@ -131,20 +167,53 @@
         <Property name="text" type="java.lang.String" value="Profile"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="createCustomerButton1">
+    <Component class="javax.swing.JButton" name="createCustomerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Customer"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="modifyCustomerButton1">
+    <Component class="javax.swing.JButton" name="modifyCustomerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modify Customer"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="deleteCustomerButton1">
+    <Component class="javax.swing.JButton" name="deleteCustomerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete Customer"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="checkInButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Check In"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="checkOutButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Check Out"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="createStaffButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Create Staff"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="modifyStaffButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modify Staff"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="deleteStaffButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete Staff"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="addFeedbackButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Add Feedback"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addFeedbackButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

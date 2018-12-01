@@ -36,6 +36,7 @@ public class SearchController {
             case "delete staff"    : deleteStaff(); break;
             case "update customer" : updateCutomer(); break;
             case "delete customer" : deleteCutomer(); break;
+            case "check in"        : checkIn();
         }
     }
     
@@ -48,11 +49,12 @@ public class SearchController {
             if(booking == null) {
                 JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
             } else {
-                BookingBean model = new BookingBean();
                 ReservationBookingView view = new ReservationBookingView();
-                JOptionPane.showMessageDialog(null, "Entering modify booking pa needs to change");
-//                StaffBookingController controller = new StaffBookingController(model, view, customer, staff, true);
-//                controller.initController();
+                CustomerBean customer = new CustomerBean();
+                CustomerDAO customerDAO = new CustomerDAO();
+                customer = customerDAO.getCustomer(booking.getCustomerID());
+                ModifyBookingController controller = new ModifyBookingController(booking, view, customer, staff);
+                controller.initController();
             }
         } catch(NumberFormatException nfe) {
             JOptionPane.showMessageDialog(null, "A reservation id has not been entered!");
@@ -87,6 +89,10 @@ public class SearchController {
     }
     
     public void deleteCutomer() {
+        JOptionPane.showMessageDialog(null, "Brings to Delete Customer");
+    }
+    
+    public void checkIn() {
         JOptionPane.showMessageDialog(null, "Brings to Delete Customer");
     }
 }

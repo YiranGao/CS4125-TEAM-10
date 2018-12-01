@@ -23,6 +23,8 @@ public class SearchView extends JFrame {
     private JTextField searchEntry;
     private SearchController controller;
     private String SearchType, search, buttonText;
+    private final int paneWidth = 340;
+    private final int paneHeight = 380;
     
     private LoginController login;
 
@@ -30,23 +32,26 @@ public class SearchView extends JFrame {
         SearchType = searchType;
         controller = aController;
         String title = "Search Page";
-        String string = "Search ";
-                
+        String string = "";
+        
+        switch(SearchType) {
+            case "update booking"  : string += "Search booking ID"; buttonText = "Update"; break;
+            case "cancel booking"  : string += "Search booking ID"; buttonText = "Cancel"; break;
+            case "update staff"    : string += "Search staff username"; buttonText = "Update"; break;
+            case "delete staff"    : string += "Search staff username"; buttonText = "Delete"; break;
+            case "update customer" : string += "Search customer username"; buttonText = "Update"; break;
+            case "delete customer" : string += "Search customer username"; buttonText = "Delete"; break;
+            case "check in"        : string += "customer username"; buttonText = "Search"; break;
+        }
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 340, 382);
+        setResizable(false);
+        setSize(paneWidth, paneHeight);
+        setLocationRelativeTo(null);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
-        
-        switch(SearchType) {
-            case "update booking"  : string += "booking ID"; buttonText = "Update"; break;
-            case "cancel booking"  : string += "booking ID"; buttonText = "Cancel"; break;
-            case "update staff"    : string += "staff username"; buttonText = "Update"; break;
-            case "delete staff"    : string += "staff username"; buttonText = "Delete"; break;
-            case "update customer" : string += "customer username"; buttonText = "Update"; break;
-            case "delete customer" : string += "customer username"; buttonText = "Delete"; break;
-        }
 	
         JLabel lblLoginPage = new JLabel(title);
         lblLoginPage.setHorizontalAlignment(SwingConstants.CENTER);

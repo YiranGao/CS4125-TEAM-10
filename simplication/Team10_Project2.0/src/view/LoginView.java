@@ -19,6 +19,9 @@ import controller.LoginController;
 public class LoginView extends JFrame {
     
     private JPanel contentPane;
+    private final int paneWidth = 340;
+    private final int paneHeight = 380;
+    private final String title = "Login Page";
     private JTextField password;
     private JTextField username;
     
@@ -29,13 +32,15 @@ public class LoginView extends JFrame {
         login = aLogin;
                 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 340, 382);
+        setResizable(false);
+        setSize(paneWidth, paneHeight);
+        setLocationRelativeTo(null);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 	
-        JLabel lblLoginPage = new JLabel("Login Page");
+        JLabel lblLoginPage = new JLabel(title);
         lblLoginPage.setHorizontalAlignment(SwingConstants.CENTER);
         lblLoginPage.setFont(new Font("Tahoma", Font.PLAIN, 26));
         lblLoginPage.setBounds(12, 13, 298, 51);
