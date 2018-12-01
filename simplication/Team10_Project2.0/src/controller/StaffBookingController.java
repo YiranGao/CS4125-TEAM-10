@@ -58,7 +58,8 @@ public class StaffBookingController {
         view.getNameLabel().setText(customer.getFirstName() + " " + customer.getSurName());
         view.getUserNameLabel().setText(customer.getUserName());
         view.getEmailLabel().setText(customer.getEmailAddress());
-        view.getCardNumLabel().setText(customer.getCC());
+        String cardID = Integer.toString(customer.getCC());
+        view.getCardNumLabel().setText(cardID);
         view.getPhoneNumLabel().setText(customer.getPhoneNum());
         
     }

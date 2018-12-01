@@ -50,7 +50,8 @@ public abstract class BookingController {
         view.getNameLabel().setText(getCustomer().getFirstName() + " " + getCustomer().getSurName());
         view.getUserNameLabel().setText(getCustomer().getUserName());
         view.getEmailLabel().setText(getCustomer().getEmailAddress());
-        view.getCardNumLabel().setText(getCustomer().getCC());
+        String cardID = Integer.toString(customer.getCC());
+        view.getCardNumLabel().setText(cardID);
         view.getPhoneNumLabel().setText(getCustomer().getPhoneNum());
     }
 

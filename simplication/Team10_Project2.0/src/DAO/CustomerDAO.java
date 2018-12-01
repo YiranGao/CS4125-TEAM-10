@@ -28,7 +28,7 @@ public class CustomerDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             String sql = "insert into customers(username, password, firstname, lastname, phone_number,";
-            sql += " email, birthday, creditcard_id) values(?,?,?,?,?,?,?,null)";
+            sql += " email, birthday, creditcard_id) values(?,?,?,?,?,?,?,?)";
            
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,CustRegBean.getUserName());
@@ -37,7 +37,8 @@ public class CustomerDAO {
             ps.setString(4,CustRegBean.getSurName() );
             ps.setString(5,CustRegBean.getPhoneNum() );
             ps.setString(6,CustRegBean.getEmailAddress() );
-            ps.setString(7,CustRegBean.getDOB() );
+            ps.setString(7,CustRegBean.getDOB());
+            ps.setInt(8,CustRegBean.getCC());
             ps.executeUpdate();
             
         } catch(SQLException e) {
@@ -51,7 +52,7 @@ public class CustomerDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             resultSet = statement.executeQuery("select * from customers");
- 
+            String stringCardID;
             while(resultSet.next()) {
  
                 if(username.equals(resultSet.getString("username"))) {
@@ -63,7 +64,7 @@ public class CustomerDAO {
                     customer.setPhoneNum(resultSet.getString("phone_number"));
                     customer.setEmailAddress(resultSet.getString("email"));
                     customer.setDOB(resultSet.getString("birthday"));
-                    customer.setCC(resultSet.getString("creditcard_id"));
+                    customer.setCC(resultSet.getInt("creditcard_id"));
                     customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
                     
                     String name = customer.getFirstName();
@@ -78,7 +79,7 @@ public class CustomerDAO {
     }
     
         public CustomerBean getCustomer(int cID) {
- 
+            String stringCardID;
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
@@ -95,7 +96,7 @@ public class CustomerDAO {
                     customer.setPhoneNum(resultSet.getString("phone_number"));
                     customer.setEmailAddress(resultSet.getString("email"));
                     customer.setDOB(resultSet.getString("birthday"));
-                    customer.setCC(resultSet.getString("creditcard_id"));
+                    customer.setCC(resultSet.getInt("creditcard_id"));
                     customer.setLoyaltyPoints(resultSet.getInt("loyalty_points"));
                     
                     String name = customer.getFirstName();
@@ -118,7 +119,7 @@ public class CustomerDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             String sql = "UPDATE customers SET username = ? , password = ?, firstname = ?, lastname = ?, phone_number = ?,";
-            sql += "email = ?, birthday = ?, creditcard_id = null where username = ?";
+            sql += "email = ?, birthday = ?, creditcard_id = ? where username = ?";
            
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,customer.getUserName());
@@ -128,7 +129,7 @@ public class CustomerDAO {
             ps.setString(5,customer.getPhoneNum());
             ps.setString(6,customer.getEmailAddress());
             ps.setString(7,customer.getDOB());
-            //ps.setInt(8, customer.());
+            ps.setInt(8, customer.getCC());
             ps.setString(8, customer.getUserName());
             ps.executeUpdate();
             
