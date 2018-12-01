@@ -2,6 +2,7 @@ package DAO;
 
 import bean.CustomerBean;
 import bean.LoginBean;
+import bean.StaffBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -107,6 +108,35 @@ public class CustomerDAO {
         }
         return null;
     }
+        
+        
+         public void updateCustomer(CustomerBean customer) {
+        
+        Connection con;
+        Statement statement;
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "UPDATE customers SET username = ? , password = ?, firstname = ?, lastname = ?, phone_number = ?,";
+            sql += "email = ?, birthday = ?, creditcard_id = null where username = ?";
+           
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,customer.getUserName());
+            ps.setString(2,customer.getPassword());
+            ps.setString(3,customer.getFirstName());
+            ps.setString(4,customer.getSurName());
+            ps.setString(5,customer.getPhoneNum());
+            ps.setString(6,customer.getEmailAddress());
+            ps.setString(7,customer.getDOB());
+            //ps.setInt(8, customer.());
+            ps.setString(8, customer.getUserName());
+            ps.executeUpdate();
+            
+            
+        } catch(SQLException e) {
+            System.out.print(e);
+        }   
+    }    
     
     public boolean autheticateUserDetails(String username){
         String checkUsername;

@@ -14,7 +14,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CustomerRegister extends JFrame {
+public class CustomerRegisterView extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userName;
@@ -25,9 +25,13 @@ public class CustomerRegister extends JFrame {
 	private JTextField DateOfBirth;
         private JTextField CreditCard;
         private JTextField emailAddress;
-        private CustomerRegister register;
+        
+        private CustomerRegisterController register;
 
-	public CustomerRegister() {
+
+	public CustomerRegisterView(CustomerRegisterController registration) {
+                register = registration;
+               
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 366, 751);
 		contentPane = new JPanel();
@@ -41,26 +45,7 @@ public class CustomerRegister extends JFrame {
 		lblRegisterPage.setBounds(12, 8, 298, 51);
 		contentPane.add(lblRegisterPage);
 
-		
-		JButton btnRegister = new JButton("Register");
-		btnRegister.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				int index = 0;
-                                CustomerRegisterController createCust = new CustomerRegisterController();
-                                createCust.checkUsername(userName.getText());
-                                createCust.checkEmailAddress( emailAddress.getText());
-                                createCust.checkFirstName(firstName.getText());
-                                createCust.checkSurName( SurName.getText());
-                                createCust.checkPW(String.valueOf(passwordField.getPassword()));
-                                createCust.checkPhoneNumber(phoneNumber.getText());
-                                createCust.checkDOB(DateOfBirth.getText());
-                                register.closeRegister();                    
-                        }                
-		});
-		btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnRegister.setBounds(102, 666, 97, 25);
-		contentPane.add(btnRegister);
-		        
+                
                 JLabel userNameLable = new JLabel("Username: ");
 		userNameLable.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		userNameLable.setBounds(12, 30, 143, 26);
@@ -140,10 +125,29 @@ public class CustomerRegister extends JFrame {
 		emailAddress.setColumns(10);
 		emailAddress.setBounds(12, 620, 298, 35);
 		contentPane.add(emailAddress);
+                
+                
+                JButton btnRegister = new JButton("Register");
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index = 0;
+                                register.checkUsername(userName.getText());
+                                register.checkEmailAddress( emailAddress.getText());
+                                register.checkFirstName(firstName.getText());
+                                register.checkSurName( SurName.getText());
+                                register.checkPW(String.valueOf(passwordField.getPassword()));
+                                register.checkPhoneNumber(phoneNumber.getText());
+                                register.checkDOB(DateOfBirth.getText());
+                                                    
+                        }                
+		});
+                btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnRegister.setBounds(102, 666, 97, 25);
+		contentPane.add(btnRegister);
 
 	}
 
-    private void closeRegister() {
+    public void closeRegister() {
         this.dispose();
     }
 }
