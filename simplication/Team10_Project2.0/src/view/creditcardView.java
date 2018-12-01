@@ -45,41 +45,41 @@ public class creditcardView extends JFrame {
 	
         JLabel lblCardHolderName = new JLabel("Card holder: ");
         lblCardHolderName.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblCardHolderName.setBounds(12, 99, 94, 26);
+        lblCardHolderName.setBounds(12, 30, 94, 26);
         contentPane.add(lblCardHolderName);
         
         cardHolderName = new JTextField();
-        cardHolderName.setBounds(12, 128, 298, 35);
+        cardHolderName.setBounds(12, 50, 298, 35);
         contentPane.add(cardHolderName);
         cardHolderName.setColumns(10);
         
         JLabel lblExpiryMonth = new JLabel("Expiry Month: ");
         lblExpiryMonth.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblExpiryMonth.setBounds(12, 99, 94, 26);
+        lblExpiryMonth.setBounds(12, 100, 94, 26);
         contentPane.add(lblExpiryMonth);
         
         validMonth = new JTextField();
-        validMonth.setBounds(12, 128, 298, 35);
+        validMonth.setBounds(12, 120, 298, 35);
         contentPane.add(validMonth);
         validMonth.setColumns(10);
         
         JLabel lblExpiryYear = new JLabel("Expiry Year: ");
         lblExpiryYear.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblExpiryYear.setBounds(12, 99, 94, 26);
+        lblExpiryYear.setBounds(12, 175, 94, 26);
         contentPane.add(lblExpiryYear);
         
         validYear = new JTextField();
-        validYear.setBounds(12, 128, 298, 35);
+        validYear.setBounds(12, 195, 298, 35);
         contentPane.add(validYear);
         validYear.setColumns(10);
         
         JLabel lblCardNumber = new JLabel("Card number: ");
         lblCardNumber.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblCardNumber.setBounds(12, 99, 94, 26);
+        lblCardNumber.setBounds(12, 240, 94, 26);
         contentPane.add(lblCardNumber);
         
         cardNumber = new JTextField();
-        cardNumber.setBounds(12, 128, 298, 35);
+        cardNumber.setBounds(12, 260, 298, 35);
         contentPane.add(cardNumber);
         cardNumber.setColumns(10);
         
@@ -91,7 +91,7 @@ public class creditcardView extends JFrame {
             }
         });
         AddCard.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        AddCard.setBounds(100, 281, 97, 25);
+        AddCard.setBounds(100, 300, 97, 25);
         contentPane.add(AddCard);
     }
     

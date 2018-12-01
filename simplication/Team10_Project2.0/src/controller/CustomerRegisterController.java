@@ -91,7 +91,7 @@ public class CustomerRegisterController {
                 try {
                     format.parse(DOB);
                     CustRegBean.setDOB(DOB);
-                    RegisterCustomer(CustRegBean);
+                    
                     }
                 catch(ParseException e){
                     checkDOB(JOptionPane.showInputDialog(null,"Date of birth should be yyyy-MM-dd", JOptionPane.ERROR_MESSAGE));
@@ -102,7 +102,7 @@ public class CustomerRegisterController {
             
             int cardID = card.getCreditCard();
             CustRegBean.setCC(cardID);
-            
+            RegisterCustomer(CustRegBean);
         }
         public void RegisterCustomer(CustomerBean CustRegBean){
             CustomerDAO genCust = new CustomerDAO();
