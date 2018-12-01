@@ -110,6 +110,72 @@ public class BookingDAO {
         
     }
     
+    
+        public String deleteBooking(BookingBean bookingBean) {
+ 
+        Connection con = null;
+        Statement statement = null;
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "delete from reservations where reservation_id = " + bookingBean.getReservationID() + ";";
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+        return "Booking sucessfully cancelled";
+    }
+        
+        public String UpdateBooking(BookingBean bookingBean) {
+ 
+        Connection con = null;
+        Statement statement = null;
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "update reservations set(customer_id = ?, numofguests=?, bookingdate=?, table_id=?, restaurant_id=?, gluten_allergy=?, dairy_allergy=?,";
+            sql += " fish_allergy=?, shellfish_allergy=?, peanuts_allergy=?, soya_allergy=?) where reservation_id = " + bookingBean.getReservationID(); 
+            Timestamp timestamp;
+            try {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                Date parsedDate = dateFormat.parse(bookingBean.getDate());
+                //Date parsedDate = dateFormat.parse("2018-11-24 18:00:00");
+                timestamp = new java.sql.Timestamp(parsedDate.getTime());
+                
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, bookingBean.getCustomerID());
+                System.out.println("-------------------- " + bookingBean.getCustomerID());
+                ps.setInt(2, bookingBean.getNoOfGuests());
+                //ps.setString(3, bookingBean.getDate());
+
+                ps.setTimestamp(3, timestamp);
+
+                ps.setInt(4, bookingBean.getTableID());
+                ps.setInt(5, bookingBean.getRestID());
+                ps.setInt(6, bookingBean.getAllergyGluten());
+                ps.setInt(7, bookingBean.getAllergyDairy());
+                ps.setInt(8, bookingBean.getAllergyFish());
+                ps.setInt(9, bookingBean.getAllergyShellfish());
+                ps.setInt(10, bookingBean.getAllergyPeanuts());
+                ps.setInt(11, bookingBean.getAllergySoya());
+
+                ps.executeUpdate();
+                return "SUCCESS";
+            } catch(Exception e) { 
+                                JOptionPane.showMessageDialog(null,e.getMessage());
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+        return "Invalid user credentials";
+    }    
+    
+    
+    
 }
 
 
