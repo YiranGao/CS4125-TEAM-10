@@ -1,6 +1,12 @@
 package controller;
 
+import DAO.BookingDAO;
+import DAO.CustomerDAO;
+import bean.BookingBean;
+import bean.CustomerBean;
+import bean.StaffBean;
 import javax.swing.JOptionPane;
+import view.ReservationBookingView;
 import view.SearchView;
 
 /**
@@ -9,10 +15,12 @@ import view.SearchView;
  */
 public class SearchController {
     
-    String SearchType, search;
+    private StaffBean staff;
+    private String SearchType, search;
     
-    public SearchController(String searchType){
+    public SearchController(String searchType,StaffBean aStaff){
         SearchType = searchType;
+        staff = aStaff;
         
         SearchView view = new SearchView(searchType,this);
         view.setVisible(true);
@@ -32,11 +40,38 @@ public class SearchController {
     }
     
     public void updateBooking() {
-        JOptionPane.showMessageDialog(null, "Brings to Update Booking");
+        
+        BookingDAO bookingDAO = new BookingDAO();
+        try{
+            BookingBean booking = bookingDAO.getBooking(Integer.parseInt(search));
+            
+            if(booking == null) {
+                JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
+            } else {
+                BookingBean model = new BookingBean();
+                ReservationBookingView view = new ReservationBookingView();
+                JOptionPane.showMessageDialog(null, "Entering modify booking pa needs to change");
+//                StaffBookingController controller = new StaffBookingController(model, view, customer, staff, true);
+//                controller.initController();
+            }
+        } catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "A reservation id has not been entered!");
+        }
     }
     
     public void cancelBooking() {
-        JOptionPane.showMessageDialog(null, "Brings to Cancel Booking");
+        BookingDAO bookingDAO = new BookingDAO();
+        try{
+            BookingBean booking = bookingDAO.getBooking(Integer.parseInt(search));
+            if(booking == null) {
+                JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
+            } else {
+                deleteBookingController delete = new deleteBookingController();
+                delete.deleteBooking(booking);
+            }
+        } catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "A reservation id has not been entered!");
+        }
     }
     
     public void updateStaff() {
