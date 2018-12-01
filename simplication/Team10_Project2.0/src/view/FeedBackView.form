@@ -48,31 +48,30 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="fronthouseLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="frontScoreLabel" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="waiterMarkButton2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="waiterMarkButton3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="waiterMarkButton4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="waiterMarkButton5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="waiterScoreLabel" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="waiterMarkButton2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="waiterMarkButton3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="waiterMarkButton4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="waiterMarkButton5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="waiterScoreLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                                           <Component id="tableIDLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="reservationID" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                                          <Component id="frontScoreLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -93,7 +92,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="141" max="32767" attributes="0"/>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,12 +127,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="fronthouseLabel" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="fronthouseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="reservationID" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   </Group>
                   <Component id="frontScoreLabel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Confirm" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Cancel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -165,7 +167,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#x5b8b;&#x4f53;" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="waiterID"/>
+        <Property name="text" type="java.lang.String" value="Feedback Mark:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="waiterMarkButton1">
@@ -206,7 +208,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#x5b8b;&#x4f53;" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="fronthouseID"/>
+        <Property name="text" type="java.lang.String" value="Reservation ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="frontScoreLabel">
@@ -223,6 +225,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirm"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Cancel">
       <Properties>
@@ -239,6 +244,8 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Calendar c = Calendar.getInstance();&#xd; &#xd; int year = c.get(Calendar.YEAR);  &#xd; &#xd; int month = c.get(Calendar.MONTH);   &#xd; &#xd; int date = c.get(Calendar.DATE);      &#xd; &#xd; dateLabel.setText(year + &quot;/&quot; + (month+1) + &quot;/&quot; + date);  "/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="reservationID">
     </Component>
   </SubComponents>
 </Form>
