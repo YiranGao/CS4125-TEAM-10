@@ -120,6 +120,8 @@ public class BookingDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             String sql = "delete from reservations where reservation_id = " + bookingBean.getReservationID() + ";";
+            statement.executeQuery(sql);
+            
 
         } catch(SQLException e) {
             e.printStackTrace();

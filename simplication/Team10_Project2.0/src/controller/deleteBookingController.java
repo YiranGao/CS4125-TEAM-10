@@ -35,7 +35,7 @@ public class deleteBookingController {
         loyaltyPoints -= 50;
         custDAO.updateLoyaltyPoints(loyaltyPoints, cust1.getUserID());
         String message = bookingDAO.deleteBooking(booking);
-        JOptionPane.showMessageDialog(null, "CustomerID:" + cust1 + "has cancelled a booking, loyalty points has been decremented. \n Cancellation Fee: " + cancellationFee + "\n" + message);
+        JOptionPane.showMessageDialog(null, "CustomerID: " + cust1.getUserName() + "has cancelled a booking, loyalty points has been decremented. \n Cancellation Fee: " + cancellationFee + "\n" + message);
 
         
         
