@@ -15,6 +15,8 @@ import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import view.ReservationBookingView;
 //import view.java_app.createReservation2;
 //import view.java_app.mainmenu;
@@ -25,6 +27,8 @@ public class StaffBookingController {
     private CustomerBean customer;
     private StaffBean staff;
     private int loyaltyPoints = 100;
+    private String time = "";
+    int table = 0;
     
     public StaffBookingController(BookingBean m, ReservationBookingView v, CustomerBean c, StaffBean s) {
         bookingBean = m;
@@ -52,12 +56,13 @@ public class StaffBookingController {
         view.getTableButton().addActionListener(e -> pickTable());
         view.getCancelButton().addActionListener(e -> cancel());
         view.getConfirmButton().addActionListener(e -> makeBooking());
+        view.getTableButton().addActionListener(e-> initTableList());
+        view.getTableList().addListSelectionListener(e -> timeSelected(e));
     }
     
     public void initTableList() {
-        if(view.getjDateChooser().getDate() != null) {
+        if(view.getjDateChooser().getDate() != null && time != null) {
             TableDAO tDao = new TableDAO();
-            String time = "17:00";
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             ArrayList<String> list = tDao.getFreeTables(staff.getRestaurantID(), df.format(view.getjDateChooser().getDate()) + " " + time + ":00");
             //String [] labels = {"1, 5 seats", "2, 4 seats"};
@@ -72,8 +77,18 @@ public class StaffBookingController {
         }
     }
     
+    private void timeSelected(ListSelectionEvent ev){
+        time = String.valueOf(((JList)ev.getSource()).getSelectedValue());
+    }
     
-    private void makeBooking() {                                                     
+    private void tableSelected(ListSelectionEvent ev){
+        String line = String.valueOf(((JList)ev.getSource()).getSelectedValue());
+        String [] array = line.split(", ");
+        table = Integer.parseInt(array[0]);
+    }
+    
+    
+    private void makeBooking() {
         bookingBean.setCustomerID(customer.getUserID());
         setBookingValues();
         boolean validDate = validDate();
