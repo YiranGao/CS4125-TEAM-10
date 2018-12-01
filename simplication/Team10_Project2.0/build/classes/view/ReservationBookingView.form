@@ -165,6 +165,10 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="174" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="currentDateTextLabel" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   </Group>
@@ -274,6 +278,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="confirmButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="currentDateTextLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
@@ -526,7 +531,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="DefaultListModel listModel = new DefaultListModel();&#xd;&#xa;timeslotList.setModel(listModel );&#xd;&#xa;Calendar c = Calendar.getInstance();&#xd;&#xa; int year = c.get(Calendar.YEAR);  &#xd;&#xa; int month = c.get(Calendar.MONTH);   &#xd;&#xa; int date1 = c.get(Calendar.DATE);      &#xd;&#xa;&#xd;&#xa;for(int i=0;i&lt;15;i++){&#xd;&#xa;    int hour = 10 + i;&#xd;&#xa;    String time = hour + &quot;:00&quot;;&#xd;&#xa;    String date = year + &quot;/&quot; + (month+1) + &quot;/&quot; + date1;&#xd;&#xa;    listModel.addElement(date + &quot; &quot; + time);&#xd;&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="DefaultListModel listModel = new DefaultListModel();&#xd;&#xa;timeslotList.setModel(listModel );/*&#xd;&#xa;Calendar c = Calendar.getInstance();&#xd;&#xa; int year = c.get(Calendar.YEAR);  &#xd;&#xa; int month = c.get(Calendar.MONTH);   &#xd;&#xa; int date1 = c.get(Calendar.DATE);     */ &#xd;&#xa;&#xd;&#xa;for(int i=0;i&lt;15;i++){&#xd;&#xa;    int hour = 10 + i;&#xd;&#xa;    String time = hour + &quot;:00&quot;;&#xd;&#xa;    //String date = year + &quot;/&quot; + (month+1) + &quot;/&quot; + date1;&#xd;&#xa;    listModel.addElement(time);&#xd;&#xa;}"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
@@ -548,6 +553,14 @@
     <Component class="javax.swing.JLabel" name="timeLabel">
     </Component>
     <Component class="javax.swing.JLabel" name="tableLabel">
+    </Component>
+    <Component class="javax.swing.JLabel" name="currentDateTextLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Calendar c = Calendar.getInstance();&#xd;&#xa; int year = c.get(Calendar.YEAR);  &#xd;&#xa; int month = c.get(Calendar.MONTH);   &#xd;&#xa; int date1 = c.get(Calendar.DATE);&#xd;&#xa;currentDateTextLabel.setText(year+&quot;/&quot;+month+&quot;/&quot;+date1);"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

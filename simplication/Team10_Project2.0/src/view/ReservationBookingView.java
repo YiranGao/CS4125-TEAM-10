@@ -110,6 +110,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
         timeslotButton = new javax.swing.JButton();
         timeLabel = new javax.swing.JLabel();
         tableLabel = new javax.swing.JLabel();
+        currentDateTextLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -203,17 +204,17 @@ public class ReservationBookingView extends javax.swing.JFrame {
         timeslotList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         timeslotList.setToolTipText("");
         DefaultListModel listModel = new DefaultListModel();
-        timeslotList.setModel(listModel );
+        timeslotList.setModel(listModel );/*
         Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);  
         int month = c.get(Calendar.MONTH);   
-        int date1 = c.get(Calendar.DATE);      
+        int date1 = c.get(Calendar.DATE);     */ 
 
         for(int i=0;i<15;i++){
             int hour = 10 + i;
             String time = hour + ":00";
-            String date = year + "/" + (month+1) + "/" + date1;
-            listModel.addElement(date + " " + time);
+            //String date = year + "/" + (month+1) + "/" + date1;
+            listModel.addElement(time);
         }
         jScrollPane1.setViewportView(timeslotList);
 
@@ -225,6 +226,13 @@ public class ReservationBookingView extends javax.swing.JFrame {
                 timeslotButtonActionPerformed(evt);
             }
         });
+
+        currentDateTextLabel.setText("jLabel2");
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);  
+        int month = c.get(Calendar.MONTH);   
+        int date1 = c.get(Calendar.DATE);
+        currentDateTextLabel.setText(year+"/"+month+"/"+date1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -330,7 +338,10 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                 .addComponent(tableLabel))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(currentDateTextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(93, 93, 93))))
         );
         layout.setVerticalGroup(
@@ -416,7 +427,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmButton)
-                    .addComponent(cancelButton))
+                    .addComponent(cancelButton)
+                    .addComponent(currentDateTextLabel))
                 .addGap(28, 28, 28))
         );
 
@@ -464,6 +476,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JLabel cardnumLabel;
     private javax.swing.JLabel cardnumTextEmail;
     private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel currentDateTextLabel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel discountLabel;
     private javax.swing.JLabel discountTextLabel;
