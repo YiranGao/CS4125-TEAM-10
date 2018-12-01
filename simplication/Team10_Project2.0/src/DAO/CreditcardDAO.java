@@ -77,5 +77,31 @@ public class CreditcardDAO {
             e.printStackTrace();
         }
         return null;
+    } 
+    
+    public int getCardID(int cardNumber){
+        
+    
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        int cardID;
+ 
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            resultSet = statement.executeQuery("select card_id from creditcards");
+ 
+            while(resultSet.next()) {
+ 
+                if(cardNumber == resultSet.getInt("card_id")) {
+                    cardID = resultSet.getInt("card_id");
+                    return cardID;
+                }
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/ReservationBookingView.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/TableDAO.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/BookingDAO.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/CustomerDAO.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/StaffBookingController.java</file>
-            <file>file:/C:/Users/Jakub/Documents/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/RestaurantDAO.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/CustomerRegisterView.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/LoginView.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/CreditCardController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/CustomerRegisterController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
