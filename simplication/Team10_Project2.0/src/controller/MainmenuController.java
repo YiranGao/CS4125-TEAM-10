@@ -39,7 +39,7 @@ public class MainmenuController {
         else {
             BookingBean model = new BookingBean();
             ReservationBookingView view = new ReservationBookingView();
-            StaffBookingController controller = new StaffBookingController(model, view, customer, staff);
+            StaffBookingController controller = new StaffBookingController(model, view, customer, staff, false);
             controller.initController();
         }
     }    

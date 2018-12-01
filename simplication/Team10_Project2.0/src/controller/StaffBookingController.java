@@ -9,12 +9,17 @@ import bean.BookingBean;
 import bean.StaffBean;
 import bean.UserBean;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.RadioButton;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import view.ReservationBookingView;
@@ -29,8 +34,10 @@ public class StaffBookingController {
     private int loyaltyPoints = 100;
     private String time = "";
     int table = 0;
+    private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    private boolean modify = false;
     
-    public StaffBookingController(BookingBean m, ReservationBookingView v, CustomerBean c, StaffBean s) {
+    public StaffBookingController(BookingBean m, ReservationBookingView v, CustomerBean c, StaffBean s, boolean modify) {
         bookingBean = m;
         view = v;
         customer = c;
@@ -38,6 +45,10 @@ public class StaffBookingController {
         initLabels();
         initTableList();
         view.setVisible(true);
+        if(modify) {
+            this.modify = modify;
+            initReservation();
+        }
     }
     
     public void initLabels() {
@@ -52,6 +63,21 @@ public class StaffBookingController {
         
     }
     
+    public void initReservation() {
+        table = bookingBean.getTableID();
+        setAllergies();
+        String timestamp = bookingBean.getDate();
+        String [] array = timestamp.split(" ");
+        time = array[0];
+        view.getTimeLabel().setText(time);
+        view.getTableLabel().setText(Integer.toString(table));
+        try {
+            view.getjDateChooser().setDate(df.parse(array[1]));
+        } catch (ParseException ex) {
+            Logger.getLogger(StaffBookingController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void initController() {
         view.getTableButton().addActionListener(e -> pickTable());
         view.getCancelButton().addActionListener(e -> cancel());
@@ -63,7 +89,6 @@ public class StaffBookingController {
     public void initTableList() {
         if(view.getjDateChooser().getDate() != null && time != null) {
             TableDAO tDao = new TableDAO();
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             ArrayList<String> list = tDao.getFreeTables(staff.getRestaurantID(), df.format(view.getjDateChooser().getDate()) + " " + time + ":00");
             //String [] labels = {"1, 5 seats", "2, 4 seats"};
             String [] tables = new String[list.size()] ;
@@ -94,23 +119,25 @@ public class StaffBookingController {
         boolean validDate = validDate();
         if(validDate){
             String time = "18:00";
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String dateTime = df.format(view.getjDateChooser().getDate()) + " " + time + ":00";
             bookingBean.setDate(dateTime);
             checkAllergies();
-            BookingDAO bookingDAO = new BookingDAO();
-            String userValidate = bookingDAO.addBooking(bookingBean);
-
-            if(userValidate.equals("SUCCESS")){
-                JOptionPane.showMessageDialog(null,"Table has been reserved");
-                CustomerDAO customerDAO = new CustomerDAO();
-                customerDAO.updateLoyaltyPoints(customer.getLoyaltyPoints() + loyaltyPoints, customer.getUserID());
-                view.dispose();
-
-            } else {
-                JOptionPane.showMessageDialog(null,"Reservation Unsuccessfull");
+            if(modify) {
+                
             }
-    }
+            else {
+                BookingDAO bookingDAO = new BookingDAO();
+                String userValidate = bookingDAO.addBooking(bookingBean);
+                if(userValidate.equals("SUCCESS")){
+                    JOptionPane.showMessageDialog(null,"Table has been reserved");
+                    CustomerDAO customerDAO = new CustomerDAO();
+                    customerDAO.updateLoyaltyPoints(customer.getLoyaltyPoints() + loyaltyPoints, customer.getUserID());
+                    view.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null,"Reservation Unsuccessfull");
+                }  
+            }
+        }
 
     }  
     
@@ -159,6 +186,36 @@ public class StaffBookingController {
         {
             bookingBean.setAllergySoya(1);
         }
+    }
+    
+    public void setAllergies() {
+        
+        if(bookingBean.getAllergyDairy() > 0) {
+            
+            view.getAllergyDairy().setSelected(true);
+        }
+        if(bookingBean.getAllergyFish() > 0) {
+            
+            view.getAllergyFish().setSelected(true);
+        }
+        if(bookingBean.getAllergyGluten() > 0) {
+            
+            view.getAllergyGluten().setSelected(true);
+        }
+        if(bookingBean.getAllergyPeanuts() > 0) {
+            
+            view.getAllergyPeanuts().setSelected(true);
+        }
+        if(bookingBean.getAllergyShellfish() > 0) {
+            
+            view.getAllergyShellfish().setSelected(true);
+        }
+        if(bookingBean.getAllergySoya() > 0) {
+            
+            view.getAllergySoya().setSelected(true);
+        }
+        
+        
     }
     
     private void cancel() {

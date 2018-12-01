@@ -108,6 +108,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
         timeslotList = new javax.swing.JList<>();
         timeslotTextLabel = new javax.swing.JLabel();
         timeslotButton = new javax.swing.JButton();
+        timeLabel = new javax.swing.JLabel();
+        tableLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -278,16 +280,18 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                 .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(113, 113, 113))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(allergyGluten)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(16, 16, 16)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(allergyPeanuts)
-                                            .addComponent(allergyFish))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(allergyShellfish)
-                                            .addComponent(allergySoya)))
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(cancelButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(allergyDairy)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -300,26 +304,30 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                     .addComponent(jLabel14)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(8, 8, 8)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(allergyGluten)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, Short.MAX_VALUE)
-                                        .addComponent(cancelButton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addComponent(allergyDairy)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addComponent(timeslotTextLabel)
-                            .addComponent(timeslotButton)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(timeslotButton)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(timeLabel))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGap(16, 16, 16)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(allergyPeanuts)
+                                                .addComponent(allergyFish))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(allergyShellfish)
+                                                .addComponent(allergySoya))))
+                                    .addComponent(timeslotTextLabel)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addComponent(jLabel8))
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(tableLabel))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -338,7 +346,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel8)
                             .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(restaurantLabel))
+                            .addComponent(restaurantLabel)
+                            .addComponent(tableLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -348,7 +357,9 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(19, 19, 19)
-                                .addComponent(timeslotButton)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(timeslotButton)
+                                    .addComponent(timeLabel))
                                 .addGap(5, 5, 5))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -479,8 +490,10 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JLabel restaurantTextLabel;
     private javax.swing.ButtonGroup seperatetables;
     private javax.swing.JButton tableButton;
+    private javax.swing.JLabel tableLabel;
     private javax.swing.JList<String> tableList;
     private javax.swing.ButtonGroup tables;
+    private javax.swing.JLabel timeLabel;
     private javax.swing.JButton timeslotButton;
     private javax.swing.JList<String> timeslotList;
     private javax.swing.JLabel timeslotTextLabel;
@@ -633,6 +646,27 @@ public class ReservationBookingView extends javax.swing.JFrame {
      */
     public javax.swing.JLabel getLoyaltyLabel() {
         return loyaltyLabel;
+    }
+
+    /**
+     * @return the timeLabel
+     */
+    public javax.swing.JLabel getTimeLabel() {
+        return timeLabel;
+    }
+
+    /**
+     * @return the tableLabel
+     */
+    public javax.swing.JLabel getTableLabel() {
+        return tableLabel;
+    }
+
+    /**
+     * @param allergyGluten the allergyGluten to set
+     */
+    public void setAllergyGluten(javax.swing.JRadioButton allergyGluten) {
+        this.allergyGluten = allergyGluten;
     }
 
 }
