@@ -7,6 +7,7 @@ package view;
 
 import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -28,6 +29,15 @@ public class ReservationBookingView extends javax.swing.JFrame {
         return usernameLabel;
     }
 
+    /**
+     * @param userNameTextField the userNameTextField to set
+     */
+//    public void setUserNameTextField(javax.swing.JTextField userNameTextField) {
+//        this.userNameTextField = userNameTextField;
+//    }
+        public void setUserNameTextField(javax.swing.JLabel usernameLabel) {
+        this.usernameLabel = usernameLabel;
+    }
 
     private boolean verifyTable = false;
     private int tableSelected = 0;
@@ -35,12 +45,13 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private boolean seperate = false;
     private int [] seat = new int[5];
     private boolean isFindATable = false;
+    private boolean isFindATime = false;
     /**
      * Creates new form reservationBooking
      */
     public ReservationBookingView() {
         initComponents();
-        //this.setVisible(true);
+        this.setVisible(true);
         
     }
 
@@ -93,6 +104,10 @@ public class ReservationBookingView extends javax.swing.JFrame {
         loyaltyLabel = new javax.swing.JLabel();
         discountTextLabel = new javax.swing.JLabel();
         discountLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        timeslotList = new javax.swing.JList<>();
+        timeslotTextLabel = new javax.swing.JLabel();
+        timeslotButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -104,8 +119,18 @@ public class ReservationBookingView extends javax.swing.JFrame {
         restaurantTextLabel.setText("Selected Restaurant: ");
 
         confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
 
         cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Number of Covers:");
 
@@ -169,6 +194,11 @@ public class ReservationBookingView extends javax.swing.JFrame {
         loyaltyTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         loyaltyTextLabel.setText("Your Loyalty is:");
 
+        tableList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
         jScrollPane2.setViewportView(tableList);
 
         loyaltyLabel.setText("jLabel4");
@@ -177,6 +207,37 @@ public class ReservationBookingView extends javax.swing.JFrame {
         discountTextLabel.setText("Your Special is:");
 
         discountLabel.setText("jLabel4");
+
+        timeslotList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        timeslotList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        timeslotList.setToolTipText("");
+        DefaultListModel listModel = new DefaultListModel();
+        timeslotList.setModel(listModel );
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);  
+        int month = c.get(Calendar.MONTH);   
+        int date1 = c.get(Calendar.DATE);      
+
+        for(int i=0;i<15;i++){
+            int hour = 10 + i;
+            String time = hour + ":00";
+            String date = year + "/" + (month+1) + "/" + date1;
+            listModel.addElement(date + " " + time);
+        }
+        jScrollPane1.setViewportView(timeslotList);
+
+        timeslotTextLabel.setText("TimeSlot:");
+
+        timeslotButton.setText("Verify Time");
+        timeslotButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeslotButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,27 +257,29 @@ public class ReservationBookingView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(restaurantTextLabel)
-                                    .addComponent(discountTextLabel))
+                                    .addComponent(discountTextLabel)
+                                    .addComponent(nameTextLabel)
+                                    .addComponent(userNameTextLabel)
+                                    .addComponent(emailTextLabel)
+                                    .addComponent(cardnumTextEmail)
+                                    .addComponent(phonenumTextLabel))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cardnumTextEmail)
-                                            .addComponent(userNameTextLabel)
-                                            .addComponent(nameTextLabel)
-                                            .addComponent(emailTextLabel)
-                                            .addComponent(phonenumTextLabel))
-                                        .addGap(25, 25, 25))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(loyaltyLabel)
-                                            .addComponent(restaurantLabel)
-                                            .addComponent(discountLabel))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(loyaltyTextLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                        .addGap(19, 19, 19)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(loyaltyLabel)
+                                                .addComponent(restaurantLabel)
+                                                .addComponent(discountLabel))
+                                            .addComponent(phonenumLabel)
+                                            .addComponent(cardnumLabel)
+                                            .addComponent(emailLabel)
+                                            .addComponent(usernameLabel)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                        .addComponent(nameLabel))))
+                            .addComponent(loyaltyTextLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(tableButton)
@@ -229,17 +292,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(113, 113, 113))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(allergyGluten)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, Short.MAX_VALUE)
-                                        .addComponent(cancelButton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addComponent(allergyDairy)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -262,20 +314,26 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                             .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel14)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(usernameLabel)
-                                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(cardnumLabel)
-                                            .addComponent(emailLabel)
-                                            .addComponent(phonenumLabel)))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(8, 8, 8)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(allergyGluten)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(cancelButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(allergyDairy)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(timeslotTextLabel)
+                                    .addComponent(timeslotButton)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
@@ -300,11 +358,17 @@ public class ReservationBookingView extends javax.swing.JFrame {
                             .addComponent(numOfGuestsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(restaurantLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(timeslotTextLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)
+                                .addComponent(timeslotButton)
+                                .addGap(5, 5, 5))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14)
@@ -342,8 +406,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(phonenumTextLabel)
-                            .addComponent(phonenumLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 52, Short.MAX_VALUE)))
+                            .addComponent(phonenumLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(allergyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(allergyGluten)
@@ -366,6 +430,32 @@ public class ReservationBookingView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void timeslotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeslotButtonActionPerformed
+        // TODO add your handling code here:
+        if(isFindATable == false){
+            JOptionPane.showMessageDialog(null,"Please select a table first!");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Works!!");
+            isFindATime = true;
+        }
+    }//GEN-LAST:event_timeslotButtonActionPerformed
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        if(isFindATable == false || isFindATime == false ){
+            JOptionPane.showMessageDialog(null,"Please set a table or a time slot");
+        }
+        else{
+            // do booking on it.
+        }
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
 
 
@@ -393,6 +483,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel loyaltyLabel;
     private javax.swing.JLabel loyaltyTextLabel;
@@ -408,6 +499,9 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JButton tableButton;
     private javax.swing.JList<String> tableList;
     private javax.swing.ButtonGroup tables;
+    private javax.swing.JButton timeslotButton;
+    private javax.swing.JList<String> timeslotList;
+    private javax.swing.JLabel timeslotTextLabel;
     private javax.swing.JLabel userNameTextLabel;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
@@ -499,7 +593,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
      * @return the nameEditLabel
      */
     public JLabel getNameLabel() {
-        return nameLabel;
+        return nameEditLabel;
     }
 
 
@@ -536,41 +630,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
      */
     public JDateChooser getjDateChooser() {
         return jDateChooser;
-    }
-
-    /**
-     * @return the discountLabel
-     */
-    public javax.swing.JLabel getDiscountLabel() {
-        return discountLabel;
-    }
-
-    /**
-     * @return the loyaltyLabel
-     */
-    public javax.swing.JLabel getLoyaltyLabel() {
-        return loyaltyLabel;
-    }
-
-    /**
-     * @return the restaurantLabel
-     */
-    public javax.swing.JLabel getRestaurantLabel() {
-        return restaurantLabel;
-    }
-
-    /**
-     * @return the tableList
-     */
-    public javax.swing.JList<String> getTableList() {
-        return tableList;
-    }
-
-    /**
-     * @param tableList the tableList to set
-     */
-    public void setTableList(javax.swing.JList<String> tableList) {
-        this.tableList = tableList;
     }
 
 }

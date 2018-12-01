@@ -49,35 +49,36 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="restaurantTextLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="discountTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nameTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="userNameTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emailTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cardnumTextEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="phonenumTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cardnumTextEmail" min="-2" max="-2" attributes="0"/>
-                                          <Component id="userNameTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nameTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="emailTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="phonenumTextLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="loyaltyLabel" min="-2" max="-2" attributes="0"/>
+                                              <Component id="restaurantLabel" min="-2" max="-2" attributes="0"/>
+                                              <Component id="discountLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="phonenumLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cardnumLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="loyaltyLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="restaurantLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="discountLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                                      <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="loyaltyTextLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="loyaltyTextLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="66" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -93,21 +94,6 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jDateChooser" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="allergyGluten" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="separate" max="32767" attributes="0"/>
-                                      <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Component id="allergyDairy" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -137,26 +123,34 @@
                                   </Group>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nameLabel" min="-2" pref="180" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="cardnumLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="phonenumLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       <Component id="jLabel1" min="-2" pref="155" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="allergyGluten" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                                      <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="allergyDairy" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="timeslotTextLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="timeslotButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -191,15 +185,21 @@
                           <Component id="restaurantLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" min="-2" pref="276" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jDateChooser" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="timeslotTextLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="123" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="timeslotButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane2" min="-2" pref="263" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
@@ -245,9 +245,9 @@
                           <Component id="phonenumTextLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="phonenumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" pref="52" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="allergyLabel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="allergyGluten" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -294,6 +294,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirm"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cancelButton">
       <Properties>
@@ -499,6 +502,47 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="timeslotList">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+                <StringItem index="4" value="Item 5"/>
+              </StringArray>
+            </Property>
+            <Property name="selectionMode" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="DefaultListModel listModel = new DefaultListModel();&#xd;&#xa;timeslotList.setModel(listModel );&#xd;&#xa;Calendar c = Calendar.getInstance();&#xd;&#xa; int year = c.get(Calendar.YEAR);  &#xd;&#xa; int month = c.get(Calendar.MONTH);   &#xd;&#xa; int date1 = c.get(Calendar.DATE);      &#xd;&#xa;&#xd;&#xa;for(int i=0;i&lt;15;i++){&#xd;&#xa;    int hour = 10 + i;&#xd;&#xa;    String time = hour + &quot;:00&quot;;&#xd;&#xa;    String date = year + &quot;/&quot; + (month+1) + &quot;/&quot; + date1;&#xd;&#xa;    listModel.addElement(date + &quot; &quot; + time);&#xd;&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="timeslotTextLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="TimeSlot:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="timeslotButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Verify Time"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="timeslotButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
