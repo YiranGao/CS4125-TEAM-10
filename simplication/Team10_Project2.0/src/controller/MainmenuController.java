@@ -41,7 +41,6 @@ public class MainmenuController {
     
     public void goToUserProfile() {
         staffProfileController staffProfile = new staffProfileController(staff);
-        JOptionPane.showMessageDialog(null, "Go to user profile");
     }
     
     public void goToCreateBooking(){
@@ -68,7 +67,7 @@ public class MainmenuController {
     }
     
     public void goToCreateCustomer() {
-        JOptionPane.showMessageDialog(null, "Go to create customer");
+        CustomerRegisterController register = new CustomerRegisterController();
     }
     
     public void goToModifyCustomer() {
@@ -88,7 +87,6 @@ public class MainmenuController {
     }
     
     public void goToFeedback() {
-        JOptionPane.showMessageDialog(null, "Go to feedback");
         feedbackController feedback = new feedbackController(staff);
     }
 }
