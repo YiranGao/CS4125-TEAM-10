@@ -8,11 +8,6 @@
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="waiterMarkButtonGroup.add(waiterMarkButton1);&#xd;&#xa;waiterMarkButtonGroup.add(waiterMarkButton2);&#xd;&#xa;waiterMarkButtonGroup.add(waiterMarkButton3);&#xd;&#xa;waiterMarkButtonGroup.add(waiterMarkButton4);&#xd;&#xa;waiterMarkButtonGroup.add(waiterMarkButton5);"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="frontMarkButtonGroup">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="frontMarkButtonGroup.add(frontMarkButton1);&#xd;&#xa;frontMarkButtonGroup.add(frontMarkButton2);&#xd;&#xa;frontMarkButtonGroup.add(frontMarkButton3);&#xd;&#xa;frontMarkButtonGroup.add(frontMarkButton4);&#xd;&#xa;frontMarkButtonGroup.add(frontMarkButton5);"/>
-      </AuxValues>
-    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -51,24 +46,16 @@
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="waiterMarkButton1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="fronthouseLabel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="frontMarkButton2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="frontMarkButton3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="frontMarkButton4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="frontMarkButton5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="frontMarkButton1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               <Component id="frontScoreLabel" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
@@ -131,26 +118,18 @@
                               <Component id="waiterMarkButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="waiterMarkButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="waiterMarkButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="waiterMarkButton4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="waiterMarkButton5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="waiterMarkButton4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="waiterMarkButton5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="waiterMarkButton3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="waiterScoreLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="frontMarkButton3" min="-2" max="-2" attributes="0"/>
-                          <Component id="frontMarkButton2" min="-2" max="-2" attributes="0"/>
-                          <Component id="frontMarkButton4" min="-2" max="-2" attributes="0"/>
-                          <Component id="frontMarkButton5" min="-2" max="-2" attributes="0"/>
-                          <Component id="frontMarkButton1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" attributes="0">
                       <Component id="fronthouseLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   </Group>
                   <Component id="frontScoreLabel" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -221,34 +200,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Score"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="frontMarkButton1">
-      <Properties>
-        <Property name="selected" type="boolean" value="true"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frontMarkButton1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="frontMarkButton2">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frontMarkButton2ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="frontMarkButton3">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frontMarkButton3ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="frontMarkButton4">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frontMarkButton4ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="frontMarkButton5">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="frontMarkButton5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fronthouseLabel">
       <Properties>
