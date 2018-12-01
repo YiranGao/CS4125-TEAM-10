@@ -28,15 +28,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         return usernameLabel;
     }
 
-    /**
-     * @param userNameTextField the userNameTextField to set
-     */
-//    public void setUserNameTextField(javax.swing.JTextField userNameTextField) {
-//        this.userNameTextField = userNameTextField;
-//    }
-        public void setUserNameTextField(javax.swing.JLabel usernameLabel) {
-        this.usernameLabel = usernameLabel;
-    }
 
     private boolean verifyTable = false;
     private int tableSelected = 0;
@@ -49,7 +40,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
      */
     public ReservationBookingView() {
         initComponents();
-        this.setVisible(true);
+        //this.setVisible(true);
         
     }
 
@@ -80,7 +71,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
         jRadioButton11 = new javax.swing.JRadioButton();
         emailTextLabel = new javax.swing.JLabel();
         nameTextLabel = new javax.swing.JLabel();
-        nameEditLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
         allergyLabel = new javax.swing.JLabel();
         allergyGluten = new javax.swing.JRadioButton();
         allergyDairy = new javax.swing.JRadioButton();
@@ -115,11 +106,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         confirmButton.setText("Confirm");
 
         cancelButton.setText("Cancel");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("Number of Covers:");
 
@@ -147,8 +133,8 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
         nameTextLabel.setText("Name");
 
-        nameEditLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
-        nameEditLabel.setText("jLabel21");
+        nameLabel.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        nameLabel.setText("jLabel21");
 
         allergyLabel.setText("Allergies:");
 
@@ -183,11 +169,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         loyaltyTextLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         loyaltyTextLabel.setText("Your Loyalty is:");
 
-        tableList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(tableList);
 
         loyaltyLabel.setText("jLabel4");
@@ -284,7 +265,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
                                         .addGap(33, 33, 33)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(usernameLabel)
-                                            .addComponent(nameEditLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(33, 33, 33)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -345,7 +326,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameTextLabel)
-                            .addComponent(nameEditLabel))
+                            .addComponent(nameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(userNameTextLabel)
@@ -386,11 +367,6 @@ public class ReservationBookingView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -420,7 +396,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel loyaltyLabel;
     private javax.swing.JLabel loyaltyTextLabel;
-    private javax.swing.JLabel nameEditLabel;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel nameTextLabel;
     private javax.swing.JTextField numOfGuestsTextField;
     private javax.swing.JLabel phonenumLabel;
@@ -523,7 +499,7 @@ public class ReservationBookingView extends javax.swing.JFrame {
      * @return the nameEditLabel
      */
     public JLabel getNameLabel() {
-        return nameEditLabel;
+        return nameLabel;
     }
 
 
@@ -560,6 +536,41 @@ public class ReservationBookingView extends javax.swing.JFrame {
      */
     public JDateChooser getjDateChooser() {
         return jDateChooser;
+    }
+
+    /**
+     * @return the discountLabel
+     */
+    public javax.swing.JLabel getDiscountLabel() {
+        return discountLabel;
+    }
+
+    /**
+     * @return the loyaltyLabel
+     */
+    public javax.swing.JLabel getLoyaltyLabel() {
+        return loyaltyLabel;
+    }
+
+    /**
+     * @return the restaurantLabel
+     */
+    public javax.swing.JLabel getRestaurantLabel() {
+        return restaurantLabel;
+    }
+
+    /**
+     * @return the tableList
+     */
+    public javax.swing.JList<String> getTableList() {
+        return tableList;
+    }
+
+    /**
+     * @param tableList the tableList to set
+     */
+    public void setTableList(javax.swing.JList<String> tableList) {
+        this.tableList = tableList;
     }
 
 }

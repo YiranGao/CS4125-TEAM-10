@@ -2,13 +2,18 @@ package controller;
 
 import DAO.CustomerDAO;
 import DAO.BookingDAO;
+import DAO.RestaurantDAO;
+import DAO.TableDAO;
 import bean.CustomerBean;
 import bean.BookingBean;
 import bean.StaffBean;
 import bean.UserBean;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import view.ReservationBookingView;
 //import view.java_app.createReservation2;
@@ -27,11 +32,14 @@ public class StaffBookingController {
         customer = c;
         staff = s;
         initLabels();
-        //view.setVisible(true);
+        initTableList();
+        view.setVisible(true);
     }
     
     public void initLabels() {
-//        view.getRestaurantLabel().setText();
+        RestaurantDAO rDao = new RestaurantDAO();
+        view.getRestaurantLabel().setText(rDao.getRestaurant(staff.getRestaurantID()).getName());
+        view.getLoyaltyLabel().setText(Integer.toString(customer.getLoyaltyPoints()));
         view.getNameLabel().setText(customer.getFirstName() + " " + customer.getSurName());
         view.getUserNameLabel().setText(customer.getUserName());
         view.getEmailLabel().setText(customer.getEmailAddress());
@@ -44,6 +52,24 @@ public class StaffBookingController {
         view.getTableButton().addActionListener(e -> pickTable());
         view.getCancelButton().addActionListener(e -> cancel());
         view.getConfirmButton().addActionListener(e -> makeBooking());
+    }
+    
+    public void initTableList() {
+        if(view.getjDateChooser().getDate() != null) {
+            TableDAO tDao = new TableDAO();
+            String time = "17:00";
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            ArrayList<String> list = tDao.getFreeTables(staff.getRestaurantID(), df.format(view.getjDateChooser().getDate()) + " " + time + ":00");
+            //String [] labels = {"1, 5 seats", "2, 4 seats"};
+            String [] tables = new String[list.size()] ;
+            tables = list.toArray(tables);
+            // Fill model
+            DefaultListModel model = new DefaultListModel();
+            for (int i = 0, n = tables.length; i < n; i++) {
+                model.addElement(tables[i]);
+            }
+            view.getTableList().setModel(model);
+        }
     }
     
     

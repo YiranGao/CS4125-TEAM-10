@@ -7,7 +7,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import util.DBConnection;
+import java.sql.Timestamp;
+import java.text.ParseException;
 
 /**
  *
@@ -16,6 +21,9 @@ import util.DBConnection;
 public class TableDAO {
     
     private TableBean table = new TableBean();
+    private Connection con;
+    private Statement statement;
+    private ResultSet resultSet;
     
     public String addTable(TableBean table) {
         
@@ -23,8 +31,6 @@ public class TableDAO {
         int tableState = table.getTableState();
         int seatAmount = table.getSeatAmount();
         
-        Connection con = null;
-        Statement statement = null;
  
         try {
             con = DBConnection.createConnection();
@@ -47,9 +53,6 @@ public class TableDAO {
     
     public TableBean getTable(int tableID) {
         
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
  
         try {
             con = DBConnection.createConnection();
@@ -70,6 +73,36 @@ public class TableDAO {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+    
+    
+    public ArrayList<String> getFreeTables(int reservationID, String datetime) {
+        
+        ArrayList<String> tableList = new ArrayList<String>();
+        
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            Date parsedDate = dateFormat.parse(datetime);
+            //Date parsedDate = dateFormat.parse("2018-11-24 18:00:00");
+            Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+            String sql = "SELECT tables.table_id, tables.seat_amount FROM `tables` INNER JOIN `reservations` ON tables.table_id = reservations.table_id WHERE reservations.reservation_id = ? AND reservations.bookingdate <> ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, reservationID);
+            ps.setTimestamp(2, timestamp);
+            resultSet = ps.executeQuery(); //statement.executeQuery(ps);
+            while(resultSet.next()) {    
+                tableList.add(resultSet.getInt("table_id") + ", " + resultSet.getInt("seat_amount") + " seats");
+            }
+            return tableList;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } catch(ParseException e) {
+            e.printStackTrace();
+        }
+        
         return null;
     }
     
