@@ -3,7 +3,7 @@ package controller;
 import DAO.FeedbackDAO;
 import bean.FeedbackBean;
 import bean.StaffBean;
-import view.FeedBackView1;
+import view.FeedBackView;
 
 
 /**
@@ -12,14 +12,14 @@ import view.FeedBackView1;
  */
 public class feedbackController {
     
-    FeedBackView1 feedback;
+    FeedBackView feedback;
     private final FeedbackBean feedbackBean = new FeedbackBean();
     StaffBean staff;
     
     public feedbackController(StaffBean aStaff) {
         
         staff = aStaff;
-        feedback = new FeedBackView1();
+        feedback = new FeedBackView();
        feedback.setVisible(true);
        
     }
