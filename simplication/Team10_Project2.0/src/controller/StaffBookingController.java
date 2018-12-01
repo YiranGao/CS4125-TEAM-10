@@ -79,7 +79,6 @@ public class StaffBookingController {
     }
     
     public void initController() {
-        view.getTableButton().addActionListener(e -> pickTable());
         view.getCancelButton().addActionListener(e -> cancel());
         view.getConfirmButton().addActionListener(e -> makeBooking());
         view.getTableButton().addActionListener(e-> initTableList());
@@ -145,9 +144,6 @@ public class StaffBookingController {
 
     }  
     
-    private void pickTable() {
-        
-    }
     
     private void setBookingValues() {
         bookingBean.setRestID(staff.getRestaurantID()); //(Integer.parseInt(view.getRestaurantIdLabel().getText()));

@@ -24,9 +24,21 @@ public class MainmenuController {
     }
     
     public void initController() {
+        view.getUserProfileButton().addActionListener(e-> goToUserProfile());
         view.getCreateReservationButton().addActionListener(e-> goToCreateBooking());
         view.getModifyReservationButton().addActionListener(e-> goToModifyBooking());
         view.getCancelReservationButton().addActionListener(e-> goToCancelBooking());
+        view.getCreateCustomerButton().addActionListener(e-> goToCreateCustomer());
+        view.getModifyCustomerButton().addActionListener(e-> goToModifyCustomer());
+        view.getDeleteCustomerButton().addActionListener(e-> goToDeleteCustomer());
+//        view.getCreateStaffButton().addActionListerner(e-> goToStaffCustomer());
+//        view.getModifyStaffButton().addActionListerner(e-> goToStaffCustomer());
+//        view.getDeleteStaffButton().addActionListerner(e-> goToStaffCustomer());
+    }
+    
+    public void goToUserProfile() {
+        //TODO: Go to User Profile
+        JOptionPane.showMessageDialog(null, "Go to user profile");
     }
     
     public void goToCreateBooking(){
@@ -45,10 +57,22 @@ public class MainmenuController {
     }    
     
     public void goToModifyBooking() {
-        
+        SearchController search = new SearchController("update booking",staff);
     }
     
     public void goToCancelBooking() {
-        
+        SearchController search = new SearchController("cancel booking",staff);
+    }
+    
+    public void goToCreateCustomer() {
+        JOptionPane.showMessageDialog(null, "Go to create customer");
+    }
+    
+    public void goToModifyCustomer() {
+        SearchController search = new SearchController("update customer",staff);
+    }
+    
+    public void goToDeleteCustomer() {
+        SearchController search = new SearchController("delete customer",staff);
     }
 }
