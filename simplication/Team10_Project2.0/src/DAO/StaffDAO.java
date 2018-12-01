@@ -80,6 +80,35 @@ public class StaffDAO {
         return null;
     }
     
+     public void updateStaff(StaffBean StaffRegBean) {
+        
+        Connection con;
+        Statement statement;
+        try {
+            con = DBConnection.createConnection();
+            statement = con.createStatement();
+
+            String sql = "UPDATE `staff`, SET `username` = ?, `password` = ?, `firstname` = ?, `lastname` = ?, `phone_number` = ?";
+            sql += "`email` = ?, `usertype` = ?, `resturant_id` = ?) WHERE `username` = ?";
+
+           
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,StaffRegBean.getUserName());
+            ps.setString(2,StaffRegBean.getPassword());
+            ps.setString(3,StaffRegBean.getFirstName());
+            ps.setString(4,StaffRegBean.getSurName());
+            ps.setString(5,StaffRegBean.getPhoneNum());
+            ps.setString(6,StaffRegBean.getEmailAddress());
+            ps.setInt(7,StaffRegBean.getFeedBackMark());
+            ps.setInt(8, StaffRegBean.getRestaurantID());
+            ps.executeUpdate();
+            
+            
+        } catch(SQLException e) {
+            System.out.print(e);
+        }   
+    }
+    
     public String authenticateLogin(String username, String password) {
  
         Connection con = null;
