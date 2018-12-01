@@ -682,4 +682,11 @@ public class ReservationBookingView extends javax.swing.JFrame {
         this.allergyGluten = allergyGluten;
     }
 
+    /**
+     * @return the timeslotList
+     */
+    public javax.swing.JList<String> getTimeslotList() {
+        return timeslotList;
+    }
+
 }
