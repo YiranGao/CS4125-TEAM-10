@@ -3,6 +3,7 @@ package view;
 import java.util.Calendar;
 import controller.FeedbackController;
 import javax.swing.AbstractButton;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -263,8 +264,8 @@ public class FeedBackView extends javax.swing.JFrame {
     }//GEN-LAST:event_waiterMarkButton5ActionPerformed
 
     private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
-        // TODO add your handling code here:
-        feedback.submitFeedback(Integer.parseInt(waiterScoreLabel.getText()), Integer.parseInt(reservationID.getText()));
+         // JOptionPane.showMessageDialog(null,waiterScoreLabel.getText() + reservationID.getText());
+        feedback.submitFeedback(waiterScoreLabel.getText(), reservationID.getText());
     }//GEN-LAST:event_ConfirmActionPerformed
 
 
