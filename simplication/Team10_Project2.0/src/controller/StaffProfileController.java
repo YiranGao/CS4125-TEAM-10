@@ -8,11 +8,11 @@ import DAO.StaffDAO;
 import bean.StaffBean;
 import view.StaffProfileView;
 
-public class staffProfileController {
+public class StaffProfileController {
     
     StaffProfileView staffProfile;
     
-    public staffProfileController(StaffBean staff) {
+    public StaffProfileController(StaffBean staff) {
         
         staffProfile = new StaffProfileView(staff);
         staffProfile.setVisible(true);

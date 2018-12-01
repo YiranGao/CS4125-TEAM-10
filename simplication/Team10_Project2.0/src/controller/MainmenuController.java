@@ -40,7 +40,7 @@ public class MainmenuController {
     }
     
     public void goToUserProfile() {
-        staffProfileController staffProfile = new staffProfileController(staff);
+        StaffProfileController staffProfile = new StaffProfileController(staff);
     }
     
     public void goToCreateBooking(){
@@ -87,6 +87,6 @@ public class MainmenuController {
     }
     
     public void goToFeedback() {
-        feedbackController feedback = new feedbackController(staff);
+        FeedbackController feedback = new FeedbackController(staff);
     }
 }
