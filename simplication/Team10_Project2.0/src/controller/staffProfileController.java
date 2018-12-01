@@ -17,12 +17,4 @@ public class staffProfileController {
         staffProfile = new StaffProfileView(staff);
         staffProfile.setVisible(true);
     }
-     
-    
-    public void displayStaffInfo(StaffBean staffMember)
-    {
-        
-             
-        
-    }
 }

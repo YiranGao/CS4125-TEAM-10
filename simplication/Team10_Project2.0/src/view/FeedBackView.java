@@ -1,11 +1,14 @@
 package view;
 
 import java.util.Calendar;
+import controller.feedbackController;
+import javax.swing.AbstractButton;
 
 /**
  *
  * @author Yiran Gao - 17083214
  */
+
 public class FeedBackView extends javax.swing.JFrame {
 
     /**
@@ -13,6 +16,13 @@ public class FeedBackView extends javax.swing.JFrame {
      */
     public FeedBackView() {
         initComponents();
+    }
+    
+    private feedbackController feedback;
+    
+    public FeedBackView(feedbackController aFeedback)
+    {
+        feedback = aFeedback;
     }
 
     /**
@@ -30,7 +40,6 @@ public class FeedBackView extends javax.swing.JFrame {
         waiterMarkButtonGroup.add(waiterMarkButton3);
         waiterMarkButtonGroup.add(waiterMarkButton4);
         waiterMarkButtonGroup.add(waiterMarkButton5);
-        frontMarkButtonGroup = new javax.swing.ButtonGroup();
         titleTextLabel = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
         waiterLabel = new javax.swing.JLabel();
@@ -40,29 +49,19 @@ public class FeedBackView extends javax.swing.JFrame {
         waiterMarkButton4 = new javax.swing.JRadioButton();
         waiterMarkButton5 = new javax.swing.JRadioButton();
         waiterScoreLabel = new javax.swing.JLabel();
-        frontMarkButton1 = new javax.swing.JRadioButton();
-        frontMarkButton2 = new javax.swing.JRadioButton();
-        frontMarkButton3 = new javax.swing.JRadioButton();
-        frontMarkButton4 = new javax.swing.JRadioButton();
-        frontMarkButton5 = new javax.swing.JRadioButton();
         fronthouseLabel = new javax.swing.JLabel();
         frontScoreLabel = new javax.swing.JLabel();
         tableIDLabel = new javax.swing.JLabel();
         Confirm = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
         dateLabel = new javax.swing.JLabel();
+        reservationID = new javax.swing.JTextField();
 
         waiterMarkButtonGroup.add(waiterMarkButton1);
         waiterMarkButtonGroup.add(waiterMarkButton2);
         waiterMarkButtonGroup.add(waiterMarkButton3);
         waiterMarkButtonGroup.add(waiterMarkButton4);
         waiterMarkButtonGroup.add(waiterMarkButton5);
-
-        frontMarkButtonGroup.add(frontMarkButton1);
-        frontMarkButtonGroup.add(frontMarkButton2);
-        frontMarkButtonGroup.add(frontMarkButton3);
-        frontMarkButtonGroup.add(frontMarkButton4);
-        frontMarkButtonGroup.add(frontMarkButton5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -74,7 +73,7 @@ public class FeedBackView extends javax.swing.JFrame {
         usernameLabel.setText("user");
 
         waiterLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        waiterLabel.setText("waiterID");
+        waiterLabel.setText("Feedback Mark:");
 
         waiterMarkButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,45 +108,19 @@ public class FeedBackView extends javax.swing.JFrame {
 
         waiterScoreLabel.setText("Score");
 
-        frontMarkButton1.setSelected(true);
-        frontMarkButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontMarkButton1ActionPerformed(evt);
-            }
-        });
-
-        frontMarkButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontMarkButton2ActionPerformed(evt);
-            }
-        });
-
-        frontMarkButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontMarkButton3ActionPerformed(evt);
-            }
-        });
-
-        frontMarkButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontMarkButton4ActionPerformed(evt);
-            }
-        });
-
-        frontMarkButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                frontMarkButton5ActionPerformed(evt);
-            }
-        });
-
         fronthouseLabel.setFont(new java.awt.Font("宋体", 0, 18)); // NOI18N
-        fronthouseLabel.setText("fronthouseID");
+        fronthouseLabel.setText("Reservation ID:");
 
         frontScoreLabel.setText("Score");
 
         tableIDLabel.setText("jLabel1");
 
         Confirm.setText("Confirm");
+        Confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmActionPerformed(evt);
+            }
+        });
 
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -184,36 +157,28 @@ public class FeedBackView extends javax.swing.JFrame {
                                             .addComponent(waiterLabel)
                                             .addGap(35, 35, 35)
                                             .addComponent(waiterMarkButton1))
-                                        .addGroup(layout.createSequentialGroup()
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(fronthouseLabel)
+                                            .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(waiterMarkButton2)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(waiterMarkButton3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(waiterMarkButton4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(waiterMarkButton5)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(frontMarkButton2)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(frontMarkButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(frontMarkButton4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(frontMarkButton5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(frontMarkButton1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(frontScoreLabel))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(waiterMarkButton2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(waiterMarkButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(waiterMarkButton4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(waiterMarkButton5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(waiterScoreLabel)))
-                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(waiterScoreLabel))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addGap(173, 173, 173)
-                                            .addComponent(tableIDLabel))))
+                                            .addComponent(tableIDLabel))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(reservationID, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                            .addComponent(frontScoreLabel))))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(Confirm)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -224,7 +189,7 @@ public class FeedBackView extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(145, 145, 145)
                             .addComponent(titleTextLabel))))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,23 +210,19 @@ public class FeedBackView extends javax.swing.JFrame {
                                 .addComponent(waiterLabel)
                                 .addComponent(waiterMarkButton1)
                                 .addComponent(waiterMarkButton2))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(waiterMarkButton3)
-                                .addComponent(waiterMarkButton4)
-                                .addComponent(waiterMarkButton5))))
+                            .addComponent(waiterMarkButton4)
+                            .addComponent(waiterMarkButton5)
+                            .addComponent(waiterMarkButton3)))
                     .addComponent(waiterScoreLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(frontMarkButton3)
-                            .addComponent(frontMarkButton2)
-                            .addComponent(frontMarkButton4)
-                            .addComponent(frontMarkButton5)
-                            .addComponent(frontMarkButton1))
-                        .addComponent(fronthouseLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fronthouseLabel)
+                            .addComponent(reservationID, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4))
                     .addComponent(frontScoreLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Confirm)
                     .addComponent(Cancel))
@@ -276,10 +237,6 @@ public class FeedBackView extends javax.swing.JFrame {
         // TODO add your handling code here:
                 waiterScoreLabel.setText("3");
     }//GEN-LAST:event_waiterMarkButton3ActionPerformed
-
-    private void frontMarkButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontMarkButton4ActionPerformed
-frontScoreLabel.setText("3");          // TODO add your handling code here:
-    }//GEN-LAST:event_frontMarkButton4ActionPerformed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
         // TODO add your handling code here:
@@ -305,69 +262,20 @@ frontScoreLabel.setText("3");          // TODO add your handling code here:
                 waiterScoreLabel.setText("5");
     }//GEN-LAST:event_waiterMarkButton5ActionPerformed
 
-    private void frontMarkButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontMarkButton2ActionPerformed
-        frontScoreLabel.setText("4");        // TODO add your handling code here:
-    }//GEN-LAST:event_frontMarkButton2ActionPerformed
+    private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
+        // TODO add your handling code here:
+        feedback.submitFeedback(Integer.parseInt(waiterScoreLabel.getText()), Integer.parseInt(reservationID.getText()));
+    }//GEN-LAST:event_ConfirmActionPerformed
 
-    private void frontMarkButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontMarkButton3ActionPerformed
-       frontScoreLabel.setText("2");   // TODO add your handling code here:
-    }//GEN-LAST:event_frontMarkButton3ActionPerformed
 
-    private void frontMarkButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontMarkButton5ActionPerformed
-            frontScoreLabel.setText("1");          // TODO add your handling code here:
-    }//GEN-LAST:event_frontMarkButton5ActionPerformed
-
-    private void frontMarkButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontMarkButton1ActionPerformed
-      frontScoreLabel.setText("5");  
-    }//GEN-LAST:event_frontMarkButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FeedBackView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FeedBackView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FeedBackView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FeedBackView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FeedBackView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancel;
     private javax.swing.JButton Confirm;
     private javax.swing.JLabel dateLabel;
-    private javax.swing.JRadioButton frontMarkButton1;
-    private javax.swing.JRadioButton frontMarkButton2;
-    private javax.swing.JRadioButton frontMarkButton3;
-    private javax.swing.JRadioButton frontMarkButton4;
-    private javax.swing.JRadioButton frontMarkButton5;
-    private javax.swing.ButtonGroup frontMarkButtonGroup;
     private javax.swing.JLabel frontScoreLabel;
     private javax.swing.JLabel fronthouseLabel;
+    private javax.swing.JTextField reservationID;
     private javax.swing.JLabel tableIDLabel;
     private javax.swing.JLabel titleTextLabel;
     private javax.swing.JLabel usernameLabel;
@@ -380,4 +288,5 @@ frontScoreLabel.setText("3");          // TODO add your handling code here:
     private javax.swing.ButtonGroup waiterMarkButtonGroup;
     private javax.swing.JLabel waiterScoreLabel;
     // End of variables declaration//GEN-END:variables
+
 }

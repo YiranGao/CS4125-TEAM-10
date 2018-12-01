@@ -15,20 +15,18 @@ import javax.swing.JButton;
 public class MainmenuView extends javax.swing.JFrame {
     
     private StaffBean staff;
-   /* private static String name = Team10_ProjectClient.fetchUsername(); 
-    private static int id = Team10_ProjectClient.fetchUserid();
-    private static int type = Team10_ProjectClient.fetchUsertype();*/
     /**
      * Creates new form mainmenu
      */
     public MainmenuView(StaffBean aStaff) {
         staff = aStaff;
-      /*name = Team10_ProjectClient.fetchUsername();
-      id = Team10_ProjectClient.fetchUserid();
-      type = Team10_ProjectClient.fetchUsertype();*/
-      //JOptionPane.showMessageDialog(null,name + id);
         initComponents();
         setVisible(true);
+        if(staff.getUserType() == 2) {
+            
+        } else if(staff.getUserType() == 3) {
+            
+        }
     }
 
     /**
@@ -46,9 +44,15 @@ public class MainmenuView extends javax.swing.JFrame {
         modifyReservationButton = new javax.swing.JButton();
         usernameLabel = new javax.swing.JLabel();
         profileButton = new javax.swing.JButton();
-        createCustomerButton1 = new javax.swing.JButton();
-        modifyCustomerButton1 = new javax.swing.JButton();
-        deleteCustomerButton1 = new javax.swing.JButton();
+        createCustomerButton = new javax.swing.JButton();
+        modifyCustomerButton = new javax.swing.JButton();
+        deleteCustomerButton = new javax.swing.JButton();
+        checkInButton = new javax.swing.JButton();
+        checkOutButton = new javax.swing.JButton();
+        createStaffButton = new javax.swing.JButton();
+        modifyStaffButton = new javax.swing.JButton();
+        deleteStaffButton = new javax.swing.JButton();
+        addFeedbackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,6 +65,11 @@ public class MainmenuView extends javax.swing.JFrame {
         cancelReservationButton.setText("Cancel Reservation");
 
         modifyReservationButton.setText("Modify Reservation");
+        modifyReservationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyReservationButtonActionPerformed(evt);
+            }
+        });
 
         usernameLabel.setText(staff.getUserName());
         /* SeanHelpMe 
@@ -70,42 +79,78 @@ public class MainmenuView extends javax.swing.JFrame {
 
         profileButton.setText("Profile");
 
-        createCustomerButton1.setText("Create Customer");
+        createCustomerButton.setText("Create Customer");
 
-        modifyCustomerButton1.setText("Modify Customer");
+        modifyCustomerButton.setText("Modify Customer");
 
-        deleteCustomerButton1.setText("Delete Customer");
+        deleteCustomerButton.setText("Delete Customer");
+
+        checkInButton.setText("Check In");
+
+        checkOutButton.setText("Check Out");
+
+        createStaffButton.setText("Create Staff");
+
+        modifyStaffButton.setText("Modify Staff");
+
+        deleteStaffButton.setText("Delete Staff");
+
+        addFeedbackButton.setText("Add Feedback");
+        addFeedbackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addFeedbackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(273, Short.MAX_VALUE)
                         .addComponent(welcomeLabel)
                         .addGap(273, 273, 273))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileButton)
                             .addComponent(usernameLabel))
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGap(20, 20, 20)))
+                .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(182, 182, 182)
+                .addComponent(checkInButton)
+                .addGap(41, 41, 41)
+                .addComponent(checkOutButton)
+                .addGap(41, 41, 41)
+                .addComponent(addFeedbackButton)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(deleteCustomerButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancelReservationButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(deleteCustomerButton1)
+                                .addComponent(createCustomerButton)
+                                .addGap(32, 32, 32)
+                                .addComponent(createStaffButton))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(modifyCustomerButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cancelReservationButton))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(modifyCustomerButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(modifyReservationButton))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(createCustomerButton1)
-                                .addGap(102, 102, 102)
-                                .addComponent(createReservationButton)))
-                        .addGap(118, 118, 118))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(deleteStaffButton)
+                                    .addComponent(modifyStaffButton))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(modifyReservationButton)
+                            .addComponent(createReservationButton))))
+                .addGap(78, 78, 78))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,21 +164,37 @@ public class MainmenuView extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createReservationButton)
-                    .addComponent(createCustomerButton1))
+                    .addComponent(createCustomerButton)
+                    .addComponent(createStaffButton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modifyReservationButton)
-                    .addComponent(modifyCustomerButton1))
-                .addGap(16, 16, 16)
+                    .addComponent(modifyCustomerButton)
+                    .addComponent(modifyStaffButton))
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelReservationButton)
-                    .addComponent(deleteCustomerButton1))
-                .addContainerGap(93, Short.MAX_VALUE))
+                    .addComponent(deleteCustomerButton)
+                    .addComponent(deleteStaffButton))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkInButton)
+                    .addComponent(checkOutButton)
+                    .addComponent(addFeedbackButton))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void modifyReservationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyReservationButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyReservationButtonActionPerformed
+
+    private void addFeedbackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFeedbackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addFeedbackButtonActionPerformed
   /*  public static int fetchUserid() {
          return id;
      }
@@ -199,12 +260,18 @@ public class MainmenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addFeedbackButton;
     private javax.swing.JButton cancelReservationButton;
-    private javax.swing.JButton createCustomerButton1;
+    private javax.swing.JButton checkInButton;
+    private javax.swing.JButton checkOutButton;
+    private javax.swing.JButton createCustomerButton;
     private javax.swing.JButton createReservationButton;
-    private javax.swing.JButton deleteCustomerButton1;
-    private javax.swing.JButton modifyCustomerButton1;
+    private javax.swing.JButton createStaffButton;
+    private javax.swing.JButton deleteCustomerButton;
+    private javax.swing.JButton deleteStaffButton;
+    private javax.swing.JButton modifyCustomerButton;
     private javax.swing.JButton modifyReservationButton;
+    private javax.swing.JButton modifyStaffButton;
     private javax.swing.JButton profileButton;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JLabel welcomeLabel;
@@ -239,24 +306,65 @@ public class MainmenuView extends javax.swing.JFrame {
     }
     
     /**
-     * @return the createCustomerButton1
+     * @return the createCustomerButton
      */
     public JButton getCreateCustomerButton() {
-        return createCustomerButton1;
+        return createCustomerButton;
     }
 
     /**
-     * @return the modifyCustomerButton1
+     * @return the modifyCustomerButton
      */
     public JButton getModifyCustomerButton() {
-        return modifyCustomerButton1;
+        return modifyCustomerButton;
     }
 
     /**
-     * @return the deleteCustomerButton1
+     * @return the deleteCustomerButton
      */
     public JButton getDeleteCustomerButton() {
-        return deleteCustomerButton1;
+        return deleteCustomerButton;
     }
     
+    /**
+     * @return the createStaffButton
+     */
+    public JButton getCreateStaffButton() {
+        return createStaffButton;
+    }
+
+    /**
+     * @return the modifyCustomerButton
+     */
+    public JButton getModifyStaffButton() {
+        return modifyStaffButton;
+    }
+
+    /**
+     * @return the deleteStaffButton
+     */
+    public JButton getDeleteStaffButton() {
+        return deleteStaffButton;
+    }
+    
+    /**
+     * @return the checkOutButton
+     */
+    public JButton getCheckInButton() {
+        return checkInButton;
+    }
+
+    /**
+     * @return the checkOutButton
+     */
+    public JButton getCheckOutButton() {
+        return checkOutButton;
+    }
+
+    /**
+     * @return the addFeedbackButton
+     */
+    public JButton getAddFeedbackButton() {
+        return addFeedbackButton;
+    }
 }

@@ -6,6 +6,7 @@ package bean;
  */
 public class StaffBean extends UserBean {
     
+    //userType 1 = Manager, 2 = Staff, 3 = Front of house
     private int userType;
     private int staffFeedBackMark;
     private int restaurantID;

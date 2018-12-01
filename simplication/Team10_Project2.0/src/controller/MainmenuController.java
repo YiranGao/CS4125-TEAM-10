@@ -31,13 +31,16 @@ public class MainmenuController {
         view.getCreateCustomerButton().addActionListener(e-> goToCreateCustomer());
         view.getModifyCustomerButton().addActionListener(e-> goToModifyCustomer());
         view.getDeleteCustomerButton().addActionListener(e-> goToDeleteCustomer());
-//        view.getCreateStaffButton().addActionListerner(e-> goToStaffCustomer());
-//        view.getModifyStaffButton().addActionListerner(e-> goToStaffCustomer());
-//        view.getDeleteStaffButton().addActionListerner(e-> goToStaffCustomer());
+        view.getCreateStaffButton().addActionListener(e-> goToCreateCustomer());
+        view.getModifyStaffButton().addActionListener(e-> goToModifyCustomer());
+        view.getDeleteStaffButton().addActionListener(e-> goToDeleteCustomer());
+        view.getCheckInButton().addActionListener(e-> goToCheckIn());
+        view.getCheckOutButton().addActionListener(e-> goToCheckOut());
+        view.getAddFeedbackButton().addActionListener(e-> goToFeedback());
     }
     
     public void goToUserProfile() {
-        //TODO: Go to User Profile
+        staffProfileController staffProfile = new staffProfileController(staff);
         JOptionPane.showMessageDialog(null, "Go to user profile");
     }
     
@@ -74,5 +77,18 @@ public class MainmenuController {
     
     public void goToDeleteCustomer() {
         SearchController search = new SearchController("delete customer",staff);
+    }
+    
+    public void goToCheckIn() {
+        SearchController search = new SearchController("check in",staff);
+    }
+    
+    public void goToCheckOut() {
+        JOptionPane.showMessageDialog(null, "Go to Checkout");
+    }
+    
+    public void goToFeedback() {
+        JOptionPane.showMessageDialog(null, "Go to feedback");
+        feedbackController feedback = new feedbackController(staff);
     }
 }

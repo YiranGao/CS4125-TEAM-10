@@ -82,47 +82,55 @@ public class StaffProfileView extends JFrame{
 		contentPane.add(lblEmail_2);
 		
 		JLabel lblUsertype = new JLabel("usertype");
-                lblUsertype.setText("hello");
+                lblUsertype.setText(Integer.toString(staff.getUserType()));
 		lblUsertype.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblUsertype.setBounds(132, 57, 117, 31);
 		contentPane.add(lblUsertype);
 		
 		JLabel lblStafffeedbackmark = new JLabel("staffFeedbackMark");
+                lblStafffeedbackmark.setText(Integer.toString(staff.getFeedBackMark()));
 		lblStafffeedbackmark.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblStafffeedbackmark.setBounds(153, 104, 91, 31);
 		contentPane.add(lblStafffeedbackmark);
 		
 		JLabel lblRestaurantid = new JLabel("RestaurantID");
+                lblRestaurantid.setText(Integer.toString(staff.getRestaurantID()));
 		lblRestaurantid.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblRestaurantid.setBounds(132, 147, 117, 31);
 		contentPane.add(lblRestaurantid);
 		
 		JLabel lblFirstname = new JLabel("FirstName");
+                lblFirstname.setText(staff.getFirstName());
 		lblFirstname.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblFirstname.setBounds(132, 226, 117, 31);
 		contentPane.add(lblFirstname);
 		
 		JLabel lblPhonenum = new JLabel("phoneNum");
+                lblPhonenum.setText(staff.getPhoneNum());
 		lblPhonenum.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblPhonenum.setBounds(132, 270, 117, 31);
 		contentPane.add(lblPhonenum);
 		
 		JLabel lblSurname = new JLabel("surName");
+                lblSurname.setText(staff.getSurName());
 		lblSurname.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblSurname.setBounds(422, 226, 117, 31);
 		contentPane.add(lblSurname);
 		
 		JLabel lblEmail = new JLabel("email");
+                lblEmail.setText(staff.getEmailAddress());
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblEmail.setBounds(422, 287, 117, 31);
 		contentPane.add(lblEmail);
 		
 		JLabel lblUsername = new JLabel("userName");
+                lblUsername.setText(staff.getUserName());
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblUsername.setBounds(422, 103, 117, 31);
 		contentPane.add(lblUsername);
 		
 		JLabel lblUserid = new JLabel("userID");
+                lblUserid.setText(Integer.toString(staff.getUserID()));
 		lblUserid.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblUserid.setBounds(422, 59, 117, 31);
 		contentPane.add(lblUserid);
