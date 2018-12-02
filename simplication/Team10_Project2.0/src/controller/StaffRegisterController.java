@@ -3,6 +3,7 @@ package controller;
 import DAO.StaffDAO;
 import bean.StaffBean;
 import javax.swing.JOptionPane;
+import view.createRegisterStaffView;
 
 /**
  *
@@ -13,6 +14,13 @@ public class StaffRegisterController {
     private final String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     private final String namePattern = "^[A-Za-z]+$";
     private final StaffBean staffRegBean = new StaffBean();
+    
+    createRegisterStaffView frame;
+    
+    public StaffRegisterController(){
+        frame = new createRegisterStaffView();
+	frame.setVisible(true);
+    }                                   
     
     //The authentication return is not returning the correct value yet
     public void checkUsername(String userName){
