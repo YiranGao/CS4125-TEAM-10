@@ -15,14 +15,12 @@ public class RestaurantBean {
     private String name;
     private String location;
     private int tableAmount;
-    private String chain;
     
     public RestaurantBean(){
         restaurant_id = 0;
         name = "";
         location = "";
         tableAmount = 0;
-        chain = "";
     }
 
     public void setRestaurant_id(int restaurant_id) {
@@ -41,9 +39,6 @@ public class RestaurantBean {
         this.tableAmount = tableAmount;
     }
     
-    public void setChain(String chain) {
-        this.chain = chain;
-    }
 
     public int getRestaurant_id() {
         return restaurant_id;
@@ -60,11 +55,7 @@ public class RestaurantBean {
     public int getTableAmount() {
         return tableAmount;
     }
-    
-    public String getChain() {
-        return chain;
-    }
-    
-    
+
+       
     
 }

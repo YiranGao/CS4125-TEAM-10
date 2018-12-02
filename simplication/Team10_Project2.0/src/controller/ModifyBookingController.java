@@ -37,7 +37,7 @@ public class ModifyBookingController extends BookingController{
         try {
             getView().getjDateChooser().setDate(getDf().parse(array[0])); // sets date
         } catch (ParseException ex) {
-            Logger.getLogger(StaffBookingController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModifyBookingController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
