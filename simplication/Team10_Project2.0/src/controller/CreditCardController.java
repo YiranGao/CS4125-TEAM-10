@@ -45,12 +45,6 @@ public class CreditCardController {
         createCard.addCreditcard(newCard);
         cardID = createCard.getCardID(cardNum);
         newCard.setCardID(cardID);
-        
         aCard.closeCreditView();
     }
-    public int getCreditCard(){
-        return newCard.getCardID();
-    }
-
- 
 }

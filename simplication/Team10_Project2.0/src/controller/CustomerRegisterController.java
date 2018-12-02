@@ -28,7 +28,6 @@ public class CustomerRegisterController {
         private final String namePattern = "^[A-Za-z]+$";
         private final CustomerBean CustRegBean = new CustomerBean();
         
-        //The authentication return is not returning the correct value yet
         public void checkUsername(String userName){
             CustomerDAO authUser = new CustomerDAO();
             
@@ -91,23 +90,22 @@ public class CustomerRegisterController {
                 try {
                     format.parse(DOB);
                     CustRegBean.setDOB(DOB);
-                    
+                    register.closeRegister();
                     }
                 catch(ParseException e){
                     checkDOB(JOptionPane.showInputDialog(null,"Date of birth should be yyyy-MM-dd", JOptionPane.ERROR_MESSAGE));
                     }
         }
-        public void addCreditCard(){
+        public void CCview(){
             card = new CreditCardController();
             
-            int cardID = card.getCreditCard();
-            CustRegBean.setCC(cardID);
+            CustRegBean.setCC(1);
             RegisterCustomer(CustRegBean);
         }
         public void RegisterCustomer(CustomerBean CustRegBean){
             CustomerDAO genCust = new CustomerDAO();
                  genCust.addCusotmer(CustRegBean);
-                 register.closeRegister();
+                 
             
         }
 }
