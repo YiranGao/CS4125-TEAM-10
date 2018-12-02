@@ -2,6 +2,8 @@ package controller;
 
 import DAO.BookingDAO;
 import DAO.CustomerDAO;
+import Discount.Deals;
+import Discount.SimpleDealsFactory;
 import bean.BookingBean;
 import bean.CustomerBean;
 import bean.StaffBean;
@@ -32,6 +34,13 @@ public class CreateBookingController extends BookingController{
         } else {
             JOptionPane.showMessageDialog(null,"Reservation Unsuccessfull");
         }
+    }
+    
+    private void applyDiscount() {
+        SimpleDealsFactory factory = new SimpleDealsFactory();
+        Deals deals = factory.createDeals("Milano");
+        double rate = deals.applyDiscount(getBookingBean().getDate(), getCustomer().getLoyaltyPoints());
+        getBookingBean().setDiscount(rate);
     }
          
         

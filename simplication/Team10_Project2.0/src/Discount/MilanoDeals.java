@@ -1,28 +1,28 @@
-package Factory;
-
-import bean.Discount;
-import bean.LoyalDiscount;
-import bean.PremiumDiscount;
+package Discount;
 
 /**
  *
  * @author Patryk
  */
-
-
-public class GetDiscountFactory {
+public class MilanoDeals extends Deals {
+    
+    public MilanoDeals() {
+        super();
+        dealDay = "Thursday";
+        dayRate = 5;
+    }
     
     public Discount getDiscount(int points) {
         if(points == 0) {
             return null;
         }
         else if(points >= 1000 && points < 10000) {
-            return new LoyalDiscount();
+            return new MilanoLoyalDiscount();
         }
         else if(points >= 10000) { // is "else if" instead of "if" incase points was a negative integer
-            return new PremiumDiscount();
+            return new MilanoPremiumDiscount();
         }
         return null;
     }
-    
+                  
 }

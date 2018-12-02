@@ -14,6 +14,7 @@ public class BookingBean {
         private int AllergyPeanuts = 0;
         private int AllergyShellfish = 0;
         private int AllergySoya = 0;
+        private double discount;
         
         public BookingBean()
         {
@@ -28,7 +29,8 @@ public class BookingBean {
         AllergyGluten = 0;
         AllergyPeanuts = 0;
         AllergyShellfish = 0;
-        AllergySoya = 0;   
+        AllergySoya = 0;
+        discount = 0;
         }
 
     public void setReservationID(int reservationID) {
@@ -78,6 +80,10 @@ public class BookingBean {
     public void setAllergySoya(int AllergySoya) {
         this.AllergySoya = AllergySoya;
     }
+    
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 
     public int getReservationID() {
         return reservationID;
@@ -126,6 +132,9 @@ public class BookingBean {
     public int getAllergySoya() {
         return AllergySoya;
     }
-
+    
+    public double getDiscount() {
+        return discount;
+    }
 
 }

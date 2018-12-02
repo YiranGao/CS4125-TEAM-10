@@ -1,10 +1,10 @@
-package bean;
+package Discount;
 
 /**
  *
  * @author Patryk
  */
-public class PremiumDiscount extends Discount {
+public class MilanoPremiumDiscount extends Discount {
 
     @Override
     void getRate() {
