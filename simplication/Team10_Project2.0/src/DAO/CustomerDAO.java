@@ -27,8 +27,7 @@ public class CustomerDAO {
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = "insert into customers(username, password, firstname, lastname, phone_number,";
-            sql += " email, birthday, creditcard_id) values(?,?,?,?,?,?,?,?)";
+            String sql = "insert into customers(username, password, firstname, lastname, phone_number, email, birthday, creditcard_id, loyalty_points) values(?,?,?,?,?,?,?,?,?)";
            
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,CustRegBean.getUserName());
@@ -39,6 +38,7 @@ public class CustomerDAO {
             ps.setString(6,CustRegBean.getEmailAddress() );
             ps.setString(7,CustRegBean.getDOB());
             ps.setInt(8,CustRegBean.getCC());
+            ps.setInt(9, CustRegBean.getLoyaltyPoints());
             ps.executeUpdate();
             
         } catch(SQLException e) {
