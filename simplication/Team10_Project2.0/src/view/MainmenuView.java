@@ -23,9 +23,16 @@ public class MainmenuView extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         if(staff.getUserType() == 2) {
+            createStaffButton.setVisible(false);
+            modifyStaffButton.setVisible(false);
+            deleteStaffButton.setVisible(false);
+            checkInButton.setVisible(false);
+            checkOutButton.setVisible(false);
             
         } else if(staff.getUserType() == 3) {
-            
+            createStaffButton.setVisible(false);
+            modifyStaffButton.setVisible(false);
+            deleteStaffButton.setVisible(false);
         }
     }
 

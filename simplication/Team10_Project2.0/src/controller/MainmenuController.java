@@ -76,6 +76,7 @@ public class MainmenuController {
     
     public void goToDeleteCustomer() {
         SearchController search = new SearchController("delete customer",staff);
+        
     }
     
     public void goToCheckIn() {
