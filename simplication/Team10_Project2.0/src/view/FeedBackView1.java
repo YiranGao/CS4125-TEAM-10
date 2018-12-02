@@ -264,7 +264,7 @@ public class FeedBackView1 extends javax.swing.JFrame {
     private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {                                        
 
         //lblUserid.setText(Integer.toString(staff.getUserID()));
-        feedback.submitFeedback(Integer.parseInt(waiterScoreLabel.getText()), Integer.parseInt(reservationID.getText()));
+//        feedback.submitFeedback(Integer.parseInt(waiterScoreLabel.getText()), Integer.parseInt(reservationID.getText()));
     }                                       
 
     private void reservationIDActionPerformed(java.awt.event.ActionEvent evt) {                                              
