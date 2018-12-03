@@ -16,7 +16,7 @@ import java.text.ParseException;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class TableDAO {
     
@@ -53,7 +53,6 @@ public class TableDAO {
     
     public TableBean getTable(int tableID) {
         
- 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
@@ -77,7 +76,7 @@ public class TableDAO {
     }
     
     
-    public ArrayList<String> getFreeTables(int reservationID, String datetime) {
+    public ArrayList<String> getFreeTables(int restaurantID, String datetime) {
         
         ArrayList<String> tableList = new ArrayList<String>();
         
@@ -88,12 +87,12 @@ public class TableDAO {
             Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = "SELECT `table_id`, `seat_amount` FROM `tables` WHERE NOT EXISTS\n" +
-                "(SELECT tables.table_id, tables.seat_amount FROM `tables` INNER JOIN `reservations` ON tables.table_id = reservations.table_id WHERE reservations.restaurant_id = ? AND reservations.bookingdate = ?)";
+            String sql = "SELECT table_id, seat_amount from tables WHERE restaurant_id = ? AND table_id NOT IN";
+            sql += "(SELECT tables.table_id FROM `tables` INNER JOIN `reservations` ON tables.table_id = reservations.table_id WHERE reservations.restaurant_id = ? AND reservations.bookingdate = ?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, reservationID);
-            ps.setTimestamp(2, timestamp);
-//            ps.setString(2, datetime);
+            ps.setInt(1, restaurantID);
+            ps.setInt(2, restaurantID);
+            ps.setTimestamp(3, timestamp);
             resultSet = ps.executeQuery(); //statement.executeQuery(ps);
             while(resultSet.next()) {    
                 tableList.add(resultSet.getInt("table_id") + ", " + resultSet.getInt("seat_amount") + " seats");
@@ -104,8 +103,6 @@ public class TableDAO {
         } catch(ParseException e) {
             e.printStackTrace();
         }
-        
         return null;
     }
-    
 }

@@ -443,23 +443,23 @@ public class ReservationBookingView extends javax.swing.JFrame {
 
     private void timeslotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeslotButtonActionPerformed
         // TODO add your handling code here:
-        if(isFindATable == false){
+       /* if(isFindATable == false){
             JOptionPane.showMessageDialog(null,"Please select a table first!");
         }
         else{
             JOptionPane.showMessageDialog(null,"Works!!");
             isFindATime = true;
-        }
+        }*/
     }//GEN-LAST:event_timeslotButtonActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
-        if(isFindATable == false || isFindATime == false ){
+     /*   if(isFindATable == false || isFindATime == false ){
             JOptionPane.showMessageDialog(null,"Please set a table or a time slot");
         }
         else{
             // do booking on it.
-        }
+        }*/
     }//GEN-LAST:event_confirmButtonActionPerformed
 
 

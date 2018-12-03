@@ -120,18 +120,18 @@ public class CustomerRegisterView extends JFrame {
                 
                 JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-                                register.checkUsername(userName.getText());
-                                register.checkEmailAddress( emailAddress.getText());
-                                register.checkFirstName(firstName.getText());
-                                register.checkSurName( SurName.getText());
-                                register.checkPW(String.valueOf(passwordField.getPassword()));
-                                register.checkPhoneNumber(phoneNumber.getText());
-                                register.checkDOB(DateOfBirth.getText());
-                                register.addCreditCard();
-                                                    
-                        }                
-		});
+                    @Override
+                    public void actionPerformed(ActionEvent arg0) {
+                        register.checkUsername(userName.getText());
+                        register.checkEmailAddress( emailAddress.getText());
+                        register.checkFirstName(firstName.getText());
+                        register.checkSurName( SurName.getText());
+                        register.checkPW(String.valueOf(passwordField.getPassword()));
+                        register.checkPhoneNumber(phoneNumber.getText());
+                        register.checkDOB(DateOfBirth.getText());
+                        register.CCview();
+                    }
+                });
                 btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnRegister.setBounds(102, 666, 97, 25);
 		contentPane.add(btnRegister);

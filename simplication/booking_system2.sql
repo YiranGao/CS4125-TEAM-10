@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 01:38 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Czas generowania: 03 Gru 2018, 02:22
+-- Wersja serwera: 10.1.36-MariaDB
+-- Wersja PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booking_system2`
+-- Baza danych: `booking_system2`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creditcards`
+-- Struktura tabeli dla tabeli `creditcards`
 --
 
 CREATE TABLE `creditcards` (
@@ -37,7 +37,7 @@ CREATE TABLE `creditcards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `creditcards`
+-- Zrzut danych tabeli `creditcards`
 --
 
 INSERT INTO `creditcards` (`card_id`, `holder_name`, `validdate_year`, `validdate_month`, `card_number`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `creditcards` (`card_id`, `holder_name`, `validdate_year`, `validdat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Struktura tabeli dla tabeli `customers`
 --
 
 CREATE TABLE `customers` (
@@ -63,16 +63,16 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `customers`
+-- Zrzut danych tabeli `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `username`, `password`, `firstname`, `lastname`, `phone_number`, `email`, `birthday`, `creditcard_id`, `loyalty_points`) VALUES
-(1, 'grand1', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', '05/13/2018', 1, 0);
+(1, 'grand1', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', '05/13/2018', 1, 1100);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Struktura tabeli dla tabeli `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -83,7 +83,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `feedback`
+-- Zrzut danych tabeli `feedback`
 --
 
 INSERT INTO `feedback` (`feedback_id`, `staff_id`, `feedback_mark`, `reservation_id`) VALUES
@@ -92,7 +92,7 @@ INSERT INTO `feedback` (`feedback_id`, `staff_id`, `feedback_mark`, `reservation
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservations`
+-- Struktura tabeli dla tabeli `reservations`
 --
 
 CREATE TABLE `reservations` (
@@ -107,20 +107,26 @@ CREATE TABLE `reservations` (
   `fish_allergy` tinyint(1) DEFAULT '0',
   `shellfish_allergy` tinyint(1) DEFAULT '0',
   `peanuts_allergy` tinyint(1) DEFAULT '0',
-  `soya_allergy` tinyint(1) DEFAULT '0'
+  `soya_allergy` tinyint(1) DEFAULT '0',
+  `discount` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `reservations`
+-- Zrzut danych tabeli `reservations`
 --
 
-INSERT INTO `reservations` (`reservation_id`, `customer_id`, `numofguests`, `bookingdate`, `table_id`, `restaurant_id`, `gluten_allergy`, `dairy_allergy`, `fish_allergy`, `shellfish_allergy`, `peanuts_allergy`, `soya_allergy`) VALUES
-(1, 1, 4, '2000-01-01 00:00:00', 1, 1, 0, 0, 0, 0, 0, 0);
+INSERT INTO `reservations` (`reservation_id`, `customer_id`, `numofguests`, `bookingdate`, `table_id`, `restaurant_id`, `gluten_allergy`, `dairy_allergy`, `fish_allergy`, `shellfish_allergy`, `peanuts_allergy`, `soya_allergy`, `discount`) VALUES
+(27, 1, 4, '2018-12-04 00:00:00', 2, 2, 0, 0, 1, 0, 0, 0, 0),
+(28, 1, 4, '2018-12-04 11:00:00', 2, 2, 1, 0, 0, 0, 0, 0, 0),
+(29, 1, 3, '2018-12-04 14:00:00', 2, 2, 0, 0, 0, 0, 0, 0, 0),
+(30, 1, 3, '2018-12-04 13:00:00', 3, 2, 0, 0, 0, 0, 0, 0, 0),
+(31, 1, 4, '2018-12-04 15:00:00', 2, 2, 0, 0, 0, 0, 0, 0, 11),
+(32, 1, 4, '2018-12-04 19:00:00', 2, 2, 0, 0, 0, 0, 0, 0, 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `restaurants`
+-- Struktura tabeli dla tabeli `restaurants`
 --
 
 CREATE TABLE `restaurants` (
@@ -131,16 +137,17 @@ CREATE TABLE `restaurants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `restaurants`
+-- Zrzut danych tabeli `restaurants`
 --
 
 INSERT INTO `restaurants` (`restaurant_id`, `name`, `location`, `tableamount`) VALUES
-(1, 'Team10 Limerick City', 'Limerick City, Limerick', 15);
+(2, 'La Cucina', 'Castletroy, Limerick', 10),
+(3, 'Milano', 'Limerick', 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staff`
+-- Struktura tabeli dla tabeli `staff`
 --
 
 CREATE TABLE `staff` (
@@ -157,16 +164,16 @@ CREATE TABLE `staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `staff`
+-- Zrzut danych tabeli `staff`
 --
 
 INSERT INTO `staff` (`staff_id`, `username`, `password`, `firstname`, `surname`, `phone_number`, `email`, `usertype`, `feedback_mark`, `restaurant_id`) VALUES
-(1, 'grandles', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', 2, 0, 1);
+(1, 'grandles', 'gav123', 'Gavin', 'Randles', '0852725054', 'gtarandles@gmail.com', 2, 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tables`
+-- Struktura tabeli dla tabeli `tables`
 --
 
 CREATE TABLE `tables` (
@@ -177,31 +184,34 @@ CREATE TABLE `tables` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tables`
+-- Zrzut danych tabeli `tables`
 --
 
 INSERT INTO `tables` (`table_id`, `restaurant_id`, `table_state`, `seat_amount`) VALUES
-(1, 1, 0, 5);
+(2, 2, 0, 4),
+(3, 3, 0, 4),
+(4, 2, 0, 5),
+(5, 3, 0, 6);
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `creditcards`
+-- Indeksy dla tabeli `creditcards`
 --
 ALTER TABLE `creditcards`
   ADD PRIMARY KEY (`card_id`);
 
 --
--- Indexes for table `customers`
+-- Indeksy dla tabeli `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`),
   ADD KEY `creditcard_id` (`creditcard_id`);
 
 --
--- Indexes for table `feedback`
+-- Indeksy dla tabeli `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`feedback_id`),
@@ -209,29 +219,29 @@ ALTER TABLE `feedback`
   ADD KEY `reservation_id` (`reservation_id`);
 
 --
--- Indexes for table `reservations`
+-- Indeksy dla tabeli `reservations`
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`reservation_id`),
   ADD KEY `customer_id` (`customer_id`),
-  ADD KEY `restaurant_id` (`restaurant_id`),
-  ADD KEY `table_id` (`table_id`);
+  ADD KEY `table_id` (`table_id`),
+  ADD KEY `restaurant_id` (`restaurant_id`);
 
 --
--- Indexes for table `restaurants`
+-- Indeksy dla tabeli `restaurants`
 --
 ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`restaurant_id`);
 
 --
--- Indexes for table `staff`
+-- Indeksy dla tabeli `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`staff_id`),
   ADD KEY `restaurant_id` (`restaurant_id`);
 
 --
--- Indexes for table `tables`
+-- Indeksy dla tabeli `tables`
 --
 ALTER TABLE `tables`
   ADD PRIMARY KEY (`table_id`),
@@ -242,66 +252,66 @@ ALTER TABLE `tables`
 --
 
 --
--- AUTO_INCREMENT for table `creditcards`
+-- AUTO_INCREMENT dla tabeli `creditcards`
 --
 ALTER TABLE `creditcards`
   MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT dla tabeli `customers`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT dla tabeli `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `reservations`
+-- AUTO_INCREMENT dla tabeli `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `restaurants`
+-- AUTO_INCREMENT dla tabeli `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `restaurant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `restaurant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `staff`
+-- AUTO_INCREMENT dla tabeli `staff`
 --
 ALTER TABLE `staff`
   MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tables`
+-- AUTO_INCREMENT dla tabeli `tables`
 --
 ALTER TABLE `tables`
-  MODIFY `table_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `table_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `customers`
+-- Ograniczenia dla tabeli `customers`
 --
 ALTER TABLE `customers`
   ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`creditcard_id`) REFERENCES `creditcards` (`card_id`);
 
 --
--- Constraints for table `feedback`
+-- Ograniczenia dla tabeli `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`),
   ADD CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`reservation_id`) REFERENCES `reservations` (`reservation_id`);
 
 --
--- Constraints for table `reservations`
+-- Ograniczenia dla tabeli `reservations`
 --
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
@@ -309,13 +319,13 @@ ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_3` FOREIGN KEY (`table_id`) REFERENCES `tables` (`table_id`);
 
 --
--- Constraints for table `staff`
+-- Ograniczenia dla tabeli `staff`
 --
 ALTER TABLE `staff`
   ADD CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`restaurant_id`);
 
 --
--- Constraints for table `tables`
+-- Ograniczenia dla tabeli `tables`
 --
 ALTER TABLE `tables`
   ADD CONSTRAINT `tables_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`restaurant_id`);

@@ -1,7 +1,6 @@
 
 package DAO;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import util.DBConnection;
-
+/**
+ *
+ * @author Gavin
+ */
 public class BookingDAO {
         
     private BookingBean booking = new BookingBean();
@@ -28,7 +30,7 @@ public class BookingDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             String sql = "insert into reservations(customer_id, numofguests, bookingdate, table_id, restaurant_id, gluten_allergy, dairy_allergy,";
-            sql += " fish_allergy, shellfish_allergy, peanuts_allergy, soya_allergy) values(?,?,?,?,?,?,?,?,?,?,?)";
+            sql += " fish_allergy, shellfish_allergy, peanuts_allergy, soya_allergy, discount) values(?,?,?,?,?,?,?,?,?,?,?,?)";
             Timestamp timestamp;
             try {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -52,6 +54,7 @@ public class BookingDAO {
                 ps.setInt(9, bookingBean.getAllergyShellfish());
                 ps.setInt(10, bookingBean.getAllergyPeanuts());
                 ps.setInt(11, bookingBean.getAllergySoya());
+                ps.setDouble(12, bookingBean.getDiscount());
 
                 ps.executeUpdate();
                 return "SUCCESS";
@@ -100,6 +103,7 @@ public class BookingDAO {
                     booking.setAllergyShellfish(resultSet.getInt("shellfish_allergy"));
                     booking.setAllergyPeanuts(resultSet.getInt("peanuts_allergy"));
                     booking.setAllergySoya(resultSet.getInt("soya_allergy"));
+                    booking.setDiscount(resultSet.getDouble("discount"));
                     
                     return booking;
                 }
@@ -144,7 +148,7 @@ public class BookingDAO {
             con = DBConnection.createConnection();
             statement = con.createStatement();
             String sql = "update reservations set(customer_id = ?, numofguests=?, bookingdate=?, table_id=?, restaurant_id=?, gluten_allergy=?, dairy_allergy=?,";
-            sql += " fish_allergy=?, shellfish_allergy=?, peanuts_allergy=?, soya_allergy=?) where reservation_id = " + bookingBean.getReservationID(); 
+            sql += " fish_allergy=?, shellfish_allergy=?, peanuts_allergy=?, soya_allergy=?, discount=?) where reservation_id = " + bookingBean.getReservationID(); 
             Timestamp timestamp;
             try {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -168,6 +172,8 @@ public class BookingDAO {
                 ps.setInt(9, bookingBean.getAllergyShellfish());
                 ps.setInt(10, bookingBean.getAllergyPeanuts());
                 ps.setInt(11, bookingBean.getAllergySoya());
+                ps.setDouble(12, bookingBean.getDiscount());
+
 
                 ps.executeUpdate();
                 return "SUCCESS";

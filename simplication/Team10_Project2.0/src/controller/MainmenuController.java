@@ -10,7 +10,7 @@ import view.ReservationBookingView;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class MainmenuController {
     
@@ -35,7 +35,7 @@ public class MainmenuController {
         view.getModifyStaffButton().addActionListener(e-> goToModifyCustomer());
         view.getDeleteStaffButton().addActionListener(e-> goToDeleteCustomer());
         view.getCheckInButton().addActionListener(e-> goToCheckIn());
-        view.getCheckOutButton().addActionListener(e-> goToCheckOut());
+        view.getLogOutButton().addActionListener(e-> goToLogOut());
         view.getAddFeedbackButton().addActionListener(e-> goToFeedback());
     }
     
@@ -53,7 +53,7 @@ public class MainmenuController {
         else {
             BookingBean model = new BookingBean();
             ReservationBookingView view = new ReservationBookingView();
-            StaffBookingController controller = new StaffBookingController(model, view, customer, staff, false);
+            CreateBookingController controller = new CreateBookingController(model, view, customer, staff);
             controller.initController();
         }
     }    
@@ -83,8 +83,10 @@ public class MainmenuController {
         SearchController search = new SearchController("check in",staff);
     }
     
-    public void goToCheckOut() {
-        JOptionPane.showMessageDialog(null, "Go to Checkout");
+    public void goToLogOut() {
+        LoginController login = new LoginController();
+        JOptionPane.showMessageDialog(null, "System should check for bookings not checked in");
+        view.dispose();
     }
     
     public void goToFeedback() {

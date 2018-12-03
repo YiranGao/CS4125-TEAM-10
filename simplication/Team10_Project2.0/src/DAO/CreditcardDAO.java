@@ -1,8 +1,6 @@
 
 package DAO;
 
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,13 +12,13 @@ import util.DBConnection;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class CreditcardDAO {
     
     private CreditcardBean creditcard = new CreditcardBean();
     
-    public String addCreditcard(CreditcardBean creditcard) {
+    public void addCreditcard(CreditcardBean creditcard) {
         
         String holderName = creditcard.getHolderName();
         int year = creditcard.getYear();
@@ -33,7 +31,7 @@ public class CreditcardDAO {
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            String sql = ("insert into tables(holder_name, validdate_year, validdate_month, card_number) values(?,?,?,?)");
+            String sql = ("insert into creditcards(holder_name, validdate_year, validdate_month, card_number) values(?,?,?,?)");
            
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, holderName);
@@ -42,12 +40,10 @@ public class CreditcardDAO {
             ps.setString(4, number);
            
             ps.executeUpdate();
- 
-            return "SUCCESS";
+
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return "ERROR";
     }
     
     public CreditcardBean getCreditcard(int cardID) {
@@ -81,7 +77,6 @@ public class CreditcardDAO {
     
     public int getCardID(int cardNumber){
         
-    
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;
