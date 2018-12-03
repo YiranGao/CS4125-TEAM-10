@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bean;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class RestaurantBean {
     
@@ -39,7 +35,6 @@ public class RestaurantBean {
         this.tableAmount = tableAmount;
     }
     
-
     public int getRestaurant_id() {
         return restaurant_id;
     }
@@ -55,7 +50,5 @@ public class RestaurantBean {
     public int getTableAmount() {
         return tableAmount;
     }
-
-       
-    
+   
 }

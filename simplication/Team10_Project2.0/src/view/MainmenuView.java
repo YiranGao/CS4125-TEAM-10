@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 
 import bean.StaffBean;
@@ -11,6 +7,7 @@ import javax.swing.JButton;
 /**
  *
  * @author Yiran Gao - 17083214
+ * @author Gavin
  */
 public class MainmenuView extends javax.swing.JFrame {
     

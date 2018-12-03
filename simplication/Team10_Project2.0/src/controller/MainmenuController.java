@@ -10,7 +10,7 @@ import view.ReservationBookingView;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class MainmenuController {
     

@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import bean.LoginBean;
 import bean.StaffBean;
 import util.DBConnection;
 

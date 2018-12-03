@@ -16,7 +16,7 @@ import java.text.ParseException;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class TableDAO {
     
@@ -53,7 +53,6 @@ public class TableDAO {
     
     public TableBean getTable(int tableID) {
         
- 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
@@ -94,7 +93,6 @@ public class TableDAO {
             ps.setInt(1, restaurantID);
             ps.setInt(2, restaurantID);
             ps.setTimestamp(3, timestamp);
-//            ps.setString(2, datetime);
             resultSet = ps.executeQuery(); //statement.executeQuery(ps);
             while(resultSet.next()) {    
                 tableList.add(resultSet.getInt("table_id") + ", " + resultSet.getInt("seat_amount") + " seats");
@@ -105,8 +103,6 @@ public class TableDAO {
         } catch(ParseException e) {
             e.printStackTrace();
         }
-        
         return null;
     }
-    
 }

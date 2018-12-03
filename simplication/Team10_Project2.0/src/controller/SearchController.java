@@ -11,7 +11,7 @@ import view.SearchView;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class SearchController {
     
@@ -50,11 +50,11 @@ public class SearchController {
             if(booking == null) {
                 JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
             } else {
-                ReservationBookingView view = new ReservationBookingView();
+                ReservationBookingView bookingView = new ReservationBookingView();
                 CustomerBean customer = new CustomerBean();
                 CustomerDAO customerDAO = new CustomerDAO();
                 customer = customerDAO.getCustomer(booking.getCustomerID());
-                ModifyBookingController controller = new ModifyBookingController(booking, view, customer, staff);
+                ModifyBookingController controller = new ModifyBookingController(booking, bookingView, customer, staff);
                 view.dispose();
                 controller.initController();
             }

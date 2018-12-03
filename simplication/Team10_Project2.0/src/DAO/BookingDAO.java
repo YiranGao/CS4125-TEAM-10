@@ -1,7 +1,6 @@
 
 package DAO;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import util.DBConnection;
-
+/**
+ *
+ * @author Gavin
+ */
 public class BookingDAO {
         
     private BookingBean booking = new BookingBean();

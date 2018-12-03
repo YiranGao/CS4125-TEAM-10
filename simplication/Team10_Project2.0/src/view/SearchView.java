@@ -16,7 +16,10 @@ import java.awt.event.ActionEvent;
 
 import controller.LoginController;
 import controller.SearchController;
-
+/**
+ *
+ * @author Gavin
+ */
 public class SearchView extends JFrame {
     
     private JPanel contentPane;

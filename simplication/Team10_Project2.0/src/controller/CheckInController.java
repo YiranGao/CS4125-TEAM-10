@@ -1,20 +1,16 @@
 package controller;
 
-import DAO.BookingDAO;
 import bean.BookingBean;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class CheckInController {
     
-    
-    
     private String result = "Check In Sucessfull\n\n";
-            
-    
+           
     public void CheckIn(BookingBean booking) {
         
         result += "Discount: " + booking.getDiscount() + "%\n\n"
@@ -51,7 +47,5 @@ public class CheckInController {
         }
         
         JOptionPane.showMessageDialog(null, result);
-    }
-    
-    
+    }   
 }
