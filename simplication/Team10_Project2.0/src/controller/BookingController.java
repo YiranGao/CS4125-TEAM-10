@@ -89,7 +89,15 @@ public abstract class BookingController {
     private void tableSelected(ListSelectionEvent ev){
         String line = String.valueOf(((JList)ev.getSource()).getSelectedValue());
         String [] array = line.split(", ");
-        table = Integer.parseInt(array[0]);
+        String [] array2 = array[1].split(" ");
+        if(view.getNumOfGuestsTextField().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please provide the number of guests");
+        }
+        else if(Integer.parseInt(array2[0]) < Integer.parseInt(view.getNumOfGuestsTextField().getText())){
+            JOptionPane.showMessageDialog(null, "There is not enough seats at this table");
+        } else {
+            table = Integer.parseInt(array[0]);
+        }
     }
     
     private void makeBooking() {
