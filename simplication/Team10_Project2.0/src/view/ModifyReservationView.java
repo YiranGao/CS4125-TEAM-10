@@ -236,7 +236,7 @@ public class ModifyReservationView extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(verifyButton)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addContainerGap(46, Short.MAX_VALUE))
