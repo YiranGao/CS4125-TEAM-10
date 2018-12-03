@@ -3,15 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/SearchController.java</file>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/CreditcardView.java</file>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/FeedBackView1.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/view/CustomerRegisterView.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/CreditcardBean.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/StaffBean.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/BookingBean.java</file>
             <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/CreditCardController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/CustomerRegisterController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/DiscountTest.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/CreditcardDAO.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/TableBean.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/RestaurantDAO.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/LoyalDiscount.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/FeedbackBean.java</file>
             <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/DAO/CustomerDAO.java</file>
             <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/CustomerBean.java</file>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/MainmenuController.java</file>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/deleteCustomerController.java</file>
-            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/controller/CustomerRegisterController.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/Discount.java</file>
+            <file>file:/C:/Users/Sean/Documents/GitHub/CS4125-TEAM-10/simplication/Team10_Project2.0/src/bean/RestaurantBean.java</file>
         </group>
     </open-files>
 </project-private>

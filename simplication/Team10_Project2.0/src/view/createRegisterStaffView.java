@@ -29,19 +29,6 @@ public class createRegisterStaffView extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
-        
-        	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					createRegisterStaffView frame = new createRegisterStaffView();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
     
 
     public createRegisterStaffView() {

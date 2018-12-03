@@ -15,7 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import controller.LoginController;
-
+/**
+ *
+ * @author Gavin
+ */
 public class LoginView extends JFrame {
     
     private JPanel contentPane;

@@ -1,8 +1,6 @@
 
 package DAO;
 
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +12,7 @@ import util.DBConnection;
 
 /**
  *
- * @author gtara
+ * @author Gavin
  */
 public class CreditcardDAO {
     
@@ -79,7 +77,6 @@ public class CreditcardDAO {
     
     public int getCardID(int cardNumber){
         
-    
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;

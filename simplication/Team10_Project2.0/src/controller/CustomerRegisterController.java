@@ -99,7 +99,7 @@ public class CustomerRegisterController {
         public void CCview(){
             card = new CreditCardController();
             
-            CustRegBean.setCC(1);
+            CustRegBean.setCC(1);//cant get the card ID back
             RegisterCustomer(CustRegBean);
         }
         public void RegisterCustomer(CustomerBean CustRegBean){
