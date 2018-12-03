@@ -10,9 +10,15 @@ import javax.swing.JOptionPane;
  */
 public class CheckInController {
     
-    private String result = "Check In Sucessfull\n\nWarning Alegies Include:\n\n";
+    
+    
+    private String result = "Check In Sucessfull\n\n";
+            
     
     public void CheckIn(BookingBean booking) {
+        
+        result += "Discount: " + booking.getDiscount() + "%\n\n"
+            + "Warning Alegies Include:\n\n";
         
         int counter = 0;
         

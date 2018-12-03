@@ -85,6 +85,7 @@ public class MainmenuController {
     
     public void goToLogOut() {
         LoginController login = new LoginController();
+        JOptionPane.showMessageDialog(null, "System should check for bookings not checked in");
         view.dispose();
     }
     
