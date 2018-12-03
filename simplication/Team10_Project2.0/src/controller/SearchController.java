@@ -16,13 +16,14 @@ import view.SearchView;
 public class SearchController {
     
     private StaffBean staff;
+    private SearchView view;
     private String SearchType, search;
     
     public SearchController(String searchType,StaffBean aStaff){
         SearchType = searchType;
         staff = aStaff;
         
-        SearchView view = new SearchView(searchType,this);
+        view = new SearchView(searchType,this);
         view.setVisible(true);
     }
     
@@ -54,6 +55,7 @@ public class SearchController {
                 CustomerDAO customerDAO = new CustomerDAO();
                 customer = customerDAO.getCustomer(booking.getCustomerID());
                 ModifyBookingController controller = new ModifyBookingController(booking, view, customer, staff);
+                view.dispose();
                 controller.initController();
             }
         } catch(NumberFormatException nfe) {
@@ -69,6 +71,7 @@ public class SearchController {
                 JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
             } else {
                 DeleteBookingController delete = new DeleteBookingController();
+                view.dispose();
                 delete.deleteBooking(booking);
             }
         } catch(NumberFormatException nfe) {
@@ -78,21 +81,37 @@ public class SearchController {
     
     public void updateStaff() {
         JOptionPane.showMessageDialog(null, "Brings to Update Staff");
+        view.dispose();
     }
     
     public void deleteStaff() {
         JOptionPane.showMessageDialog(null, "Brings to Delete Staff");
+        view.dispose();
     }
     
     public void updateCutomer() {
         JOptionPane.showMessageDialog(null, "Brings to Update Customer");
+        view.dispose();
     }
     
     public void deleteCutomer() {
         JOptionPane.showMessageDialog(null, "Brings to Delete Customer");
+        view.dispose();
     }
     
     public void checkIn() {
-        JOptionPane.showMessageDialog(null, "Brings to Delete Customer");
+        BookingDAO bookingDAO = new BookingDAO();
+        try{
+            BookingBean booking = bookingDAO.getBooking(Integer.parseInt(search));
+            if(booking == null) {
+                JOptionPane.showMessageDialog(null, "The booking doesn't exist!");
+            } else {
+                CheckInController checkIn = new CheckInController();
+                view.dispose();
+                checkIn.CheckIn(booking);
+            }
+        } catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "A reservation id has not been entered!");
+        }
     }
 }

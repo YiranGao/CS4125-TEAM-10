@@ -27,7 +27,6 @@ public class MainmenuView extends javax.swing.JFrame {
             modifyStaffButton.setVisible(false);
             deleteStaffButton.setVisible(false);
             checkInButton.setVisible(false);
-            checkOutButton.setVisible(false);
             
         } else if(staff.getUserType() == 3) {
             createStaffButton.setVisible(false);
@@ -55,7 +54,7 @@ public class MainmenuView extends javax.swing.JFrame {
         modifyCustomerButton = new javax.swing.JButton();
         deleteCustomerButton = new javax.swing.JButton();
         checkInButton = new javax.swing.JButton();
-        checkOutButton = new javax.swing.JButton();
+        logOutButton = new javax.swing.JButton();
         createStaffButton = new javax.swing.JButton();
         modifyStaffButton = new javax.swing.JButton();
         deleteStaffButton = new javax.swing.JButton();
@@ -94,7 +93,12 @@ public class MainmenuView extends javax.swing.JFrame {
 
         checkInButton.setText("Check In");
 
-        checkOutButton.setText("Check Out");
+        logOutButton.setText("Log Out");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
 
         createStaffButton.setText("Create Staff");
 
@@ -115,38 +119,42 @@ public class MainmenuView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createStaffButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(welcomeLabel)
-                            .addGap(273, 273, 273))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(profileButton)
-                                .addComponent(usernameLabel))
-                            .addGap(20, 20, 20)))
-                    .addComponent(modifyStaffButton)
-                    .addComponent(deleteStaffButton))
-                .addGap(32, 32, 32))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(welcomeLabel)
+                        .addGap(305, 305, 305))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profileButton)
+                            .addComponent(usernameLabel))
+                        .addGap(52, 52, 52))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(checkInButton)
                         .addGap(56, 56, 56)
-                        .addComponent(checkOutButton)
+                        .addComponent(logOutButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addFeedbackButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(deleteCustomerButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(deleteStaffButton)
+                        .addGap(18, 18, 18)
                         .addComponent(cancelReservationButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(modifyCustomerButton)
-                            .addComponent(createCustomerButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(modifyCustomerButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(modifyStaffButton)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(createCustomerButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(createStaffButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(modifyReservationButton)
                             .addComponent(createReservationButton))))
@@ -179,7 +187,7 @@ public class MainmenuView extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkInButton)
-                    .addComponent(checkOutButton)
+                    .addComponent(logOutButton)
                     .addComponent(addFeedbackButton))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -195,6 +203,10 @@ public class MainmenuView extends javax.swing.JFrame {
     private void addFeedbackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFeedbackButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addFeedbackButtonActionPerformed
+
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logOutButtonActionPerformed
   /*  public static int fetchUserid() {
          return id;
      }
@@ -263,12 +275,12 @@ public class MainmenuView extends javax.swing.JFrame {
     private javax.swing.JButton addFeedbackButton;
     private javax.swing.JButton cancelReservationButton;
     private javax.swing.JButton checkInButton;
-    private javax.swing.JButton checkOutButton;
     private javax.swing.JButton createCustomerButton;
     private javax.swing.JButton createReservationButton;
     private javax.swing.JButton createStaffButton;
     private javax.swing.JButton deleteCustomerButton;
     private javax.swing.JButton deleteStaffButton;
+    private javax.swing.JButton logOutButton;
     private javax.swing.JButton modifyCustomerButton;
     private javax.swing.JButton modifyReservationButton;
     private javax.swing.JButton modifyStaffButton;
@@ -357,8 +369,8 @@ public class MainmenuView extends javax.swing.JFrame {
     /**
      * @return the checkOutButton
      */
-    public JButton getCheckOutButton() {
-        return checkOutButton;
+    public JButton getLogOutButton() {
+        return logOutButton;
     }
 
     /**

@@ -35,7 +35,7 @@ public class MainmenuController {
         view.getModifyStaffButton().addActionListener(e-> goToModifyCustomer());
         view.getDeleteStaffButton().addActionListener(e-> goToDeleteCustomer());
         view.getCheckInButton().addActionListener(e-> goToCheckIn());
-        view.getCheckOutButton().addActionListener(e-> goToCheckOut());
+        view.getLogOutButton().addActionListener(e-> goToLogOut());
         view.getAddFeedbackButton().addActionListener(e-> goToFeedback());
     }
     
@@ -83,8 +83,9 @@ public class MainmenuController {
         SearchController search = new SearchController("check in",staff);
     }
     
-    public void goToCheckOut() {
-        JOptionPane.showMessageDialog(null, "Go to Checkout");
+    public void goToLogOut() {
+        LoginController login = new LoginController();
+        view.dispose();
     }
     
     public void goToFeedback() {
