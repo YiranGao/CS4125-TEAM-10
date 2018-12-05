@@ -18,7 +18,7 @@ import javax.swing.*;
  * @author Yiran Gao 17083214
  */
 public class ReservationBookingView extends javax.swing.JFrame {
-
+    
     /**
      * @return the userNameTextField
      */
