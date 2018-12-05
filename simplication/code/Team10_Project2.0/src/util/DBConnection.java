@@ -9,7 +9,7 @@ public class DBConnection {
     public static Connection createConnection() {
     
         Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/booking_system2";
+        String url = "jdbc:mysql://localhost:3306/booking_system";
         String username = "root";
         String password = "";
         
